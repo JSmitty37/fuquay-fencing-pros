@@ -16,7 +16,7 @@ PHONE_TEXT   = "(919) 000-0000"          # ← REPLACE with the real NC tracking
 PHONE_TEL    = "+19190000000"            # ← REPLACE
 GA4_ID       = "G-XXXXXXXXXX"            # ← REPLACE with real GA4 measurement ID
 PIXEL_ID     = "000000000000000"         # ← REPLACE with real Meta Pixel ID
-WEBHOOK      = ""                        # ← PASTE Zapier Catch Hook URL (blank = demo mode)
+WEBHOOK      = "https://hooks.zapier.com/hooks/catch/24209228/4dq1xf8/"
 CITY         = "Fuquay-Varina"
 STATE        = "NC"
 OUT          = os.path.join(os.path.dirname(os.path.abspath(__file__)), "site")
@@ -977,7 +977,7 @@ Open `build.py`, edit the CONFIG block, re-run `python3 build.py`:
 | `PHONE_TEXT` / `PHONE_TEL` | `(919) 000-0000` | the real NC 919 call-tracking number |
 | `GA4_ID` | `G-XXXXXXXXXX` | real GA4 measurement ID |
 | `PIXEL_ID` | `000000000000000` | real Meta Pixel ID |
-| `WEBHOOK` | *(blank — demo mode)* | Zapier Catch Hook URL |
+| `WEBHOOK` | `{WEBHOOK or "*(blank — demo mode)*"}` | Zapier Catch Hook URL |
 | `DOMAIN` | `{DOMAIN}` | final domain if different |
 
 With `WEBHOOK` blank the forms run in demo mode: they show the success state and log the payload to the
