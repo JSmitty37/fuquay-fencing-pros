@@ -11,11 +11,10 @@ Open `build.py`, edit the CONFIG block, re-run `python3 build.py`:
 | `PHONE_TEXT` / `PHONE_TEL` | `(919) 000-0000` | the real NC 919 call-tracking number |
 | `GA4_ID` | `G-XXXXXXXXXX` | real GA4 measurement ID |
 | `PIXEL_ID` | `000000000000000` | real Meta Pixel ID |
-| `WEBHOOK` | *(blank — demo mode)* | Zapier Catch Hook URL |
+| `WEBHOOK` | `https://hooks.zapier.com/hooks/catch/24209228/4dq1xf8/` | Zapier Catch Hook URL |
 | `DOMAIN` | `fuquayfencingpros.com` | final domain if different |
 
-With `WEBHOOK` blank the forms run in demo mode: they show the success state and log the payload to the
-console without sending anywhere. Useful for local testing, useless in production — set it before launch.
+`WEBHOOK` is set. Lead forms POST JSON to that Zapier Catch Hook. Turn the Zap **On** so submissions are received. If `WEBHOOK` is blank, forms run in demo mode (success state + console log, no send).
 
 ## What's in here
 
