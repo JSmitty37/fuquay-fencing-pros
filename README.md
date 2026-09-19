@@ -43,20 +43,31 @@ console without sending anywhere. Useful for local testing, useless in productio
 
 ## Deploy
 
-```bash
-cd site
-git init && git add -A && git commit -m "Initial site"
-git branch -M main
-git remote add origin https://github.com/<OWNER>/<REPO>.git
-git push -u origin main
-```
+Site files live at the repository root (`index.html`, `CNAME`, etc.). Repo:
+https://github.com/JSmitty37/fuquay-fencing-pros
 
-Then: repo **Settings → Pages → Source: main / root**. Add `fuquayfencingpros.com` as the custom domain and enable
-**Enforce HTTPS**.
+**GitHub Pages (admin click — API cannot enable this):** Settings → Pages →
+Build and deployment → Source: **Deploy from a branch** → Branch **main** / folder **/ (root)** → Save.
+Custom domain: `fuquayfencingpros.com` → Save. After DNS is green, enable **Enforce HTTPS**.
 
-**DNS (apex + www):** four A records for the apex pointing at GitHub Pages —
-`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` — and a CNAME for `www` →
-`<OWNER>.github.io`.
+Default Pages URL after enable: `https://jsmitty37.github.io/fuquay-fencing-pros/`
+Custom domain URL: `https://fuquayfencingpros.com/`
+
+### Namecheap Advanced DNS (what GitHub Pages displays)
+
+Remove any parking / default URL Redirect / conflicting `@` or `www` records first.
+
+| Type | Host | Value | TTL |
+|---|---|---|---|
+| A Record | `@` | `185.199.108.153` | Automatic |
+| A Record | `@` | `185.199.109.153` | Automatic |
+| A Record | `@` | `185.199.110.153` | Automatic |
+| A Record | `@` | `185.199.111.153` | Automatic |
+| AAAA Record | `@` | `2606:50c0:8000::153` | Automatic |
+| AAAA Record | `@` | `2606:50c0:8001::153` | Automatic |
+| AAAA Record | `@` | `2606:50c0:8002::153` | Automatic |
+| AAAA Record | `@` | `2606:50c0:8003::153` | Automatic |
+| CNAME Record | `www` | `jsmitty37.github.io.` | Automatic |
 
 ## Content accuracy note
 
