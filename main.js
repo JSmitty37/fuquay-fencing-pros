@@ -1,5 +1,5 @@
 /* Fuquay Fencing Pros — nav, lead forms, analytics events */
-const LEAD_WEBHOOK_URL = ""; // Zapier Catch Hook. Blank = demo mode (logs, no send).
+const LEAD_WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/24209228/4dq1xf8/"; // Zapier Catch Hook. Blank = demo mode (logs, no send).
 
 /* ---------- mobile nav ---------- */
 (function(){
