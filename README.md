@@ -8,13 +8,13 @@ Open `build.py`, edit the CONFIG block, re-run `python3 build.py`:
 
 | Constant | Current placeholder | Replace with |
 |---|---|---|
-| `PHONE_TEXT` / `PHONE_TEL` | `(919) 000-0000` | the real NC 919 call-tracking number |
+| `PHONE_TEXT` / `PHONE_TEL` | `(919) 276-8406` / `+19192768406` | CallRail NC tracking number |
 | `GA4_ID` | `G-XXXXXXXXXX` | real GA4 measurement ID |
 | `PIXEL_ID` | `000000000000000` | real Meta Pixel ID |
 | `WEBHOOK` | `https://hooks.zapier.com/hooks/catch/24209228/4dq1xf8/` | Zapier Catch Hook URL |
 | `DOMAIN` | `fuquayfencingpros.com` | final domain if different |
 
-`WEBHOOK` is set. Lead forms POST JSON to that Zapier Catch Hook. Turn the Zap **On** so submissions are received. If `WEBHOOK` is blank, forms run in demo mode (success state + console log, no send).
+`PHONE_TEXT` / `PHONE_TEL` are set to the CallRail tracking number `(919) 276-8406` (`tel:+19192768406`). `WEBHOOK` is set. Lead forms POST JSON to that Zapier Catch Hook. Turn the Zap **On** so submissions are received. If `WEBHOOK` is blank, forms run in demo mode (success state + console log, no send). GA4 and Meta Pixel IDs are still placeholders.
 
 ## What's in here
 
