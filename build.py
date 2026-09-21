@@ -15,7 +15,7 @@ BASE         = f"https://{DOMAIN}"
 PHONE_TEXT   = "(919) 276-8406"          # CallRail tracking number
 PHONE_TEL    = "+19192768406"
 GA4_ID       = "G-D8RTHW2GYN"
-PIXEL_ID     = "000000000000000"         # ← REPLACE with real Meta Pixel ID
+PIXEL_ID     = "28277699775183703"       # Meta Pixel ID
 WEBHOOK      = "https://hooks.zapier.com/hooks/catch/24209228/4dq1xf8/"
 CITY         = "Fuquay-Varina"
 STATE        = "NC"
@@ -976,12 +976,11 @@ Open `build.py`, edit the CONFIG block, re-run `python3 build.py`:
 |---|---|---|
 | `PHONE_TEXT` / `PHONE_TEL` | `{PHONE_TEXT}` / `{PHONE_TEL}` | CallRail NC tracking number |
 | `GA4_ID` | `{GA4_ID}` | real GA4 measurement ID |
-| `PIXEL_ID` | `000000000000000` | real Meta Pixel ID |
+| `PIXEL_ID` | `{PIXEL_ID}` | real Meta Pixel ID |
 | `WEBHOOK` | `{WEBHOOK or "*(blank — demo mode)*"}` | Zapier Catch Hook URL |
 | `DOMAIN` | `{DOMAIN}` | final domain if different |
 
-With `WEBHOOK` blank the forms run in demo mode: they show the success state and log the payload to the
-console without sending anywhere. Useful for local testing, useless in production — set it before launch.
+`PHONE_TEXT` / `PHONE_TEL` are set to the CallRail tracking number `{PHONE_TEXT}` (`tel:{PHONE_TEL}`). `GA4_ID` is set (`{GA4_ID}`); every page loads gtag with that measurement ID. `WEBHOOK` is set. Lead forms POST JSON to that Zapier Catch Hook. Turn the Zap **On** so submissions are received. If `WEBHOOK` is blank, forms run in demo mode (success state + console log, no send). `PIXEL_ID` is set (`{PIXEL_ID}`); every page loads fbq with that Pixel ID.
 
 ## What's in here
 
@@ -991,6 +990,7 @@ console without sending anywhere. Useful for local testing, useless in productio
 - `faq.html` — 8 Q&As with FAQPage schema
 - `privacy.html` — required for Meta lead forms and business verification
 - `styles.css`, `main.js`, `sitemap.xml`, `robots.txt`, `CNAME`, `favicon.svg`
+- `images/` — add `og-image.jpg` here (1200×630); pages already reference it
 
 ## What's different from the Summerville build
 
@@ -1051,6 +1051,13 @@ write("favicon.svg", FAVICON)
 write("CNAME", DOMAIN + "\n")
 write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\n")
 write("README.md", README)
+os.makedirs(os.path.join(OUT, "images"), exist_ok=True)
+write("images/README.md", """# Open Graph image
+
+Place `og-image.jpg` here (recommended 1200×630). Every page already references
+`/images/og-image.jpg` via `og:image`. This note is a placeholder until the
+branded image is added — no binary is committed yet.
+""")
 
 urls = [("", "1.0"), ("faq.html", "0.6"), ("privacy.html", "0.3")]
 urls += [(f"services/{s}.html", "0.9") for s, _, _ in SERVICES]
