@@ -12,8 +12,8 @@ BRAND_L1     = "Fuquay"
 BRAND_L2     = "Fencing Pros"
 DOMAIN       = "fuquayfencingpros.com"
 BASE         = f"https://{DOMAIN}"
-PHONE_TEXT   = "(919) 000-0000"          # ← REPLACE with the real NC tracking number
-PHONE_TEL    = "+19190000000"            # ← REPLACE
+PHONE_TEXT   = "(919) 276-8406"          # CallRail tracking number
+PHONE_TEL    = "+19192768406"
 GA4_ID       = "G-XXXXXXXXXX"            # ← REPLACE with real GA4 measurement ID
 PIXEL_ID     = "000000000000000"         # ← REPLACE with real Meta Pixel ID
 WEBHOOK      = "https://hooks.zapier.com/hooks/catch/24209228/4dq1xf8/"
@@ -974,7 +974,7 @@ Open `build.py`, edit the CONFIG block, re-run `python3 build.py`:
 
 | Constant | Current placeholder | Replace with |
 |---|---|---|
-| `PHONE_TEXT` / `PHONE_TEL` | `(919) 000-0000` | the real NC 919 call-tracking number |
+| `PHONE_TEXT` / `PHONE_TEL` | `{PHONE_TEXT}` / `{PHONE_TEL}` | CallRail NC tracking number |
 | `GA4_ID` | `G-XXXXXXXXXX` | real GA4 measurement ID |
 | `PIXEL_ID` | `000000000000000` | real Meta Pixel ID |
 | `WEBHOOK` | `{WEBHOOK or "*(blank — demo mode)*"}` | Zapier Catch Hook URL |
