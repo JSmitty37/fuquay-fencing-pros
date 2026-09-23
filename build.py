@@ -930,9 +930,13 @@ const LEAD_WEBHOOK_URL = "%WEBHOOK%"; // Zapier Catch Hook. Blank = demo mode (l
 
       try{
         if(LEAD_WEBHOOK_URL){
+          /* Form-urlencoded is CORS-safelisted, so the browser POSTs without a
+             preflight. application/json is not: Zapier's Catch Hook omits
+             Access-Control-Allow-Headers on OPTIONS, and the browser blocks the
+             lead ("content-type is not allowed") before the POST is sent.
+             Field names are unchanged so existing Zap maps still match. */
           const r = await fetch(LEAD_WEBHOOK_URL,{method:"POST",
-            headers:{"Content-Type":"application/json","Accept":"application/json"},
-            body: JSON.stringify(payload)});
+            body: new URLSearchParams(payload)});
           if(!r.ok) throw new Error("HTTP "+r.status);
         } else {
           console.warn("No LEAD_WEBHOOK_URL set — demo mode.", payload);
@@ -980,7 +984,7 @@ Open `build.py`, edit the CONFIG block, re-run `python3 build.py`:
 | `WEBHOOK` | `{WEBHOOK or "*(blank — demo mode)*"}` | Zapier Catch Hook URL |
 | `DOMAIN` | `{DOMAIN}` | final domain if different |
 
-`PHONE_TEXT` / `PHONE_TEL` are set to the CallRail tracking number `{PHONE_TEXT}` (`tel:{PHONE_TEL}`). `GA4_ID` is set (`{GA4_ID}`); every page loads gtag with that measurement ID. `WEBHOOK` is set. Lead forms POST JSON to that Zapier Catch Hook. Turn the Zap **On** so submissions are received. If `WEBHOOK` is blank, forms run in demo mode (success state + console log, no send). `PIXEL_ID` is set (`{PIXEL_ID}`); every page loads fbq with that Pixel ID.
+`PHONE_TEXT` / `PHONE_TEL` are set to the CallRail tracking number `{PHONE_TEXT}` (`tel:{PHONE_TEL}`). `GA4_ID` is set (`{GA4_ID}`); every page loads gtag with that measurement ID. `WEBHOOK` is set. Lead forms POST `application/x-www-form-urlencoded` fields to that Zapier Catch Hook (same names as before: fullName, phone, email, address, zip, fenceType, timeline, source, pageSource, submittedAt, pageUrl). A JSON content type is not used: it triggers a CORS preflight the Catch Hook rejects. Turn the Zap **On** so submissions are received. If `WEBHOOK` is blank, forms run in demo mode (success state + console log, no send). `PIXEL_ID` is set (`{PIXEL_ID}`); every page loads fbq with that Pixel ID.
 
 ## What's in here
 

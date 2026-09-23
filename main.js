@@ -62,9 +62,13 @@ const LEAD_WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/24209228/4dq1xf8/
 
       try{
         if(LEAD_WEBHOOK_URL){
+          /* Form-urlencoded is CORS-safelisted, so the browser POSTs without a
+             preflight. application/json is not: Zapier's Catch Hook omits
+             Access-Control-Allow-Headers on OPTIONS, and the browser blocks the
+             lead ("content-type is not allowed") before the POST is sent.
+             Field names are unchanged so existing Zap maps still match. */
           const r = await fetch(LEAD_WEBHOOK_URL,{method:"POST",
-            headers:{"Content-Type":"application/json","Accept":"application/json"},
-            body: JSON.stringify(payload)});
+            body: new URLSearchParams(payload)});
           if(!r.ok) throw new Error("HTTP "+r.status);
         } else {
           console.warn("No LEAD_WEBHOOK_URL set — demo mode.", payload);
