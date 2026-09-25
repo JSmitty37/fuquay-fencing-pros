@@ -23,6 +23,7 @@ Open `build.py`, edit the CONFIG block, re-run `python3 build.py`:
 - `areas/` — 5 city pages, each with genuinely distinct local content
 - `faq.html` — 8 Q&As with FAQPage schema
 - `privacy.html` — required for Meta lead forms and business verification
+- `terms.html` — terms and conditions, including SMS / text messaging terms
 - `styles.css`, `main.js`, `sitemap.xml`, `robots.txt`, `CNAME`, `favicon.svg`
 - `images/` — add `og-image.jpg` here (1200×630); pages already reference it
 
