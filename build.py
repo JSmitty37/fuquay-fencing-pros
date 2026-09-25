@@ -194,8 +194,7 @@ def form(page_source, heading="Get Your Free Fence Estimate", depth=0):
       <div class="hp" aria-hidden="true"><label for="co-{page_source}">Company</label>
         <input type="text" id="co-{page_source}" name="company" tabindex="-1" autocomplete="off" /></div>
       <button type="submit" class="btn btn-primary btn-block btn-lg">Get My Free Estimate</button>
-      <p class="consent">By submitting, you agree to be contacted about your estimate.
-         See our <a href="{up}privacy.html">Privacy Policy</a>.</p>
+      <p class="consent">By submitting, you agree to be contacted by {BRAND} by call or text at the number provided about your request. Msg &amp; data rates may apply. Reply STOP to opt out. See our <a href="{up}terms.html">Terms</a> and <a href="{up}privacy.html">Privacy Policy</a>.</p>
       <div class="form-status form-success" role="status" hidden>
         <strong>Thanks! We'll reach out shortly.</strong>
         <span>Want to talk sooner? Call <a data-call href="tel:{PHONE_TEL}">{PHONE_TEXT}</a>.</span></div>
@@ -226,7 +225,7 @@ def footer(depth):
 </div>
 <div class="footer-bottom"><div class="container footer-bottom-inner">
   <p>&copy; <span id="year">2026</span> {BRAND}. All rights reserved.</p>
-  <p><a href="{up}privacy.html">Privacy Policy</a></p>
+  <p><a href="{up}privacy.html">Privacy Policy</a> &middot; <a href="{up}terms.html">Terms</a></p>
 </div></div>
 </footer>
 <a class="mobile-call-bar" data-call href="tel:{PHONE_TEL}" aria-label="Call {BRAND}">{PHONE_SVG} Call {PHONE_TEXT}</a>
@@ -722,8 +721,66 @@ account settings.</p>
 <h2>Your choices</h2>
 <p>You can ask us to delete your information at any time by calling {PHONE_TEXT}. If you no longer wish to be
 contacted, tell us and we will stop.</p>
+<h2>Text Messaging (SMS)</h2>
+<p>If you submit an estimate request, we may text you at the number you provide about that request &mdash;
+follow-up on your fence estimate, scheduling, and related project updates. Reply STOP to opt out. You can
+also call {PHONE_TEXT}. Program details, including message frequency and help instructions, are in our
+<a href="terms.html">Terms and Conditions</a>.</p>
+<p>No mobile information will be shared with third parties or affiliates for marketing or promotional
+purposes. Text-messaging originator opt-in data and consent will not be shared with any third parties.</p>
 <h2>Contact</h2>
 <p>Questions about this policy? Call {PHONE_TEXT}.</p>
+</div></section></main>""" + footer(0))
+
+def terms_page():
+    title = f"Terms and Conditions | {BRAND}"
+    nav, bc_ld = crumbs(0, [("Terms and Conditions", None)])
+    desc = f"Terms and conditions for {BRAND}, including SMS text messaging terms."
+    return (head(title, desc, f"{BASE}/terms.html", 0, ref_ld() + bc_ld)
+            + header(0) + nav + f"""<main><section class="section"><div class="container prose">
+<h1>Terms and Conditions</h1>
+<p><em>Last updated: September 2026</em></p>
+<h2>Who operates this site</h2>
+<p>This website is operated by Smith Asset Group LLC, doing business as {BRAND} (&ldquo;we&rdquo; or
+&ldquo;us&rdquo;). {BRAND} is a referral and lead service for homeowners in {CITY}, North Carolina and
+nearby communities.</p>
+<h2>We are not the fence contractor</h2>
+<p>We connect you with an independent licensed local fence contractor. We are not that contractor, and we
+do not install the fence ourselves. If you decide to hire the contractor, your agreement for the work is
+with the contractor. The contractor is responsible for its own estimates, scheduling, materials, and the
+quality of its work.</p>
+<h2>No guarantee of pricing, availability, or work</h2>
+<p>Requesting an estimate does not guarantee a price, a start date, or that a contractor is available for
+your project. We do not guarantee the contractor&rsquo;s pricing, availability, or the quality of any work
+the contractor performs.</p>
+<h2>Acceptable use</h2>
+<p>You may use this site to learn about fence options in our service area and to request an estimate. Do not
+misuse the site &mdash; for example by submitting information you know is false, interfering with the site,
+or using it for anything unlawful.</p>
+<h2>Estimates</h2>
+<p>Estimate requests are free and do not require you to purchase anything. Please give accurate project
+details so we can tell whether a local contractor can help.</p>
+<h2>Limitation of liability</h2>
+<p>This site is provided as-is. To the fullest extent allowed by law, Smith Asset Group LLC is not liable
+for indirect, incidental, or consequential damages arising from your use of the site, or for the
+contractor&rsquo;s acts, omissions, pricing, scheduling, or workmanship.</p>
+<h2>SMS / Text Messaging Terms</h2>
+<p><strong>Program name:</strong> {BRAND}.</p>
+<p>If you submit a fence estimate request and give us a mobile number &mdash; on this website or on a
+Facebook or Instagram form we use for estimate requests &mdash; we may text you about that request.
+Messages are follow-up about your fence estimate, scheduling, and related project updates. They are not
+marketing blasts.</p>
+<p>Message frequency varies. Message and data rates may apply.</p>
+<p>Reply <strong>STOP</strong> to opt out of further texts. Reply <strong>HELP</strong> for help, or call
+{PHONE_TEXT}.</p>
+<p>Carriers are not liable for delayed or undelivered messages.</p>
+<p>Consent to receive texts is not a condition of purchase. You can opt out at any time by replying STOP.</p>
+<p>How we handle your information, including mobile numbers and text-message consent, is described in our
+<a href="privacy.html">Privacy Policy</a>.</p>
+<h2>North Carolina law</h2>
+<p>These terms are governed by the laws of the State of North Carolina.</p>
+<h2>Contact</h2>
+<p>Questions about these terms? Call {PHONE_TEXT}.</p>
 </div></section></main>""" + footer(0))
 
 # ================================= ASSETS =================================
@@ -993,6 +1050,7 @@ Open `build.py`, edit the CONFIG block, re-run `python3 build.py`:
 - `areas/` — 5 city pages, each with genuinely distinct local content
 - `faq.html` — 8 Q&As with FAQPage schema
 - `privacy.html` — required for Meta lead forms and business verification
+- `terms.html` — terms and conditions, including SMS / text messaging terms
 - `styles.css`, `main.js`, `sitemap.xml`, `robots.txt`, `CNAME`, `favicon.svg`
 - `images/` — add `og-image.jpg` here (1200×630); pages already reference it
 
@@ -1049,6 +1107,7 @@ for s, n, h in SERVICES: write(f"services/{s}.html", service_page(s, n, h))
 for s, n, z in AREAS:    write(f"areas/{s}.html", area_page(s, n, z))
 write("faq.html", faq_page())
 write("privacy.html", privacy_page())
+write("terms.html", terms_page())
 write("styles.css", CSS)
 write("main.js", JS)
 write("favicon.svg", FAVICON)
@@ -1063,7 +1122,7 @@ Place `og-image.jpg` here (recommended 1200×630). Every page already references
 branded image is added — no binary is committed yet.
 """)
 
-urls = [("", "1.0"), ("faq.html", "0.6"), ("privacy.html", "0.3")]
+urls = [("", "1.0"), ("faq.html", "0.6"), ("privacy.html", "0.3"), ("terms.html", "0.3")]
 urls += [(f"services/{s}.html", "0.9") for s, _, _ in SERVICES]
 urls += [(f"areas/{s}.html", "0.9" if s == "fuquay-varina" else "0.7") for s, _, _ in AREAS]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
