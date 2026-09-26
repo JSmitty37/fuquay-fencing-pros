@@ -1513,11 +1513,11 @@ Inside town limits, side and back yard fences can generally be up to 6 feet. In 
 
 **Quick answer:** Planning a Holly Springs new construction fence for a bare backyard? Don't start with the fence material. Start by checking the Town of Holly Springs fence rules and getting your HOA's approval process going, since that step often takes the longest. Then pick a material that suits our red clay and humid weather, and make sure the posts are set for packed builder fill dirt.
 
-Holly Springs is about five miles northwest of Fuquay-Varina and has its own zip code, 27540. It's close enough that we work there often, but it's a separate town with its own rules. This guide walks you through the steps in order.
+Holly Springs is about five miles northwest of Fuquay-Varina and has its own zip code, 27540. It's right next door and in our service area, but it's a separate town with its own rules. This guide walks you through the steps in order.
 
 ## Why do so many new homes in Holly Springs come without a fence?
 
-Holly Springs has been one of the faster-growing towns in Wake County, and that means lots of new homes. Builders here, like in much of southern Wake, often don't include a fence with the house. The most common call we get from Holly Springs is from someone who just closed and has a bare backyard.
+Holly Springs has been one of the faster-growing towns in Wake County, and that means lots of new homes. Builders here, like in much of southern Wake, often don't include a fence with the house. A lot of Holly Springs homeowners have just closed on a new build and are looking at a bare backyard.
 
 A new-build yard usually has a few things in common. The back and sides are wide open to the neighbors, and the sod is fresh or the dirt is still settling. The HOA's review process may still be active while you're unpacking boxes.
 
