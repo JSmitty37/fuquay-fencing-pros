@@ -4,7 +4,7 @@ Fuquay Fencing Pros — static site generator.
 Every page gets: its own lead form, analytics hooks, honeypot, schema, breadcrumbs.
 Swap the CONFIG block and re-run to retarget the whole site.
 """
-import os, shutil, html
+import os, shutil, html, json, re, zlib
 
 # ============================== CONFIG — SWAP THESE ==============================
 BRAND        = "Fuquay Fencing Pros"
@@ -39,7 +39,7 @@ AREAS = [
 ]
 
 # --------------------------------------------------------------------------- head
-def head(title, desc, canon, depth, extra_ld=""):
+def head(title, desc, canon, depth, extra_ld="", og_type="website", extra_meta=""):
     up = "../" * depth
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -51,7 +51,7 @@ def head(title, desc, canon, depth, extra_ld=""):
 <link rel="canonical" href="{canon}" />
 <meta name="robots" content="index, follow" />
 <meta name="theme-color" content="#14281d" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="{og_type}" />
 <meta property="og:site_name" content="{BRAND}" />
 <meta property="og:title" content="{title}" />
 <meta property="og:description" content="{desc}" />
@@ -60,7 +60,7 @@ def head(title, desc, canon, depth, extra_ld=""):
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{title}" />
 <meta name="twitter:description" content="{desc}" />
-<link rel="icon" href="{up}favicon.svg" type="image/svg+xml" />
+{extra_meta}<link rel="icon" href="{up}favicon.svg" type="image/svg+xml" />
 <link rel="stylesheet" href="{up}styles.css" />
 {extra_ld}
 <!-- GA4 -->
@@ -106,6 +106,7 @@ def header(depth):
     <a href="{up}services/aluminum-pool-fences.html">Pool Fences</a>
     <a href="{up}areas/fuquay-varina.html">Service Area</a>
     <a href="{up}faq.html">FAQ</a>
+    <a href="{up}blog/">Blog</a>
   </nav>
   <div class="header-actions">
     <a class="phone-link" data-call href="tel:{PHONE_TEL}" aria-label="Call {BRAND} at {PHONE_TEXT}">{PHONE_SVG}<span>{PHONE_TEXT}</span></a>
@@ -120,6 +121,7 @@ def header(depth):
   <a href="{up}services/chain-link-fences.html">Chain Link</a>
   <a href="{up}areas/fuquay-varina.html">Service Area</a>
   <a href="{up}faq.html">FAQ</a>
+  <a href="{up}blog/">Blog</a>
   <a href="#quote">Get a Quote</a>
   <a class="phone-link" data-call href="tel:{PHONE_TEL}">Call {PHONE_TEXT}</a>
 </nav>
@@ -149,13 +151,33 @@ def crumbs(depth, trail):
           '"@type":"BreadcrumbList","itemListElement":[' + ",".join(li) + ']}</script>')
     return nav, ld
 
+def _form_anchor(page_source):
+    """Stable heading id. Pages that already shipped keep their existing ids."""
+    pinned = {
+        "home": 7031,
+        "faq": 1490,
+        "services/vinyl-fences": 444,
+        "services/wood-privacy-fences": 3930,
+        "services/aluminum-pool-fences": 6018,
+        "services/chain-link-fences": 5973,
+        "areas/fuquay-varina": 5179,
+        "areas/holly-springs": 9683,
+        "areas/angier": 9328,
+        "areas/willow-spring": 2443,
+        "areas/garner": 8371,
+    }
+    if page_source in pinned:
+        return pinned[page_source]
+    return zlib.crc32(page_source.encode("utf-8")) % 9999
+
 def form(page_source, heading="Get Your Free Fence Estimate", depth=0):
     up = "../" * depth
-    return f"""<section class="section quote" id="quote" aria-labelledby="q-{abs(hash(page_source))%9999}">
+    qid = _form_anchor(page_source)
+    return f"""<section class="section quote" id="quote" aria-labelledby="q-{qid}">
 <div class="container quote-inner">
   <div class="quote-intro">
     <p class="eyebrow eyebrow-light">Free Estimate</p>
-    <h2 id="q-{abs(hash(page_source))%9999}">{heading}</h2>
+    <h2 id="q-{qid}">{heading}</h2>
     <p>Tell us about your project and we'll reach out to schedule a free, no-obligation estimate.
        Prefer to talk now? <a class="quote-phone" data-call href="tel:{PHONE_TEL}">Call {PHONE_TEXT}</a>.</p>
     <ul class="quote-points">
@@ -219,7 +241,7 @@ def footer(depth):
     <p><a data-call href="tel:{PHONE_TEL}">{PHONE_TEXT}</a></p>
     <p class="footer-hours">Call or text for your free estimate.</p></div>
   <div class="footer-col"><h2 class="footer-h">Fence Services</h2><p>{svc}</p>
-    <p><a href="{up}faq.html">Fence FAQ</a></p></div>
+    <p><a href="{up}faq.html">Fence FAQ</a> &middot; <a href="{up}blog/">Blog</a></p></div>
   <div class="footer-col"><h2 class="footer-h">Service Area</h2><p>{ar}</p>
     <p class="footer-zip">27526 &middot; 27540 &middot; 27501 &middot; 27592 &middot; 27529</p></div>
 </div>
@@ -235,8 +257,10 @@ def footer(depth):
 
 def biz_ld():
     areas = ",".join(f'{{"@type":"City","name":"{n}, NC"}}' for _, n, _ in AREAS)
-    offers = ",".join(f'{{"@type":"Offer","itemOffered":{{"@type":"Service","name":"{h}"}}}}'
-                      for _, _, h in SERVICES)
+    # Names are stored with HTML entities for the visible nav. JSON-LD needs the raw "&".
+    offers = ",".join(
+        f'{{"@type":"Offer","itemOffered":{{"@type":"Service","name":"{html.unescape(h)}"}}}}'
+        for _, _, h in SERVICES)
     return f"""<script type="application/ld+json">
 {{"@context":"https://schema.org","@type":["HomeAndConstructionBusiness","GeneralContractor"],
 "@id":"{BIZ_ID}","name":"{BRAND}","url":"{BASE}/","telephone":"{PHONE_TEL}",
@@ -561,10 +585,11 @@ FAQS = [
 
 def service_page(slug, nav_name, head_name):
     body, desc = SERVICE_BODY[slug]
-    title = f"{head_name.replace('&amp;','&')} in {CITY}, {STATE} | {BRAND}"
+    plain_name = html.unescape(head_name)
+    title = f"{plain_name} in {CITY}, {STATE} | {BRAND}"
     canon = f"{BASE}/services/{slug}.html"
     svc_ld = (f'<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Service",'
-              f'"name":"{head_name}","serviceType":"{head_name}",'
+              f'"name":"{plain_name}","serviceType":"{plain_name}",'
               f'"provider":{{"@id":"{BIZ_ID}"}},'
               f'"areaServed":{{"@type":"City","name":"{CITY}, {STATE}"}},'
               f'"description":"{desc}"}}</script>')
@@ -921,6 +946,11 @@ justify-content:center;gap:.5rem}
 .mobile-call-bar{display:flex}body{padding-bottom:3.4rem}
 .footer-inner{grid-template-columns:1fr}.footer-bottom-inner{flex-direction:column}}
 @media(max-width:420px){.field-row{grid-template-columns:1fr}}
+@media(max-width:1100px){.main-nav{gap:.7rem}.main-nav a{font-size:.86rem}.header-inner{gap:.65rem}}
+.blog-post h3{font-size:1.05rem;margin:1.35rem 0 .4rem}
+.blog-post .mini-table{margin:0 0 1.1rem}
+.blog-card h2{font-size:1.08rem;margin:0 0 .45rem;letter-spacing:-.015em}
+.blog-card .post-date{margin:0 0 .35rem;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--accent)}
 """
 
 JS = """/* Fuquay Fencing Pros — nav, lead forms, analytics events */
@@ -1049,6 +1079,7 @@ Open `build.py`, edit the CONFIG block, re-run `python3 build.py`:
 - `services/` — 4 service pages (vinyl first: it's the validated 70/mo term)
 - `areas/` — 5 city pages, each with genuinely distinct local content
 - `faq.html` — 8 Q&As with FAQPage schema
+- `blog/` — guides index and articles (`blog/index.html`, `blog/{{slug}}/index.html`)
 - `privacy.html` — required for Meta lead forms and business verification
 - `terms.html` — terms and conditions, including SMS / text messaging terms
 - `styles.css`, `main.js`, `sitemap.xml`, `robots.txt`, `CNAME`, `favicon.svg`
@@ -1071,20 +1102,33 @@ Open `build.py`, edit the CONFIG block, re-run `python3 build.py`:
 
 ## Deploy
 
-```bash
-cd site
-git init && git add -A && git commit -m "Initial site"
-git branch -M main
-git remote add origin https://github.com/<OWNER>/<REPO>.git
-git push -u origin main
-```
+Site files live at the repository root (`index.html`, `CNAME`, etc.). Repo:
+https://github.com/JSmitty37/fuquay-fencing-pros
 
-Then: repo **Settings → Pages → Source: main / root**. Add `{DOMAIN}` as the custom domain and enable
-**Enforce HTTPS**.
+`python3 build.py` writes `site/`, then mirrors those files onto the repo root. Pages serves the root, not `site/`.
 
-**DNS (apex + www):** four A records for the apex pointing at GitHub Pages —
-`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` — and a CNAME for `www` →
-`<OWNER>.github.io`.
+**GitHub Pages (admin click — API cannot enable this):** Settings → Pages →
+Build and deployment → Source: **Deploy from a branch** → Branch **main** / folder **/ (root)** → Save.
+Custom domain: `{DOMAIN}` → Save. After DNS is green, enable **Enforce HTTPS**.
+
+Default Pages URL after enable: `https://jsmitty37.github.io/fuquay-fencing-pros/`
+Custom domain URL: `https://{DOMAIN}/`
+
+### Namecheap Advanced DNS (what GitHub Pages displays)
+
+Remove any parking / default URL Redirect / conflicting `@` or `www` records first.
+
+| Type | Host | Value | TTL |
+|---|---|---|---|
+| A Record | `@` | `185.199.108.153` | Automatic |
+| A Record | `@` | `185.199.109.153` | Automatic |
+| A Record | `@` | `185.199.110.153` | Automatic |
+| A Record | `@` | `185.199.111.153` | Automatic |
+| AAAA Record | `@` | `2606:50c0:8000::153` | Automatic |
+| AAAA Record | `@` | `2606:50c0:8001::153` | Automatic |
+| AAAA Record | `@` | `2606:50c0:8002::153` | Automatic |
+| AAAA Record | `@` | `2606:50c0:8003::153` | Automatic |
+| CNAME Record | `www` | `jsmitty37.github.io.` | Automatic |
 
 ## Content accuracy note
 
@@ -1098,6 +1142,548 @@ launch; codes change.
 that way — add real ones when you have them.
 """
 
+
+# =============================== BLOG =====================================
+# Public article bodies only. SEO header blocks and fact-check footers from
+# the drafts are not copied into the generated HTML.
+
+_MD_LINK = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
+_MD_BOLD = re.compile(r"\*\*([^*]+)\*\*")
+
+def _ld(obj):
+    """JSON-LD script. json.dumps so '&' stays '&' (never '&amp;') inside JSON."""
+    payload = json.dumps(obj, ensure_ascii=False, separators=(",", ":"))
+    return '<script type="application/ld+json">' + payload + "</script>"
+
+def _rewrite_href(url, depth):
+    if url.startswith(("http://", "https://", "mailto:", "tel:")):
+        return url
+    up = "../" * depth
+    if url.startswith("/#"):
+        return up + "index.html" + url[1:]
+    if url.startswith("/"):
+        return up + url.lstrip("/")
+    return url
+
+def _inline(text, depth):
+    """Escape text, then restore markdown links and bold."""
+    def link_sub(m):
+        label = html.escape(m.group(1), quote=False)
+        href = html.escape(_rewrite_href(m.group(2), depth), quote=True)
+        return f'<a href="{href}">{label}</a>'
+    def bold_sub(m):
+        return "<strong>" + html.escape(m.group(1), quote=False) + "</strong>"
+    # Links first so a bold marker cannot swallow a URL. Labels in these posts
+    # do not themselves contain bold or nested links.
+    escaped_links = []
+    def hold_link(m):
+        escaped_links.append(link_sub(m))
+        return f"\x00LINK{len(escaped_links)-1}\x00"
+    held = _MD_LINK.sub(hold_link, text)
+    held = _MD_BOLD.sub(bold_sub, held)
+    # Escape the remaining plain text without touching the tags we just added
+    # or the link placeholders.
+    parts = re.split(r"(<strong>.*?</strong>|\x00LINK\d+\x00)", held)
+    out = []
+    for part in parts:
+        if part.startswith("<strong>") or part.startswith("\x00LINK"):
+            out.append(part)
+        else:
+            out.append(html.escape(part, quote=False))
+    joined = "".join(out)
+    for i, tag in enumerate(escaped_links):
+        joined = joined.replace(f"\x00LINK{i}\x00", tag)
+    return joined
+
+def _md_blocks(md):
+    lines = md.strip().splitlines()
+    if lines and lines[0].startswith("# "):
+        lines = lines[1:]
+    i, n = 0, len(lines)
+    while i < n:
+        line = lines[i]
+        if not line.strip():
+            i += 1
+            continue
+        if line.startswith("|"):
+            rows = []
+            while i < n and lines[i].startswith("|"):
+                rows.append(lines[i])
+                i += 1
+            yield ("table", rows)
+            continue
+        if line.startswith("- "):
+            items = []
+            while i < n and lines[i].startswith("- "):
+                items.append(lines[i][2:])
+                i += 1
+            yield ("ul", items)
+            continue
+        if re.match(r"\d+\. ", line):
+            items = []
+            while i < n and re.match(r"\d+\. ", lines[i]):
+                items.append(re.sub(r"^\d+\. ", "", lines[i]))
+                i += 1
+            yield ("ol", items)
+            continue
+        if line.startswith("### "):
+            yield ("h3", line[4:])
+            i += 1
+            continue
+        if line.startswith("## "):
+            yield ("h2", line[3:])
+            i += 1
+            continue
+        yield ("p", line)
+        i += 1
+
+def _cells(row):
+    return [c.strip() for c in row.strip().strip("|").split("|")]
+
+def md_to_html(md, depth):
+    chunks = []
+    for kind, data in _md_blocks(md):
+        if kind == "h2":
+            chunks.append(f"<h2>{_inline(data, depth)}</h2>")
+        elif kind == "h3":
+            chunks.append(f"<h3>{_inline(data, depth)}</h3>")
+        elif kind == "p":
+            chunks.append(f"<p>{_inline(data, depth)}</p>")
+        elif kind == "ul":
+            items = "".join(f"<li>{_inline(item, depth)}</li>" for item in data)
+            chunks.append(f'<ul class="prose-list">{items}</ul>')
+        elif kind == "ol":
+            items = "".join(f"<li>{_inline(item, depth)}</li>" for item in data)
+            chunks.append(f'<ol class="prose-list">{items}</ol>')
+        elif kind == "table":
+            header, body_rows = data[0], data[2:]
+            thead = "<thead><tr>" + "".join(f"<th>{_inline(c, depth)}</th>" for c in _cells(header)) + "</tr></thead>"
+            tbody = "<tbody>"
+            for row in body_rows:
+                tbody += "<tr>" + "".join(f"<td>{_inline(c, depth)}</td>" for c in _cells(row)) + "</tr>"
+            tbody += "</tbody>"
+            chunks.append(f'<table class="mini-table">{thead}{tbody}</table>')
+    return "\n".join(chunks)
+
+def extract_faqs(md):
+    """Q&A pairs under the post's FAQ heading, for FAQPage JSON-LD."""
+    faqs, in_faq, question, buf = [], False, None, []
+    for line in md.splitlines():
+        if line.startswith("## ") and "FAQ" in line:
+            in_faq = True
+            continue
+        if not in_faq:
+            continue
+        if line.startswith("### "):
+            if question:
+                faqs.append((question, " ".join(buf).strip()))
+            question, buf = line[4:].strip(), []
+        elif line.strip() and question:
+            buf.append(line.strip())
+    if question:
+        faqs.append((question, " ".join(buf).strip()))
+    return faqs
+
+POSTS = [
+    {
+        "slug": 'fence-permit-fuquay-varina',
+        "meta_title": 'Do You Need a Fence Permit in Fuquay-Varina, NC?',
+        "meta_desc": "Do you need a fence permit in Fuquay-Varina? Usually not, but height rules, your HOA, and the Harnett County side of 27526 still matter. Here's how.",
+        "h1": 'Do You Need a Fence Permit in Fuquay-Varina, NC?',
+        "date": "2026-09-26",
+        "body": """# Do You Need a Fence Permit in Fuquay-Varina, NC?
+
+**Quick answer:** Usually not. You don't need a fence permit in Fuquay-Varina if your home is inside town limits or the Town's ETJ, which is the area just outside town limits that still follows town zoning rules. You still have to follow the Town's height rules, and your HOA will likely need to approve your fence first. If your home is on the Harnett County side of zip code 27526, check with Harnett County instead.
+
+This guide covers what does matter: which rules cover your lot, how tall you can build, and how HOA approval works. It's general homeowner info, not legal advice, and rules can change, so confirm the details for your own lot before you build.
+
+## Do I need a fence permit in Fuquay-Varina?
+
+The Town's own answer is no: a permit is not required to install a fence inside Fuquay-Varina's town limits or its ETJ. We summarize this on our [fence FAQ page](/faq.html).
+
+Other projects are different, because pools, sheds, detached garages, and other outbuildings all need permits. If your fence goes around a pool, the pool gets the permit and the fence gets inspected as part of it.
+
+So a normal backyard privacy fence in town usually needs no Town permit. For unusual cases, like corner lots, fences near easements, or commercial property, check with the Town's Planning Department first.
+
+## What is the ETJ, and how do I know if I'm in it?
+
+ETJ is short for "extraterritorial jurisdiction." In plain terms, it's the ring of land just outside town limits that still follows the Town's zoning rules, so the Town's fence rules can apply there even though you're not technically in town.
+
+Here's the catch: your mailing address won't tell you if you're in town, in the ETJ, or neither. Fuquay-Varina has one zip code, 27526, and it covers about 98 square miles.
+
+The Town itself is only about 17.6 square miles, and it sits entirely in Wake County. The southern part of the zip reaches into Harnett County.
+
+That means two neighbors with the same "Fuquay-Varina, NC 27526" address can fall under different rules. To find out where you stand:
+
+- Look up your lot on your county's online GIS map, which shows property lines and tax records. Use the Wake County or Harnett County map, depending on where you live.
+- Check your property tax bill.
+- Call the Town of Fuquay-Varina Planning Department to confirm, or let us check it for you before we quote.
+
+## How tall can a fence be in Fuquay-Varina?
+
+It depends on whether you're inside town limits or in the ETJ, as summarized on our [Fuquay-Varina area page](/areas/fuquay-varina.html):
+
+| Yard | Inside town limits | In the ETJ |
+| --- | --- | --- |
+| Front yard | 4 ft max; no solid fences | 4 ft |
+| Side and back yard | 6 ft max | No Town maximum |
+
+You may see other websites say 8 feet is allowed. The Town's ordinance says 6 feet inside town limits, and that's what we build to.
+
+"No Town maximum" in the ETJ does not mean "no rules." Your HOA rules, easements, and setbacks still apply. A setback is the distance a structure has to stay back from a property line or buffer.
+
+## What if I'm on the Harnett County side of 27526?
+
+If your home is in the southern part of 27526, you may be outside both the town limits and the ETJ. In that case, the Town of Fuquay-Varina's "no permit" answer may not apply to you, and Harnett County (plus your HOA, if you have one) sets the rules.
+
+We won't guess at Harnett County permit rules, fees, or height limits, so please confirm directly with Harnett County before you build. Give us your street address and we'll check which rules apply before we quote.
+
+## Does my HOA have to approve my fence?
+
+If you live in an HOA, almost certainly. In Fuquay-Varina, the HOA is often the real gatekeeper, even though the Town doesn't require a fence permit. That's especially true in newer neighborhoods such as South Lakes, North Lakes, Serenity, Sunset Bluffs, and Brighton Ridge.
+
+HOA rules can be stricter than the Town's, and Town rules still apply on top of them. We are not your HOA, so we can't approve your fence or promise that your HOA will.
+
+Here's how the approval process usually works:
+
+1. Ask your HOA or its architectural review committee (the group that approves outside changes to homes) for its current fence rules and application.
+2. Gather what they ask for. That often includes a plat or survey, plus the fence height, material, color, gate locations, and which side faces out. A plat is a map of your lot that shows property lines and easements.
+3. Submit it before any work starts. Approval runs on the HOA's schedule, not yours.
+4. Wait for written approval before you buy materials.
+
+We can help you understand what details usually go into an application. Some older areas, like parts of the Village of Sippihaw, may have no HOA at all, but Town rules still apply there.
+
+## What should I check before anyone starts digging?
+
+A few details cause most of the costly mistakes:
+
+- **Property lines.** Find your survey pins, the metal markers buried at the corners of your lot. Fences are usually set a few inches inside the line to avoid disputes with neighbors.
+- **Easements.** An easement is a strip of your land that others, like utility companies, have the right to use. Fences often can't go in utility, drainage, or stormwater easements, or in the public right-of-way along the street.
+- **Finished side.** The nicer side of the fence usually faces out, toward the street or your neighbor.
+- **Ground gap.** Leave about 2 inches between the bottom of the fence and the ground so rainwater can drain.
+- **Chain link color.** Inside town limits, chain link should be black or green coated.
+
+## Do pool fences follow different rules?
+
+Yes. A pool fence is a safety barrier, not just a privacy fence. Under the 2024 NC Residential Code (Appendix NC-A), a pool barrier must be at least 48 inches tall, with self-closing, self-latching gates and limits on gaps and openings.
+
+The pool gets the permit, and the barrier is inspected as part of it. Our [aluminum and pool-code fence page](/services/aluminum-pool-fences.html) has more detail. The inspector and the code book have the final word.
+
+## What should I do next?
+
+First, confirm whether you're in town limits, the ETJ, or somewhere else, and then pull your HOA guidelines. Picking a material comes next, and our [vinyl vs wood privacy fence guide](/blog/vinyl-vs-wood-privacy-fuquay-varina/) can help. If you live in Holly Springs, the Town rules are different, so see our [Holly Springs new construction fence guide](/blog/holly-springs-new-build-fence/).
+
+When you're ready, [request a free estimate](/#quote) or call or text **(919) 276-8406**. We'll check your address, look at your yard, and talk through your options with no pressure.
+
+## Fence Permit FAQ
+
+### Do I need a permit to build a fence in Fuquay-Varina?
+
+Not inside town limits or the ETJ, where the Town of Fuquay-Varina doesn't require a fence permit. Pools, sheds, and detached garages do need permits.
+
+### Does the "no permit" answer cover all of zip code 27526?
+
+No. The zip covers parts of both Wake and Harnett counties, and much of it is outside town limits and the ETJ, so if you're outside both, check with your county.
+
+### How tall can my backyard fence be in Fuquay-Varina?
+
+Inside town limits, side and back yard fences can be up to 6 feet. In the ETJ, the Town has no maximum for side and back yards. Your HOA may still set its own limit.
+
+### Do I still need HOA approval if the Town doesn't require a permit?
+
+Usually, yes. HOA rules are separate from Town rules, so get written approval from your HOA before any work begins.""",
+    },
+    {
+        "slug": 'vinyl-vs-wood-privacy-fuquay-varina',
+        "meta_title": 'Vinyl vs Wood Privacy Fence in Fuquay-Varina, NC',
+        "meta_desc": 'Vinyl vs wood privacy fence for a Fuquay-Varina yard: compare upkeep, looks, red clay stains, and HOA rules so you can choose with confidence.',
+        "h1": 'Vinyl vs Wood Privacy Fence: Which Is Right for Your Fuquay-Varina Yard?',
+        "date": "2026-09-26",
+        "body": """# Vinyl vs Wood Privacy Fence: Which Is Right for Your Fuquay-Varina Yard?
+
+**Quick answer:** Both vinyl and wood make a good privacy fence in Fuquay-Varina. Choose vinyl if you want less upkeep and a clean, uniform look. Choose wood if you like a classic look and don't mind staining and sealing it on a regular schedule. Either way, our red clay, humid summers, and your HOA rules should shape the choice as much as the material itself.
+
+Below, we compare the two in plain terms, based on what we see on local lots in southern Wake County. You won't find made-up popularity stats or warranty promises here, just the real tradeoffs.
+
+## Vinyl vs wood privacy fence: how do they compare?
+
+Here's the short version:
+
+| | Vinyl privacy fence | Wood privacy fence |
+| --- | --- | --- |
+| Routine upkeep | No staining or painting; occasional washing | Stain and seal on a regular schedule |
+| Look | Clean, uniform color and panels | Classic wood grain; board-on-board or shadowbox styles |
+| Local weak spots | Red clay splash stains on white vinyl; pollen; UV on sunny runs | Moisture, mildew, ground contact, termites |
+| Repairs | Panel-based | Single boards can often be swapped |
+| HOA fit | Works where the HOA wants a clean, consistent look | Many HOAs already have rules written for it |
+
+Neither one is the "winner." The right pick depends on your yard, your HOA, and how much upkeep you want to take on.
+
+## Is a vinyl privacy fence worth it in Fuquay-Varina?
+
+For many homeowners, yes, mainly because it skips the stain-and-seal routine. Central North Carolina gets about 47 inches of rain a year and stays sticky and humid from June into September, which is hard on wood, while vinyl doesn't need painting or staining.
+
+Vinyl also gives you a clean, even look that many HOAs like. If solid privacy isn't wanted or allowed in part of your yard, it also comes in picket, semi-privacy, and lattice-top styles.
+
+Vinyl does have a few local downsides to plan for:
+
+- **Red clay stains.** Our soil is iron-rich red clay, and when rain splashes it onto white vinyl, it leaves an orange stain on the bottom 12 to 18 inches of the fence.
+- **Sun exposure.** Fence runs that face south or west get more sun, so ask about UV-resistant vinyl for those sides.
+- **Pine pollen.** From late March into early April, pollen makes every white fence look dirty, so wash it after the pollen drops, not during.
+- **Pressure washing.** Don't blast clay stains with a high-pressure washer, because that can scar the panels. Use a cleaner made for the job instead.
+
+The best fix for clay stains is prevention: get grass or mulch growing along the fence line so rain can't splash bare dirt onto it. Our [vinyl fence page](/services/vinyl-fences.html) has more tips.
+
+## Is a wood privacy fence a good choice here?
+
+Yes, if it's built for our conditions and you keep up with it. Wood privacy fences are still a common backyard request around Fuquay-Varina, and popular styles include board-on-board and shadowbox. Board-on-board overlaps the boards so you can't see through, while shadowbox staggers them on both sides of the rails.
+
+Wood has real strengths. It has a warm, familiar look, blends in well with trees and older streets, and can be dressed up with decorative caps and trim. If one board gets damaged, it can often be replaced on its own.
+
+Here's what shortens a wood fence's life in our area:
+
+- **Moisture.** Boards on the north side stay damp longer and tend to mildew first.
+- **Ground contact.** Wood that touches the dirt breaks down faster, so the fence should sit about 2 inches above the ground, which helps both drainage and the bottom board.
+- **Termites.** Termites are a year-round concern in North Carolina, so wood in the ground should be treated.
+- **Upkeep.** Staining and sealing are part of owning a wood fence, not an optional extra.
+
+See our [wood privacy fence page](/services/wood-privacy-fences.html) for style options.
+
+## How does our red clay affect fence posts?
+
+This matters for both materials, because under about eight inches of topsoil, Fuquay-Varina sits on dense red clay. As a common industry practice, about one-third of each post goes below ground, which is roughly 24 to 36 inches deep for a 6-foot fence.
+
+Depth isn't the whole story. Gravel at the bottom of the hole and a sloped collar at the top that sheds water help keep posts from working loose as the ground freezes and thaws. New-build lots are often packed with dense, uneven fill dirt, which makes good post work even more important.
+
+## Do height limits or HOA rules affect which material I can use?
+
+They can. Inside Fuquay-Varina town limits, back and side yard fences generally max out at 6 feet, and front yard fences at 4 feet with no solid fences. In the ETJ, which is the area just outside town limits that still follows town zoning rules, the Town sets no maximum for side and back yards. Our [fence FAQ](/faq.html) and our [Fuquay-Varina fence permit guide](/blog/fence-permit-fuquay-varina/) explain these rules.
+
+Many newer neighborhoods also need written HOA approval before any fence goes in. HOAs often care about color, height, how see-through the fence is, gate placement, and which side faces out, not just vinyl versus wood. We don't claim most HOAs require vinyl or ban wood, so check your own guidelines.
+
+We are not your HOA, and we can't approve a fence or promise your HOA will, but we can help you understand the details that usually go into an application.
+
+## How do I decide?
+
+Vinyl is often the better fit if you:
+
+- Want as little upkeep as possible
+- Like a clean, uniform look
+- Are willing to keep grass or mulch along the fence line to stop clay stains
+
+Wood is often the better fit if you:
+
+- Love the look of real wood, and your HOA allows it
+- Will stain and seal it on a regular schedule
+- Want to be able to replace single boards later
+
+If several neighbors are fencing at the same time, matching height and finished side can prevent disputes down the road. The only wrong choice is picking a material from a brochure and finding out about clay, pollen, or HOA rules after the posts are set.
+
+Just bought a new home in Holly Springs? Our [Holly Springs new construction fence guide](/blog/holly-springs-new-build-fence/) covers what's different there.
+
+## Get a free estimate
+
+Want a second opinion on your yard? [Request a free estimate](/#quote) or call or text **(919) 276-8406**. We'll measure, check your sun and soil, and talk through vinyl and wood honestly, with no pressure.
+
+## Vinyl vs Wood FAQ
+
+### Which lasts longer in North Carolina, vinyl or wood?
+
+It depends on the product, how it's installed, and how well it's cared for. Vinyl avoids the stain-and-seal routine, while wood can hold up well if it's treated, kept off the ground, and sealed on schedule.
+
+### Why is the bottom of my white vinyl fence turning orange?
+
+It's red clay: rain splashes iron-rich soil onto the fence, leaving stains on the bottom 12 to 18 inches. Grass or mulch along the fence line helps prevent it, and a proper cleaner works better than a pressure washer.
+
+### Does my HOA have to approve a vinyl or wood fence?
+
+In many Fuquay-Varina neighborhoods, yes, so check your HOA's guidelines and get written approval before work begins.
+
+### How tall can a privacy fence be in Fuquay-Varina?
+
+Inside town limits, side and back yard fences can generally be up to 6 feet. In the ETJ, the Town has no maximum for side and back yards, but your HOA may set its own limit.""",
+    },
+    {
+        "slug": 'holly-springs-new-build-fence',
+        "meta_title": 'Holly Springs New Construction Fence: What to Know First',
+        "meta_desc": 'Just closed on a new build? Our Holly Springs new construction fence guide covers Town rules, HOA approval, builder fill dirt, and choosing a material.',
+        "h1": 'Holly Springs New Construction Fence Guide: What to Do After You Close',
+        "date": "2026-09-26",
+        "body": """# Holly Springs New Construction Fence Guide: What to Do After You Close
+
+**Quick answer:** Planning a Holly Springs new construction fence for a bare backyard? Don't start with the fence material. Start by checking the Town of Holly Springs fence rules and getting your HOA's approval process going, since that step often takes the longest. Then pick a material that suits our red clay and humid weather, and make sure the posts are set for packed builder fill dirt.
+
+Holly Springs is about five miles northwest of Fuquay-Varina and has its own zip code, 27540. It's right next door and in our service area, but it's a separate town with its own rules. This guide walks you through the steps in order.
+
+## Why do so many new homes in Holly Springs come without a fence?
+
+Holly Springs has been one of the faster-growing towns in Wake County, and that means lots of new homes. Builders here, like in much of southern Wake, often don't include a fence with the house. A lot of Holly Springs homeowners have just closed on a new build and are looking at a bare backyard.
+
+A new-build yard usually has a few things in common. The back and sides are wide open to the neighbors, and the sod is fresh or the dirt is still settling. The HOA's review process may still be active while you're unpacking boxes.
+
+## Do Fuquay-Varina fence rules apply in Holly Springs?
+
+No. Holly Springs is its own town, so the Town of Holly Springs sets its own fence standards, height limits, and any permit requirements. Fuquay-Varina's "no Town fence permit" answer is a Fuquay-Varina rule only. Our [Fuquay-Varina fence permit guide](/blog/fence-permit-fuquay-varina/) explains that rule, but don't assume it carries over.
+
+We aren't going to list Holly Springs height limits, permit fees, or a "no permit needed" claim here. Please confirm the current rules with the Town of Holly Springs before you settle on height, style, or timing. We also confirm local requirements before we quote, not after, as noted on our [Holly Springs area page](/areas/holly-springs.html).
+
+A simple way to start is to check the Town of Holly Springs planning or development resources for fence standards. At the same time, pull your HOA guidelines, and bring both to your estimate.
+
+## How long does HOA fence approval take on a new street?
+
+It varies, and it runs on the HOA's schedule, not yours. On a new street, HOA review is often the slowest part of the whole project, so it pays to apply early. HOA rules can be stricter than the Town's, and both apply.
+
+We are not your HOA, and we can't approve your fence or promise that your HOA will. Here's how the process usually works:
+
+1. Ask the HOA's architectural review committee (the group that approves outside changes to homes) what its fence application needs.
+2. Gather the details, which often include a plat or survey, the fence height, material, color, gate locations, and which side faces out. A plat is a map of your lot showing property lines and easements.
+3. Submit before any digging. Digging first and asking forgiveness later rarely goes well in a new neighborhood.
+4. Wait for written approval before buying materials.
+
+If the lots next to you are still open, talk with your neighbors about height and timing. Matching fence lines now can prevent awkward mismatches later. We can help you understand what questions to ask and what details usually go into an application.
+
+## Why does builder fill dirt matter for fence posts?
+
+Holly Springs sits on the same ground as Fuquay-Varina: red clay starting about eight inches down, plus heavy yearly rain. On a new-build lot, the builder often stripped, graded, and packed down the soil. That packed fill is denser and less predictable than the soil in an older yard that has had years to settle.
+
+Here's what that means for your fence:
+
+- **Harder digging.** Hitting dense material is common on new lots. It's not a sign of a "bad" lot.
+- **Drainage.** Gravel at the bottom of each post hole and a sloped collar at the top that sheds water matter as much as depth. Water sitting around a post can loosen it as the ground freezes and thaws.
+- **Post depth.** A common industry practice is to set about one-third of the post below ground, which is roughly 24 to 36 inches for a 6-foot fence.
+- **Groundcover.** Get grass or mulch established along the fence line early, especially with white vinyl, since rain splashing bare clay leaves orange stains.
+
+## What fence material works best for a new-build backyard?
+
+It depends on your goals and your HOA's rules. Here are the common choices:
+
+- **Vinyl privacy.** This is a popular new-build choice for a finished look without staining. Protect it from clay splash, and don't pressure-wash stains, since high pressure can scar the panels.
+- **Wood privacy.** Board-on-board or shadowbox wood is a strong look if your HOA allows it. Plan for a gap above the ground, solid post work in clay and fill, and regular sealing.
+- **Aluminum (if a pool is coming).** If you plan to add a pool, don't build a privacy fence that fights pool barrier rules later. Our [aluminum and pool-code fence page](/services/aluminum-pool-fences.html) covers pool-code fencing. Confirm Holly Springs and inspector requirements separately, and keep in mind this isn't legal advice.
+- **Chain link.** On larger lots, coated chain link can be a practical first fence for pets while your landscaping fills in. Your HOA rules decide whether it can stay long term.
+
+For a side-by-side look at the two most common choices, see our [vinyl vs wood privacy fence guide](/blog/vinyl-vs-wood-privacy-fuquay-varina/).
+
+## When is the best time to install a fence in Holly Springs?
+
+The weather here is the same as in Fuquay-Varina. Spring and fall are usually the easiest times to dig. Clay turns sticky when it's soaked and gets hard as a brick in midsummer, though fences can go in year-round.
+
+Pine pollen also coats white fences from late March into early April. If you want your new fence looking its best for photos, plan around that.
+
+## What's the best order of steps after closing?
+
+1. Confirm the Town of Holly Springs fence rules for your lot.
+2. Get your HOA guidelines and start the application early.
+3. Find your survey pins, the metal markers buried at your lot corners, and note any easements. An easement is a strip of your land that others, like utility companies, have the right to use, and fences often can't go there.
+4. Decide what you need, such as full backyard privacy, a pet area, or room for a future pool.
+5. Book an on-site estimate so the material and post plan match your actual soil and slope.
+
+When you're ready, [request a free estimate](/#quote) or call or text **(919) 276-8406**. We serve Holly Springs from nearby Fuquay-Varina, and there's no obligation.
+
+## Holly Springs New Construction Fence FAQ
+
+### Do I need a fence permit in Holly Springs?
+
+Check with the Town of Holly Springs. It's a separate town from Fuquay-Varina with its own rules, so Fuquay-Varina's answer doesn't apply.
+
+### Do I need HOA approval for a fence on my new build?
+
+In many Holly Springs neighborhoods, yes. Get your HOA's written approval before any digging starts.
+
+### Why is digging harder on a new-build lot?
+
+Builders often strip, grade, and pack down the soil. That fill is denser and less predictable than soil in an older yard, so post setting and drainage need extra care.
+
+### Should I plan my fence around a future pool?
+
+Yes. Pool barriers have their own North Carolina code requirements, so plan ahead to avoid replacing part of your fence later.""",
+    },
+]
+
+def blog_index():
+    title = f"Fence Guides for {CITY} &amp; Southern Wake | {BRAND}"
+    desc = ("Fence guides for Fuquay-Varina, Holly Springs, and nearby: town fence permits, "
+            "vinyl vs wood privacy fences, and new-construction backyards.")
+    canon = f"{BASE}/blog/"
+    posts_ld = []
+    cards = []
+    for p in POSTS:
+        url = f"{BASE}/blog/{p['slug']}/"
+        posts_ld.append({
+            "@type": "BlogPosting",
+            "headline": p["h1"],
+            "url": url,
+            "datePublished": p["date"],
+            "image": f"{BASE}/images/og-image.jpg",
+        })
+        cards.append(
+            '<article class="service-card blog-card"><div class="service-body">'
+            f'<p class="post-date">September 26, 2026</p>'
+            f'<h2>{html.escape(p["h1"], quote=False)}</h2>'
+            f'<p>{html.escape(p["meta_desc"], quote=False)}</p>'
+            f'<p class="card-link"><a href="{html.escape(p["slug"])}/">Read the guide &rarr;</a></p>'
+            "</div></article>"
+        )
+    blog_ld = {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Fence Guides for Fuquay-Varina & Southern Wake",
+        "url": canon,
+        "publisher": {"@id": BIZ_ID},
+        "blogPost": posts_ld,
+    }
+    nav, bc_ld = crumbs(1, [("Blog", None)])
+    return (head(title, desc, canon, 1, ref_ld() + _ld(blog_ld) + bc_ld) + header(1) + nav +
+            f'<main><section class="hero hero-inner"><div class="container hero-content">'
+            f'<p class="hero-eyebrow">Fence guides</p>'
+            f'<h1>Fence Guides for {CITY} &amp; Southern Wake</h1>'
+            f'<p class="hero-sub">Permits, materials, and new-construction yards &mdash; written for homeowners around {CITY}.</p>'
+            f'<div class="hero-cta"><a class="btn btn-primary btn-lg" href="#quote">Get My Free Estimate</a>'
+            f'<a class="btn btn-ghost btn-lg" data-call href="tel:{PHONE_TEL}">Call {PHONE_TEXT}</a></div>'
+            f'</div></section><section class="section"><div class="container">'
+            f'<div class="card-grid">{"".join(cards)}</div>'
+            f'</div></section>' + form("blog", depth=1) + "</main>" + footer(1))
+
+def blog_post(post):
+    slug, depth = post["slug"], 2
+    canon = f"{BASE}/blog/{slug}/"
+    h1, desc = post["h1"], post["meta_desc"]
+    faqs = extract_faqs(post["body"])
+    article = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": h1,
+        "description": desc,
+        "datePublished": post["date"],
+        "dateModified": post["date"],
+        "image": f"{BASE}/images/og-image.jpg",
+        "mainEntityOfPage": {"@type": "WebPage", "@id": canon},
+        "author": {"@id": BIZ_ID},
+        "publisher": {"@id": BIZ_ID},
+    }
+    faq_ld = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
+            for q, a in faqs
+        ],
+    }
+    extra_meta = (
+        f'<meta property="article:published_time" content="{post["date"]}" />\n'
+        f'<meta property="article:modified_time" content="{post["date"]}" />\n'
+    )
+    nav, bc_ld = crumbs(depth, [("Blog", "blog/"), (h1, None)])
+    body = md_to_html(post["body"], depth)
+    return (head(post["meta_title"], desc, canon, depth, ref_ld() + _ld(article) + _ld(faq_ld) + bc_ld,
+                 og_type="article", extra_meta=extra_meta) + header(depth) + nav +
+            f'<main><section class="hero hero-inner"><div class="container hero-content">'
+            f'<p class="hero-eyebrow">Fence guide</p><h1>{html.escape(h1, quote=False)}</h1>'
+            f'<div class="hero-cta"><a class="btn btn-primary btn-lg" href="#quote">Get My Free Estimate</a>'
+            f'<a class="btn btn-ghost btn-lg" data-call href="tel:{PHONE_TEL}">Call {PHONE_TEXT}</a></div>'
+            f'</div></section><section class="section"><div class="container prose blog-post">{body}'
+            f'</div></section>' + form(f"blog/{slug}", depth=depth) + "</main>" + footer(depth))
+
 # ================================== BUILD ==================================
 if os.path.isdir(OUT): shutil.rmtree(OUT)
 os.makedirs(OUT, exist_ok=True)
@@ -1108,6 +1694,9 @@ for s, n, z in AREAS:    write(f"areas/{s}.html", area_page(s, n, z))
 write("faq.html", faq_page())
 write("privacy.html", privacy_page())
 write("terms.html", terms_page())
+write("blog/index.html", blog_index())
+for _post in POSTS:
+    write(f"blog/{_post['slug']}/index.html", blog_post(_post))
 write("styles.css", CSS)
 write("main.js", JS)
 write("favicon.svg", FAVICON)
@@ -1125,9 +1714,25 @@ branded image is added — no binary is committed yet.
 urls = [("", "1.0"), ("faq.html", "0.6"), ("privacy.html", "0.3"), ("terms.html", "0.3")]
 urls += [(f"services/{s}.html", "0.9") for s, _, _ in SERVICES]
 urls += [(f"areas/{s}.html", "0.9" if s == "fuquay-varina" else "0.7") for s, _, _ in AREAS]
+urls += [("blog/", "0.7")]
+urls += [(f"blog/{p['slug']}/", "0.6") for p in POSTS]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for u, p in urls:
-    sm += f'  <url><loc>{BASE}/{u}</loc><lastmod>2026-09-14</lastmod><priority>{p}</priority></url>\n'
+    # 2026-09-26: blog launch, Blog nav on every page, and the previous
+    # 2026-09-14 sitemap dates were already behind the 2026-09-24 terms update.
+    sm += f'  <url><loc>{BASE}/{u}</loc><lastmod>2026-09-26</lastmod><priority>{p}</priority></url>\n'
 write("sitemap.xml", sm + "</urlset>\n")
+
+# GitHub Pages serves the repo root. OUT stays site/ so a build can never rmtree
+# the repo (and .git). Mirror the generated files up, without deleting files the
+# generator does not own — images/og-image.jpg in particular.
+_root = os.path.dirname(os.path.abspath(__file__))
+if os.path.abspath(OUT) != os.path.abspath(_root):
+    for dirpath, _, files in os.walk(OUT):
+        rel = os.path.relpath(dirpath, OUT)
+        dest_dir = _root if rel == "." else os.path.join(_root, rel)
+        os.makedirs(dest_dir, exist_ok=True)
+        for fn in files:
+            shutil.copy2(os.path.join(dirpath, fn), os.path.join(dest_dir, fn))
 
 print("built", len([f for _, _, fs in os.walk(OUT) for f in fs]), "files ->", OUT)

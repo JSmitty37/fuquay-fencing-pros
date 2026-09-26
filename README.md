@@ -22,6 +22,7 @@ Open `build.py`, edit the CONFIG block, re-run `python3 build.py`:
 - `services/` — 4 service pages (vinyl first: it's the validated 70/mo term)
 - `areas/` — 5 city pages, each with genuinely distinct local content
 - `faq.html` — 8 Q&As with FAQPage schema
+- `blog/` — guides index and articles (`blog/index.html`, `blog/{slug}/index.html`)
 - `privacy.html` — required for Meta lead forms and business verification
 - `terms.html` — terms and conditions, including SMS / text messaging terms
 - `styles.css`, `main.js`, `sitemap.xml`, `robots.txt`, `CNAME`, `favicon.svg`
@@ -46,6 +47,8 @@ Open `build.py`, edit the CONFIG block, re-run `python3 build.py`:
 
 Site files live at the repository root (`index.html`, `CNAME`, etc.). Repo:
 https://github.com/JSmitty37/fuquay-fencing-pros
+
+`python3 build.py` writes `site/`, then mirrors those files onto the repo root. Pages serves the root, not `site/`.
 
 **GitHub Pages (admin click — API cannot enable this):** Settings → Pages →
 Build and deployment → Source: **Deploy from a branch** → Branch **main** / folder **/ (root)** → Save.

@@ -135,3 +135,8 @@ justify-content:center;gap:.5rem}
 .mobile-call-bar{display:flex}body{padding-bottom:3.4rem}
 .footer-inner{grid-template-columns:1fr}.footer-bottom-inner{flex-direction:column}}
 @media(max-width:420px){.field-row{grid-template-columns:1fr}}
+@media(max-width:1100px){.main-nav{gap:.7rem}.main-nav a{font-size:.86rem}.header-inner{gap:.65rem}}
+.blog-post h3{font-size:1.05rem;margin:1.35rem 0 .4rem}
+.blog-post .mini-table{margin:0 0 1.1rem}
+.blog-card h2{font-size:1.08rem;margin:0 0 .45rem;letter-spacing:-.015em}
+.blog-card .post-date{margin:0 0 .35rem;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--accent)}
