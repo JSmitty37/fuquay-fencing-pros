@@ -1,0 +1,4 @@
+# build.py writes here, then mirrors onto the repo root (what GitHub Pages serves).
+site/
+__pycache__/
+*.pyc
