@@ -978,24 +978,29 @@ const LEAD_WEBHOOK_URL = "%WEBHOOK%"; // Zapier Catch Hook. Blank = demo mode (l
 
 /* ---------- lead forms (one per page) ---------- */
 (function(){
-  const DWELL_MS = 3000;
   document.querySelectorAll("form[data-lead-form]").forEach(function(form){
     const btn = form.querySelector('button[type="submit"]');
     const okBox = form.querySelector(".form-success");
     const errBox = form.querySelector(".form-error");
-    /* Dwell starts at the first focus or input on a form field, not at
-       page load. A submit sooner than 3s after that is dropped and logged. */
-    let engagedAt = 0;
-    function markEngaged(ev){
-      if(engagedAt) return;
+    /* No dwell timer. Autofill fires input on every field and the visitor
+       often clicks Submit within a second. Drop only a submit that never had
+       a field focus/input/change or a click, touch, or keydown in the form. */
+    let interacted = false;
+    function markField(ev){
+      if(interacted) return;
       const t = ev.target;
       if(!t || !t.matches || !t.matches("input, select, textarea")) return;
-      engagedAt = Date.now();
+      interacted = true;
     }
-    form.addEventListener("focusin", markEngaged);
-    form.addEventListener("input", markEngaged);
+    function markGesture(){ interacted = true; }
+    form.addEventListener("focusin", markField);
+    form.addEventListener("input", markField);
+    form.addEventListener("change", markField);
+    form.addEventListener("click", markGesture);
+    form.addEventListener("touchstart", markGesture, {passive:true});
+    form.addEventListener("keydown", markGesture);
 
-    function dropTooFast(reason){
+    function dropSubmit(reason){
       console.warn("Lead submit dropped:", reason);
       try{ if(window.gtag) gtag("event","form_submit_dropped",{event_category:"lead",
              event_label: form.dataset.pageSource || location.pathname,
@@ -1003,15 +1008,33 @@ const LEAD_WEBHOOK_URL = "%WEBHOOK%"; // Zapier Catch Hook. Blank = demo mode (l
       okBox.hidden = false;
     }
 
+    function zipFromAddress(address){
+      const text = String(address || "");
+      const zipRe = /\\b(\\d{5})(?:-\\d{4})?\\b/g;
+      const stateRe = /\\b(?:NC|North Carolina)\\b/gi;
+      let stateMatch, followed = "";
+      while((stateMatch = stateRe.exec(text))){
+        const after = text.slice(stateMatch.index + stateMatch[0].length);
+        const z = after.match(/\\b(\\d{5})(?:-\\d{4})?\\b/);
+        if(z) followed = z[1];
+      }
+      if(followed) return followed;
+      const all = [];
+      let m;
+      while((m = zipRe.exec(text))) all.push(m[1]);
+      for(let i = all.length - 1; i >= 0; i--) if(all[i].indexOf("27") === 0) return all[i];
+      return all.length ? all[all.length - 1] : "";
+    }
+
     form.addEventListener("submit", async function(e){
       e.preventDefault();
       errBox.hidden = true;
       if(!form.checkValidity()){ form.reportValidity(); return; }
 
-      /* spam gates: honeypot stays a silent drop; dwell drops are logged */
+      /* spam gates: honeypot stays a silent drop; no-interaction drops are logged */
       if(form.company && form.company.value){ okBox.hidden=false; return; }
-      if(!engagedAt || Date.now() - engagedAt < DWELL_MS){
-        dropTooFast(engagedAt ? "under_3s_after_interaction" : "no_field_interaction");
+      if(!interacted){
+        dropSubmit("no_user_interaction");
         return;
       }
 
@@ -1020,13 +1043,12 @@ const LEAD_WEBHOOK_URL = "%WEBHOOK%"; // Zapier Catch Hook. Blank = demo mode (l
       const label = btn.textContent; btn.textContent = "Sending…";
 
       const address = form.address.value.trim();
-      const zipMatch = address.match(/\\b\\d{5}(?:-\\d{4})?\\b/);
       const payload = {
         fullName: form.fullName.value.trim(),
         phone:    form.phone.value.trim(),
         email:    (form.email && form.email.value ? form.email.value : "").trim(),
         address:  address,
-        zip:      zipMatch ? zipMatch[0].slice(0, 5) : "",
+        zip:      zipFromAddress(address),
         fenceType:form.fenceType.value,
         timeline: form.timeline.value,
         source:   "Website",
@@ -1111,12 +1133,14 @@ Open `build.py`, edit the CONFIG block, re-run `python3 build.py`:
    produced the lead.
 2. **Analytics wired in** — GA4 + Meta Pixel, with `generate_lead` and `Lead` events on submit and
    `click_to_call` / `Contact` events on every phone link.
-3. **Spam gates** — honeypot field plus a 3-second dwell measured from the first focus or input on a
-   form field (not from page load). Dwell drops log a `form_submit_dropped` GA4 event and `console.warn`.
-   Bot leads reaching your contractor is how you lose a contractor.
-4. **Property address is a required field.** There is no separate zip input; the webhook `zip` is the
-   first 5-digit ZIP parsed from the address, or `""` if none is present. Email is optional. Zip 27526
-   spans ~98 sq mi across two counties, so zip alone cannot qualify a lead here.
+3. **Spam gates** — honeypot field, plus a drop when a submit never had a focus, input, or change on a
+   form field and never had a click, touch, or keydown inside the form. Those drops log a
+   `form_submit_dropped` GA4 event and `console.warn`. There is no time delay, so autofill-then-click
+   still sends. Bot leads reaching your contractor is how you lose a contractor.
+4. **Property address is a required field.** There is no separate zip input. The webhook `zip` is a ZIP
+   after `NC` or `North Carolina` when one is there, otherwise the last 5-digit group starting with 27,
+   otherwise the last 5-digit group, or `""`. Email is optional. Zip 27526 spans ~98 sq mi across two
+   counties, so zip alone cannot qualify a lead here.
 5. **Schema** — one shared business `@id` across all pages (not duplicate entities), plus BreadcrumbList,
    Service and FAQPage.
 6. **Real local content** per area page — ordinance specifics, the Wake/Harnett split, Cecil clay,
