@@ -190,14 +190,10 @@ def form(page_source, heading="Get Your Free Fence Estimate", depth=0):
     <form class="lead-form" data-lead-form data-page-source="{page_source}" novalidate>
       <div class="field"><label for="n-{page_source}">Full Name</label>
         <input type="text" id="n-{page_source}" name="fullName" autocomplete="name" required /></div>
-      <div class="field-row">
-        <div class="field"><label for="p-{page_source}">Phone</label>
-          <input type="tel" id="p-{page_source}" name="phone" autocomplete="tel" inputmode="tel" required /></div>
-        <div class="field"><label for="z-{page_source}">Zip Code</label>
-          <input type="text" id="z-{page_source}" name="zip" autocomplete="postal-code" inputmode="numeric" maxlength="5" pattern="[0-9]{{5}}" required /></div>
-      </div>
+      <div class="field"><label for="p-{page_source}">Phone</label>
+        <input type="tel" id="p-{page_source}" name="phone" autocomplete="tel" inputmode="tel" required /></div>
       <div class="field"><label for="e-{page_source}">Email</label>
-        <input type="email" id="e-{page_source}" name="email" autocomplete="email" required /></div>
+        <input type="email" id="e-{page_source}" name="email" autocomplete="email" /></div>
       <div class="field"><label for="a-{page_source}">Property Address</label>
         <input type="text" id="a-{page_source}" name="address" autocomplete="street-address" placeholder="Where would the fence go?" required />
         <span class="hint">27526 covers a lot of ground &mdash; the street address tells us if we can reach you.</span></div>
@@ -982,31 +978,55 @@ const LEAD_WEBHOOK_URL = "%WEBHOOK%"; // Zapier Catch Hook. Blank = demo mode (l
 
 /* ---------- lead forms (one per page) ---------- */
 (function(){
-  const LOADED_AT = Date.now();
+  const DWELL_MS = 3000;
   document.querySelectorAll("form[data-lead-form]").forEach(function(form){
     const btn = form.querySelector('button[type="submit"]');
     const okBox = form.querySelector(".form-success");
     const errBox = form.querySelector(".form-error");
+    /* Dwell starts at the first focus or input on a form field, not at
+       page load. A submit sooner than 3s after that is dropped and logged. */
+    let engagedAt = 0;
+    function markEngaged(ev){
+      if(engagedAt) return;
+      const t = ev.target;
+      if(!t || !t.matches || !t.matches("input, select, textarea")) return;
+      engagedAt = Date.now();
+    }
+    form.addEventListener("focusin", markEngaged);
+    form.addEventListener("input", markEngaged);
+
+    function dropTooFast(reason){
+      console.warn("Lead submit dropped:", reason);
+      try{ if(window.gtag) gtag("event","form_submit_dropped",{event_category:"lead",
+             event_label: form.dataset.pageSource || location.pathname,
+             drop_reason: reason}); }catch(err){}
+      okBox.hidden = false;
+    }
 
     form.addEventListener("submit", async function(e){
       e.preventDefault();
       errBox.hidden = true;
       if(!form.checkValidity()){ form.reportValidity(); return; }
 
-      /* spam gates: honeypot + minimum dwell time */
-      if(form.company && form.company.value){ okBox.hidden=false; return; }   // silent drop
-      if(Date.now() - LOADED_AT < 3000){ okBox.hidden=false; return; }        // too fast to be human
+      /* spam gates: honeypot stays a silent drop; dwell drops are logged */
+      if(form.company && form.company.value){ okBox.hidden=false; return; }
+      if(!engagedAt || Date.now() - engagedAt < DWELL_MS){
+        dropTooFast(engagedAt ? "under_3s_after_interaction" : "no_field_interaction");
+        return;
+      }
 
       if(btn.getAttribute("aria-busy")==="true") return;
       btn.setAttribute("aria-busy","true");
       const label = btn.textContent; btn.textContent = "Sending…";
 
+      const address = form.address.value.trim();
+      const zipMatch = address.match(/\\b\\d{5}(?:-\\d{4})?\\b/);
       const payload = {
         fullName: form.fullName.value.trim(),
         phone:    form.phone.value.trim(),
-        email:    form.email.value.trim(),
-        address:  form.address.value.trim(),
-        zip:      form.zip.value.trim(),
+        email:    (form.email && form.email.value ? form.email.value : "").trim(),
+        address:  address,
+        zip:      zipMatch ? zipMatch[0].slice(0, 5) : "",
         fenceType:form.fenceType.value,
         timeline: form.timeline.value,
         source:   "Website",
@@ -1091,10 +1111,12 @@ Open `build.py`, edit the CONFIG block, re-run `python3 build.py`:
    produced the lead.
 2. **Analytics wired in** — GA4 + Meta Pixel, with `generate_lead` and `Lead` events on submit and
    `click_to_call` / `Contact` events on every phone link.
-3. **Spam gates** — honeypot field plus a 3-second minimum dwell time. Bot leads reaching your contractor
-   is how you lose a contractor.
-4. **Property address is a required field.** Zip 27526 spans ~98 sq mi across two counties, so zip alone
-   cannot qualify a lead here.
+3. **Spam gates** — honeypot field plus a 3-second dwell measured from the first focus or input on a
+   form field (not from page load). Dwell drops log a `form_submit_dropped` GA4 event and `console.warn`.
+   Bot leads reaching your contractor is how you lose a contractor.
+4. **Property address is a required field.** There is no separate zip input; the webhook `zip` is the
+   first 5-digit ZIP parsed from the address, or `""` if none is present. Email is optional. Zip 27526
+   spans ~98 sq mi across two counties, so zip alone cannot qualify a lead here.
 5. **Schema** — one shared business `@id` across all pages (not duplicate entities), plus BreadcrumbList,
    Service and FAQPage.
 6. **Real local content** per area page — ordinance specifics, the Wake/Harnett split, Cecil clay,
