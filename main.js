@@ -27,31 +27,77 @@ const LEAD_WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/24209228/4dq1xf8/
 
 /* ---------- lead forms (one per page) ---------- */
 (function(){
-  const LOADED_AT = Date.now();
   document.querySelectorAll("form[data-lead-form]").forEach(function(form){
     const btn = form.querySelector('button[type="submit"]');
     const okBox = form.querySelector(".form-success");
     const errBox = form.querySelector(".form-error");
+    /* No dwell timer. Autofill fires input on every field and the visitor
+       often clicks Submit within a second. Drop only a submit that never had
+       a field focus/input/change or a click, touch, or keydown in the form. */
+    let interacted = false;
+    function markField(ev){
+      if(interacted) return;
+      const t = ev.target;
+      if(!t || !t.matches || !t.matches("input, select, textarea")) return;
+      interacted = true;
+    }
+    function markGesture(){ interacted = true; }
+    form.addEventListener("focusin", markField);
+    form.addEventListener("input", markField);
+    form.addEventListener("change", markField);
+    form.addEventListener("click", markGesture);
+    form.addEventListener("touchstart", markGesture, {passive:true});
+    form.addEventListener("keydown", markGesture);
+
+    function dropSubmit(reason){
+      console.warn("Lead submit dropped:", reason);
+      try{ if(window.gtag) gtag("event","form_submit_dropped",{event_category:"lead",
+             event_label: form.dataset.pageSource || location.pathname,
+             drop_reason: reason}); }catch(err){}
+      okBox.hidden = false;
+    }
+
+    function zipFromAddress(address){
+      const text = String(address || "");
+      const zipRe = /\b(\d{5})(?:-\d{4})?\b/g;
+      const stateRe = /\b(?:NC|North Carolina)\b/gi;
+      let stateMatch, followed = "";
+      while((stateMatch = stateRe.exec(text))){
+        const after = text.slice(stateMatch.index + stateMatch[0].length);
+        const z = after.match(/\b(\d{5})(?:-\d{4})?\b/);
+        if(z) followed = z[1];
+      }
+      if(followed) return followed;
+      const all = [];
+      let m;
+      while((m = zipRe.exec(text))) all.push(m[1]);
+      for(let i = all.length - 1; i >= 0; i--) if(all[i].indexOf("27") === 0) return all[i];
+      return all.length ? all[all.length - 1] : "";
+    }
 
     form.addEventListener("submit", async function(e){
       e.preventDefault();
       errBox.hidden = true;
       if(!form.checkValidity()){ form.reportValidity(); return; }
 
-      /* spam gates: honeypot + minimum dwell time */
-      if(form.company && form.company.value){ okBox.hidden=false; return; }   // silent drop
-      if(Date.now() - LOADED_AT < 3000){ okBox.hidden=false; return; }        // too fast to be human
+      /* spam gates: honeypot stays a silent drop; no-interaction drops are logged */
+      if(form.company && form.company.value){ okBox.hidden=false; return; }
+      if(!interacted){
+        dropSubmit("no_user_interaction");
+        return;
+      }
 
       if(btn.getAttribute("aria-busy")==="true") return;
       btn.setAttribute("aria-busy","true");
       const label = btn.textContent; btn.textContent = "Sending…";
 
+      const address = form.address.value.trim();
       const payload = {
         fullName: form.fullName.value.trim(),
         phone:    form.phone.value.trim(),
-        email:    form.email.value.trim(),
-        address:  form.address.value.trim(),
-        zip:      form.zip.value.trim(),
+        email:    (form.email && form.email.value ? form.email.value : "").trim(),
+        address:  address,
+        zip:      zipFromAddress(address),
         fenceType:form.fenceType.value,
         timeline: form.timeline.value,
         source:   "Website",

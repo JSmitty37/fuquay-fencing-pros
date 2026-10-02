@@ -34,10 +34,14 @@ Open `build.py`, edit the CONFIG block, re-run `python3 build.py`:
    produced the lead.
 2. **Analytics wired in** — GA4 + Meta Pixel, with `generate_lead` and `Lead` events on submit and
    `click_to_call` / `Contact` events on every phone link.
-3. **Spam gates** — honeypot field plus a 3-second minimum dwell time. Bot leads reaching your contractor
-   is how you lose a contractor.
-4. **Property address is a required field.** Zip 27526 spans ~98 sq mi across two counties, so zip alone
-   cannot qualify a lead here.
+3. **Spam gates** — honeypot field, plus a drop when a submit never had a focus, input, or change on a
+   form field and never had a click, touch, or keydown inside the form. Those drops log a
+   `form_submit_dropped` GA4 event and `console.warn`. There is no time delay, so autofill-then-click
+   still sends. Bot leads reaching your contractor is how you lose a contractor.
+4. **Property address is a required field.** There is no separate zip input. The webhook `zip` is a ZIP
+   after `NC` or `North Carolina` when one is there, otherwise the last 5-digit group starting with 27,
+   otherwise the last 5-digit group, or `""`. Email is optional. Zip 27526 spans ~98 sq mi across two
+   counties, so zip alone cannot qualify a lead here.
 5. **Schema** — one shared business `@id` across all pages (not duplicate entities), plus BreadcrumbList,
    Service and FAQPage.
 6. **Real local content** per area page — ordinance specifics, the Wake/Harnett split, Cecil clay,
