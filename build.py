@@ -183,7 +183,7 @@ def form(page_source, heading="Get Your Free Fence Estimate", depth=0):
     <ul class="quote-points">
       <li>Free on-site measurement</li>
       <li>No obligation, no pressure</li>
-      <li>Local crew, {CITY} and nearby</li>
+      <li>Serving {CITY} and nearby</li>
     </ul>
   </div>
   <div class="quote-form-wrap">
@@ -194,9 +194,9 @@ def form(page_source, heading="Get Your Free Fence Estimate", depth=0):
         <input type="tel" id="p-{page_source}" name="phone" autocomplete="tel" inputmode="tel" required /></div>
       <div class="field"><label for="e-{page_source}">Email</label>
         <input type="email" id="e-{page_source}" name="email" autocomplete="email" /></div>
-      <div class="field"><label for="a-{page_source}">Property Address</label>
-        <input type="text" id="a-{page_source}" name="address" autocomplete="street-address" placeholder="Where would the fence go?" required />
-        <span class="hint">27526 covers a lot of ground &mdash; the street address tells us if we can reach you.</span></div>
+      <div class="field"><label for="a-{page_source}">Street address and ZIP</label>
+        <input type="text" id="a-{page_source}" name="address" autocomplete="street-address" placeholder="Street address and ZIP where the fence would go" required />
+        <span class="hint">Include the ZIP in this address. 27526 covers a lot of ground &mdash; the street and ZIP tell us if we can reach you.</span></div>
       <div class="field-row">
         <div class="field"><label for="f-{page_source}">Fence Type</label>
           <select id="f-{page_source}" name="fenceType" required>
@@ -251,7 +251,20 @@ def footer(depth):
 </body></html>
 """
 
+def _biz_node():
+    """Typed business node for @id references. No street or postal address."""
+    return {
+        "@type": ["HomeAndConstructionBusiness", "GeneralContractor"],
+        "@id": BIZ_ID,
+        "name": BRAND,
+        "url": f"{BASE}/",
+        "telephone": PHONE_TEL,
+        "areaServed": [{"@type": "City", "name": f"{n}, NC"} for _, n, _ in AREAS],
+    }
+
 def biz_ld():
+    # No PostalAddress: a Fuquay-Varina 27526 address would imply a public location.
+    # Keep @id, name, url, telephone, and areaServed.
     areas = ",".join(f'{{"@type":"City","name":"{n}, NC"}}' for _, n, _ in AREAS)
     # Names are stored with HTML entities for the visible nav. JSON-LD needs the raw "&".
     offers = ",".join(
@@ -263,13 +276,44 @@ def biz_ld():
 "image":"{BASE}/images/og-image.jpg","priceRange":"$$",
 "description":"Residential fence installation in {CITY}, NC and southern Wake County. Vinyl, wood privacy, aluminum pool-code and chain link fencing.",
 "areaServed":[{areas}],
-"address":{{"@type":"PostalAddress","addressLocality":"{CITY}","addressRegion":"{STATE}","postalCode":"27526","addressCountry":"US"}},
 "hasOfferCatalog":{{"@type":"OfferCatalog","name":"Fence Installation Services","itemListElement":[{offers}]}}}}
 </script>"""
 
 def ref_ld():
-    """Lightweight reference to the same business entity — prevents duplicate-entity confusion."""
+    """Untyped @id stub. Do not use on blog pages — author/publisher reference this @id
+    and need a real @type (see _biz_node). Other pages still point at the home entity."""
     return f'<script type="application/ld+json">{{"@context":"https://schema.org","@id":"{BIZ_ID}"}}</script>'
+
+def cta_actions(extra_class=""):
+    """Estimate anchor + tel link. extra_class is a button-size class such as btn-lg."""
+    size = f" {extra_class}" if extra_class else ""
+    return (
+        f'<a class="btn btn-primary{size}" href="#quote">Free Estimate</a>'
+        f'<a class="btn btn-outline{size}" data-call href="tel:{PHONE_TEL}">'
+        f'{PHONE_SVG} Call {PHONE_TEXT}</a>'
+    )
+
+def cta_band():
+    """Mid-page conversion band. Light, no proof claims."""
+    return f"""<section class="section cta-band" aria-labelledby="mid-cta-heading">
+  <div class="container cta-band-inner">
+    <div class="cta-copy">
+      <p class="eyebrow">Free Estimate</p>
+      <h2 id="mid-cta-heading">Ready for a free fence estimate?</h2>
+      <p>Tell us the street address, including the ZIP, and a little about the project.
+         We'll follow up to schedule a no-obligation visit.</p>
+    </div>
+    <div class="cta-actions">{cta_actions("btn-lg")}</div>
+  </div>
+</section>
+"""
+
+def inline_cta():
+    """In-article estimate + call links. Same-page #quote form; public phone only."""
+    return f"""<aside class="inline-cta" aria-label="Free estimate">
+  <p>Want a free estimate for your yard? Share the project, or call and we'll talk it through. No obligation.</p>
+  <div class="inline-cta-actions">{cta_actions()}</div>
+</aside>"""
 
 def write(path, content):
     full = os.path.join(OUT, path)
@@ -459,7 +503,7 @@ Brighton Ridge.</p>
 here almost never include a fence. If you just closed on a new build and are staring at a bare graded lot,
 you're in the majority &mdash; and it's usually worth talking to your neighbors, because fencing a run of
 adjoining yards at the same time is cheaper for everyone.</p>
-<h2>A little local history, since we're neighbors</h2>
+<h2>A little local history</h2>
 <p>The town is two towns. <strong>Fuquay Springs</strong> grew up around a mineral spring a Fuquay
 descendant turned up while plowing a field around 1858 &mdash; the spring house still stands in Fuquay
 Mineral Spring Park. <strong>Varina</strong> was named for a woman who signed her letters to a Civil War
@@ -467,21 +511,21 @@ soldier named Ballentine that way; he married her and named his store and post o
 The two merged in 1963, and you can still walk between the two downtowns in about fifteen minutes &mdash;
 S. Main on the Fuquay side, Broad Street on the Varina side, where Aviator Brewing sits in the 1903 train
 depot.</p>
-""", "Fence installation in Fuquay-Varina, NC 27526. Local crew who knows the Town's 6-ft ordinance, ETJ rules, HOA approvals and Piedmont red clay. Free estimates."),
+""", "Fence installation in Fuquay-Varina, NC 27526. Serving Fuquay-Varina — Town 6-ft ordinance, ETJ rules, HOA approvals and Piedmont red clay. Free estimates."),
 
 "holly-springs": ("""
 <h2>Fence installation in Holly Springs, NC</h2>
-<p>Holly Springs sits about five miles northwest of us &mdash; the closest of our neighbor towns and one of
+<p>Holly Springs sits about five miles northwest of Fuquay-Varina &mdash; the closest neighbor town we serve, and one of
 the fastest-growing in Wake County, from roughly 41,000 residents at the 2020 census to over
 <strong>50,000</strong> by 2025. One clean zip code, <strong>27540</strong>, which makes life simpler than
-it is in our own town.</p>
+it is in Fuquay-Varina.</p>
 <h2>What's different here</h2>
 <p>Holly Springs is its own municipality with its own ordinance, so fence standards, height limits and any
 permit requirements are set by the Town of Holly Springs rather than Fuquay-Varina. If you're in an HOA
 neighborhood &mdash; and a lot of Holly Springs is &mdash; architectural approval usually comes before
 anything else. We'll confirm the current local requirements before we quote, not after.</p>
 <h2>Same soil, same considerations</h2>
-<p>You're on the same Piedmont ground we are: <strong>Cecil red clay</strong> starting roughly eight inches
+<p>Holly Springs is on the same Piedmont ground as Fuquay-Varina: <strong>Cecil red clay</strong> starting roughly eight inches
 below the surface, the same 47 inches of annual rain, the same late-March pine pollen that makes every
 white fence in the county look dirty for three weeks. Everything we do about post drainage, ground
 clearance and material choice applies here identically.</p>
@@ -489,7 +533,7 @@ clearance and material choice applies here identically.</p>
 <p>Vinyl privacy and picket, wood privacy, powder-coated aluminum including pool-code enclosures, and
 chain link. With the volume of newer construction here, the most common call we get is from someone who
 just closed on a house with a bare backyard and a builder who didn't include a fence.</p>
-""", "Fence installation in Holly Springs, NC 27540. Vinyl, wood privacy, aluminum pool-code and chain link fencing. Local crew, free estimates."),
+""", "Fence installation in Holly Springs, NC 27540. Vinyl, wood privacy, aluminum pool-code and chain link fencing. Serving Holly Springs. Free estimates."),
 
 "angier": ("""
 <h2>Fence installation in Angier, NC</h2>
@@ -512,11 +556,11 @@ setting posts accordingly.</p>
 <h2>What we install in Angier</h2>
 <p>Vinyl privacy, wood privacy, aluminum and pool-code enclosures, and chain link for larger lots &mdash;
 and out this way, lots do get larger. Free estimates, same as everywhere we work.</p>
-""", "Fence installation in Angier, NC 27501. Harnett County fencing — vinyl, wood privacy, aluminum and chain link. Local crew, free estimates."),
+""", "Fence installation in Angier, NC 27501. Harnett County fencing — vinyl, wood privacy, aluminum and chain link. Serving Angier. Free estimates."),
 
 "willow-spring": ("""
 <h2>Fence installation in Willow Spring, NC</h2>
-<p>Willow Spring is about seven miles east of us, zip code <strong>27592</strong>. It's worth getting the
+<p>Willow Spring is about seven miles east of Fuquay-Varina, zip code <strong>27592</strong>. It's worth getting the
 name right, because locals notice: the community is <strong>Willow Spring, singular</strong>, even though
 the high school out here is Willow Springs High School.</p>
 <h2>Unincorporated &mdash; which changes the rules</h2>
@@ -542,7 +586,7 @@ out here, so the same care with post drainage does too.</p>
 <p>Garner sits about fourteen miles northeast of Fuquay-Varina on the southern edge of Raleigh &mdash;
 roughly <strong>41,500</strong> residents and, conveniently, a single zip code: <strong>27529</strong>.</p>
 <h2>An older housing stock, and what that means</h2>
-<p>Garner is a different kind of market from the new-build communities closer to us. There's real
+<p>Garner is a different kind of market from the new-build communities closer to Fuquay-Varina. There's real
 established housing here, and established housing means <strong>replacement work</strong> rather than
 first-time installation &mdash; fences that went in fifteen or twenty years ago and have reached the end of
 their service life.</p>
@@ -557,7 +601,7 @@ your project.</p>
 <h2>What we install in Garner</h2>
 <p>Vinyl privacy and picket, wood privacy, powder-coated aluminum and pool-code enclosures, chain link, and
 replacement of existing fencing. Free estimates.</p>
-""", "Fence installation in Garner, NC 27529. New and replacement fencing — vinyl, wood privacy, aluminum pool-code, chain link. Local crew, free estimates."),
+""", "Fence installation in Garner, NC 27529. New and replacement fencing — vinyl, wood privacy, aluminum pool-code, chain link. Serving Garner. Free estimates."),
 }
 
 FAQS = [
@@ -593,7 +637,7 @@ def service_page(slug, nav_name, head_name):
     return (head(title, desc, canon, 1, ref_ld() + svc_ld + bc_ld) + header(1) + nav +
             f'<main><section class="hero hero-inner"><div class="container hero-content">'
             f'<p class="hero-eyebrow">{CITY}, {STATE}</p><h1>{head_name} in {CITY}</h1>'
-            f'<p class="hero-sub">Installed by a local crew that knows this town\'s ordinance and this town\'s soil.</p>'
+            f'<p class="hero-sub">Serving {CITY} and nearby. We check this town\'s ordinance and this town\'s soil before we quote.</p>'
             f'<div class="hero-cta"><a class="btn btn-primary btn-lg" href="#quote">Get My Free Estimate</a>'
             f'<a class="btn btn-ghost btn-lg" data-call href="tel:{PHONE_TEL}">Call {PHONE_TEXT}</a></div>'
             f'</div></section><section class="section"><div class="container prose">{body}'
@@ -610,7 +654,7 @@ def area_page(slug, name, zipc):
             f'<main><section class="hero hero-inner"><div class="container hero-content">'
             f'<p class="hero-eyebrow">{name}, {STATE} &middot; {zipc}</p>'
             f'<h1>Fence Installation in {name}, {STATE}</h1>'
-            f'<p class="hero-sub">Wood, vinyl, aluminum and chain link &mdash; installed by a local crew.</p>'
+            f'<p class="hero-sub">Wood, vinyl, aluminum and chain link. Serving {name}.</p>'
             f'<div class="hero-cta"><a class="btn btn-primary btn-lg" href="#quote">Get My Free Estimate</a>'
             f'<a class="btn btn-ghost btn-lg" data-call href="tel:{PHONE_TEL}">Call {PHONE_TEXT}</a></div>'
             f'</div></section><section class="section"><div class="container prose">{body}'
@@ -624,7 +668,7 @@ def area_page(slug, name, zipc):
 def home():
     title = f"Fence Company in {CITY}, {STATE} | {BRAND} &mdash; Free Estimates"
     desc = (f"{BRAND} installs vinyl, wood privacy, aluminum pool-code and chain link fences in "
-            f"{CITY}, NC 27526 and southern Wake County. Local crew, free estimates.")
+            f"{CITY}, NC 27526 and southern Wake County. Serving {CITY} and nearby. Free estimates.")
     cards = ""
     for s, n, h in SERVICES:
         blurb = {"vinyl-fences":"Low-maintenance privacy and picket vinyl &mdash; no painting, no staining, and it shrugs off Piedmont humidity.",
@@ -648,7 +692,7 @@ f"""<main>
       <a class="btn btn-primary btn-lg" href="#quote">Get My Free Estimate</a>
       <a class="btn btn-ghost btn-lg" data-call href="tel:{PHONE_TEL}">{PHONE_SVG} Call {PHONE_TEXT}</a>
     </div>
-    <ul class="hero-badges"><li>Free on-site estimates</li><li>Local crew</li><li>We handle the HOA paperwork question</li></ul>
+    <ul class="hero-badges"><li>Free on-site estimates</li><li>Serving {CITY} and nearby</li><li>We handle the HOA paperwork question</li></ul>
   </div>
 </section>
 
@@ -676,7 +720,7 @@ f"""<main>
         <p>Under about eight inches of topsoil this town is dense Cecil clay. Post drainage and a crowned
            collar are what keep a fence plumb through our freeze-thaw cycles.</p></div>
       <div class="why-item"><h3>Every fence style</h3>
-        <p>Vinyl, wood, aluminum and chain link &mdash; one local crew for whatever your property needs.</p></div>
+        <p>Vinyl, wood, aluminum and chain link &mdash; serving {CITY} and nearby, whatever the property needs.</p></div>
     </div>
   </div>
 </section>
@@ -693,7 +737,7 @@ f"""<main>
       <a data-call href="tel:{PHONE_TEL}">Call {PHONE_TEXT}</a> and we'll let you know.</p>
   </div></div>
 </section>
-""" + form("home", depth=0) + "</main>" + footer(0))
+""" + cta_band() + form("home", depth=0) + "</main>" + footer(0))
 
 def faq_page():
     title = f"Fence FAQ &mdash; {CITY}, {STATE} | {BRAND}"
@@ -723,10 +767,12 @@ def privacy_page():
     return (head(title, f"Privacy policy for {BRAND}.", f"{BASE}/privacy.html", 0, ref_ld() + bc_ld)
             + header(0) + nav + f"""<main><section class="section"><div class="container prose">
 <h1>Privacy Policy</h1>
-<p><em>Last updated: September 2026</em></p>
+<p><em>Last updated: October 2026</em></p>
 <h2>What we collect</h2>
-<p>When you submit our estimate form we collect the name, phone number, email address, property address and
-zip code you provide, along with your selected fence type and timeline. We also collect standard analytics
+<p>When you submit our estimate form we collect the name, phone number, email address, and property
+address you provide, along with your selected fence type and timeline. ZIP is not a separate field.
+If the address includes a ZIP code, we read that ZIP from the address so we know which part of the
+service area the property is in. We also collect standard analytics
 data such as pages visited and referring source.</p>
 <h2>How we use it</h2>
 <p>We use your information solely to contact you about your fence estimate and to connect you with the local
@@ -879,6 +925,17 @@ border:1px solid var(--line);border-radius:8px;font-size:.92rem}
 .zip-list span{color:var(--mute)}
 .zip-list a{text-decoration:none;font-weight:650}
 .area-note{color:var(--mute);font-size:.92rem}
+.btn-outline{background:#fff;color:var(--accent-d);border:1.5px solid var(--accent-d)}
+.btn-outline:hover{background:var(--warm)}
+.cta-band{padding:2.2rem 0;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cta-band-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.25rem 2rem}
+.cta-copy{max-width:40rem}
+.cta-copy h2{font-size:clamp(1.35rem,2.6vw,1.8rem);margin:0 0 .35rem;letter-spacing:-.02em}
+.cta-copy p:last-child{margin:0;color:var(--mute)}
+.cta-actions,.inline-cta-actions{display:flex;flex-wrap:wrap;gap:.7rem}
+.inline-cta{background:var(--warm);border:1px solid var(--line);border-left:4px solid var(--accent);
+border-radius:var(--rad);padding:1rem 1.15rem;margin:1.4rem 0}
+.inline-cta p{margin:0 0 .8rem}
 .prose{max-width:74ch}
 .prose h2{font-size:1.28rem;margin:2rem 0 .6rem;letter-spacing:-.015em}
 .prose h2:first-child{margin-top:0}
@@ -941,7 +998,10 @@ justify-content:center;gap:.5rem}
 .phone-link span{display:none}.hero{padding:3rem 0 2.8rem}
 .mobile-call-bar{display:flex}body{padding-bottom:3.4rem}
 .footer-inner{grid-template-columns:1fr}.footer-bottom-inner{flex-direction:column}}
-@media(max-width:420px){.field-row{grid-template-columns:1fr}}
+@media(max-width:420px){.field-row{grid-template-columns:1fr}
+.cta-band-inner{align-items:stretch}
+.cta-actions,.inline-cta-actions{flex-direction:column}
+.cta-actions .btn,.inline-cta-actions .btn{width:100%}}
 @media(max-width:1100px){.main-nav{gap:.7rem}.main-nav a{font-size:.86rem}.header-inner{gap:.65rem}}
 .blog-post h3{font-size:1.05rem;margin:1.35rem 0 .4rem}
 .blog-post .mini-table{margin:0 0 1.1rem}
@@ -1286,29 +1346,85 @@ def _md_blocks(md):
 def _cells(row):
     return [c.strip() for c in row.strip().strip("|").split("|")]
 
-def md_to_html(md, depth):
+def _block_words(kind, data):
+    if kind in ("ul", "ol"):
+        text = " ".join(data)
+    elif kind == "table":
+        text = " ".join(cell for row in data for cell in _cells(row))
+    else:
+        text = data
+    return len(re.findall(r"[A-Za-z0-9']+", text))
+
+def _render_block(kind, data, depth):
+    if kind == "h2":
+        return f"<h2>{_inline(data, depth)}</h2>"
+    if kind == "h3":
+        return f"<h3>{_inline(data, depth)}</h3>"
+    if kind == "p":
+        return f"<p>{_inline(data, depth)}</p>"
+    if kind == "ul":
+        items = "".join(f"<li>{_inline(item, depth)}</li>" for item in data)
+        return f'<ul class="prose-list">{items}</ul>'
+    if kind == "ol":
+        items = "".join(f"<li>{_inline(item, depth)}</li>" for item in data)
+        return f'<ol class="prose-list">{items}</ol>'
+    if kind == "table":
+        header, body_rows = data[0], data[2:]
+        thead = "<thead><tr>" + "".join(f"<th>{_inline(c, depth)}</th>" for c in _cells(header)) + "</tr></thead>"
+        tbody = "<tbody>"
+        for row in body_rows:
+            tbody += "<tr>" + "".join(f"<td>{_inline(c, depth)}</td>" for c in _cells(row)) + "</tr>"
+        tbody += "</tbody>"
+        return f'<table class="mini-table">{thead}{tbody}</table>'
+    return ""
+
+def _mid_cta_index(blocks):
+    """Index of the pre-FAQ block after which a mid-article CTA should sit.
+
+    Lands on a section boundary (the block just before the next h2) whose
+    running word count is closest to halfway, and not on the opening answer.
+    """
+    qa_idx = next((i for i, (kind, data) in enumerate(blocks)
+                   if kind == "p" and data.startswith("**Quick answer:**")), None)
+    faq_idx = next((i for i, (kind, data) in enumerate(blocks)
+                    if kind == "h2" and "FAQ" in data), None)
+    end = faq_idx if faq_idx is not None else len(blocks)
+    if qa_idx is None:
+        return None
+    weights = [_block_words(kind, data) for kind, data in blocks[:end]]
+    total = sum(weights)
+    if total == 0:
+        return None
+    running = 0
+    prefix = []
+    for w in weights:
+        running += w
+        prefix.append(running)
+    boundaries = [i for i in range(qa_idx + 1, end)
+                  if i + 1 < end and blocks[i + 1][0] == "h2"]
+    if not boundaries:
+        return None
+    target = total * 0.5
+    return min(boundaries, key=lambda i: abs(prefix[i] - target))
+
+def md_to_html(md, depth, insert_ctas=False):
+    blocks = list(_md_blocks(md))
+    qa_idx = None
+    mid_after = None
+    if insert_ctas:
+        qa_idx = next((i for i, (kind, data) in enumerate(blocks)
+                       if kind == "p" and data.startswith("**Quick answer:**")), None)
+        mid_after = _mid_cta_index(blocks)
+        if mid_after == qa_idx:
+            mid_after = None
+    cta = inline_cta() if insert_ctas else ""
     chunks = []
-    for kind, data in _md_blocks(md):
-        if kind == "h2":
-            chunks.append(f"<h2>{_inline(data, depth)}</h2>")
-        elif kind == "h3":
-            chunks.append(f"<h3>{_inline(data, depth)}</h3>")
-        elif kind == "p":
-            chunks.append(f"<p>{_inline(data, depth)}</p>")
-        elif kind == "ul":
-            items = "".join(f"<li>{_inline(item, depth)}</li>" for item in data)
-            chunks.append(f'<ul class="prose-list">{items}</ul>')
-        elif kind == "ol":
-            items = "".join(f"<li>{_inline(item, depth)}</li>" for item in data)
-            chunks.append(f'<ol class="prose-list">{items}</ol>')
-        elif kind == "table":
-            header, body_rows = data[0], data[2:]
-            thead = "<thead><tr>" + "".join(f"<th>{_inline(c, depth)}</th>" for c in _cells(header)) + "</tr></thead>"
-            tbody = "<tbody>"
-            for row in body_rows:
-                tbody += "<tr>" + "".join(f"<td>{_inline(c, depth)}</td>" for c in _cells(row)) + "</tr>"
-            tbody += "</tbody>"
-            chunks.append(f'<table class="mini-table">{thead}{tbody}</table>')
+    for i, (kind, data) in enumerate(blocks):
+        chunks.append(_render_block(kind, data, depth))
+        if insert_ctas and i == qa_idx:
+            chunks.append(cta)
+        if insert_ctas and i == mid_after:
+            chunks.append(cta)
     return "\n".join(chunks)
 
 def extract_faqs(md):
@@ -1675,11 +1791,11 @@ def blog_index():
         "@type": "Blog",
         "name": "Fence Guides for Fuquay-Varina & Southern Wake",
         "url": canon,
-        "publisher": {"@id": BIZ_ID},
+        "publisher": _biz_node(),
         "blogPost": posts_ld,
     }
     nav, bc_ld = crumbs(1, [("Blog", None)])
-    return (head(title, desc, canon, 1, ref_ld() + _ld(blog_ld) + bc_ld) + header(1) + nav +
+    return (head(title, desc, canon, 1, _ld(blog_ld) + bc_ld) + header(1) + nav +
             f'<main><section class="hero hero-inner"><div class="container hero-content">'
             f'<p class="hero-eyebrow">Fence guides</p>'
             f'<h1>Fence Guides for {CITY} &amp; Southern Wake</h1>'
@@ -1688,7 +1804,7 @@ def blog_index():
             f'<a class="btn btn-ghost btn-lg" data-call href="tel:{PHONE_TEL}">Call {PHONE_TEXT}</a></div>'
             f'</div></section><section class="section"><div class="container">'
             f'<div class="card-grid">{"".join(cards)}</div>'
-            f'</div></section>' + form("blog", depth=1) + "</main>" + footer(1))
+            f'</div></section>' + cta_band() + form("blog", depth=1) + "</main>" + footer(1))
 
 def blog_post(post):
     slug, depth = post["slug"], 2
@@ -1705,7 +1821,7 @@ def blog_post(post):
         "image": f"{BASE}/images/og-image.jpg",
         "mainEntityOfPage": {"@type": "WebPage", "@id": canon},
         "author": {"@id": BIZ_ID},
-        "publisher": {"@id": BIZ_ID},
+        "publisher": _biz_node(),
     }
     faq_ld = {
         "@context": "https://schema.org",
@@ -1720,8 +1836,8 @@ def blog_post(post):
         f'<meta property="article:modified_time" content="{post["date"]}" />\n'
     )
     nav, bc_ld = crumbs(depth, [("Blog", "blog/"), (h1, None)])
-    body = md_to_html(post["body"], depth)
-    return (head(post["meta_title"], desc, canon, depth, ref_ld() + _ld(article) + _ld(faq_ld) + bc_ld,
+    body = md_to_html(post["body"], depth, insert_ctas=True)
+    return (head(post["meta_title"], desc, canon, depth, _ld(article) + _ld(faq_ld) + bc_ld,
                  og_type="article", extra_meta=extra_meta) + header(depth) + nav +
             f'<main><section class="hero hero-inner"><div class="container hero-content">'
             f'<p class="hero-eyebrow">Fence guide</p><h1>{html.escape(h1, quote=False)}</h1>'
