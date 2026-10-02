@@ -27,31 +27,55 @@ const LEAD_WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/24209228/4dq1xf8/
 
 /* ---------- lead forms (one per page) ---------- */
 (function(){
-  const LOADED_AT = Date.now();
+  const DWELL_MS = 3000;
   document.querySelectorAll("form[data-lead-form]").forEach(function(form){
     const btn = form.querySelector('button[type="submit"]');
     const okBox = form.querySelector(".form-success");
     const errBox = form.querySelector(".form-error");
+    /* Dwell starts at the first focus or input on a form field, not at
+       page load. A submit sooner than 3s after that is dropped and logged. */
+    let engagedAt = 0;
+    function markEngaged(ev){
+      if(engagedAt) return;
+      const t = ev.target;
+      if(!t || !t.matches || !t.matches("input, select, textarea")) return;
+      engagedAt = Date.now();
+    }
+    form.addEventListener("focusin", markEngaged);
+    form.addEventListener("input", markEngaged);
+
+    function dropTooFast(reason){
+      console.warn("Lead submit dropped:", reason);
+      try{ if(window.gtag) gtag("event","form_submit_dropped",{event_category:"lead",
+             event_label: form.dataset.pageSource || location.pathname,
+             drop_reason: reason}); }catch(err){}
+      okBox.hidden = false;
+    }
 
     form.addEventListener("submit", async function(e){
       e.preventDefault();
       errBox.hidden = true;
       if(!form.checkValidity()){ form.reportValidity(); return; }
 
-      /* spam gates: honeypot + minimum dwell time */
-      if(form.company && form.company.value){ okBox.hidden=false; return; }   // silent drop
-      if(Date.now() - LOADED_AT < 3000){ okBox.hidden=false; return; }        // too fast to be human
+      /* spam gates: honeypot stays a silent drop; dwell drops are logged */
+      if(form.company && form.company.value){ okBox.hidden=false; return; }
+      if(!engagedAt || Date.now() - engagedAt < DWELL_MS){
+        dropTooFast(engagedAt ? "under_3s_after_interaction" : "no_field_interaction");
+        return;
+      }
 
       if(btn.getAttribute("aria-busy")==="true") return;
       btn.setAttribute("aria-busy","true");
       const label = btn.textContent; btn.textContent = "Sending…";
 
+      const address = form.address.value.trim();
+      const zipMatch = address.match(/\b\d{5}(?:-\d{4})?\b/);
       const payload = {
         fullName: form.fullName.value.trim(),
         phone:    form.phone.value.trim(),
-        email:    form.email.value.trim(),
-        address:  form.address.value.trim(),
-        zip:      form.zip.value.trim(),
+        email:    (form.email && form.email.value ? form.email.value : "").trim(),
+        address:  address,
+        zip:      zipMatch ? zipMatch[0].slice(0, 5) : "",
         fenceType:form.fenceType.value,
         timeline: form.timeline.value,
         source:   "Website",
