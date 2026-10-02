@@ -485,6 +485,7 @@ where a large share of homes sit in newer master-planned communities &mdash; Sou
 Serenity, Sunset Bluffs, Brighton Ridge &mdash; the HOA is the real gatekeeper, not the municipality. That
 surprises people, because it's the reverse of what they expect. Older pockets like the Fuquay Springs
 historic district or the Village of Sippihaw often have no HOA at all.</p>
+<p>For how that approval usually works, see our <a href="../blog/hoa-fence-approval-fuquay-varina/">HOA fence approval guide</a>.</p>
 <h2>Other ordinance details we build to</h2>
 <ul class="prose-list">
   <li>Finished side faces outward, toward the street or your neighbor</li>
@@ -494,6 +495,32 @@ historic district or the Village of Sippihaw often have no HOA at all.</p>
       in landscape buffer easements</li>
   <li>Chain link inside town limits must be black or green coated</li>
 </ul>
+<h2>How do I know if I'm in town limits, the ETJ, or Harnett County?</h2>
+<p>Check your lot, not your mailing address. A Fuquay-Varina address can sit in three different places, and each one has its own rule-maker.</p>
+<ul class="prose-list">
+  <li><strong>Town limits.</strong> The Town's rules apply.</li>
+  <li><strong>The ETJ.</strong> This is the area outside town limits that is still subject to the Town's zoning and development standards. It is not an annexation. ETJ owners don't pay Town taxes or vote in Town elections.</li>
+  <li><strong>Outside both.</strong> Your county sets the rules, if it sets any.</li>
+</ul>
+<p>The ETJ is bigger than it used to be. Wake County approved 9,215 acres for the Town's ETJ in October 2019, and the change took effect on December 20, 2019. So an older map, or a neighbor's memory of the area, may be out of date. State law currently stops any town from growing its Wake County ETJ past its January 1, 2025 size, through December 31, 2028.</p>
+<p>Two quick ways to check. Wake County's iMAPS property search shows a &quot;Jurisdiction&quot; line that names the permitting agency for an address. You can also call the Town of Fuquay-Varina Planning Department at (919) 552-1429.</p>
+<h2>What if my home is on the Harnett County side of 27526?</h2>
+<p>The southern part of 27526 is in Harnett County. If the county map shows your lot in Harnett County and outside any town, Harnett County's planning office says the county does not regulate fences on residential lots, and no fence permit is required.</p>
+<p>That is not the same as &quot;anything goes.&quot; Harnett County's planning office says a fence:</p>
+<ul class="prose-list">
+  <li>cannot sit in an easement or right-of-way;</li>
+  <li>must stay outside the NCDOT sight triangle, a 10-foot by 70-foot area;</li>
+  <li>should ideally sit about a foot inside the property line, to avoid disputes with a neighbor.</li>
+</ul>
+<p>Fences in a required landscape buffer, a manufactured home park, or a non-residential development are regulated. Neighborhood covenants are a private matter there too. The county says it does not enforce them, and it points owners to the Register of Deeds to look them up.</p>
+<p>If an address falls inside a town's limits or ETJ, that town's rules apply instead.</p>
+<h2>Fuquay-Varina rules FAQ</h2>
+<h3>If I'm in the ETJ, am I &quot;in town&quot;?</h3>
+<p>No. The ETJ is outside town limits. Town zoning and development standards apply there, but ETJ owners don't pay Town taxes.</p>
+<h3>Where do I apply for a permit for a shed or addition in the ETJ?</h3>
+<p>At Fuquay-Varina Town Hall, not in downtown Raleigh. (A fence itself doesn't need a Town permit, as covered above on this page.)</p>
+<h3>Does Harnett County require a fence permit?</h3>
+<p>For a residential lot in Harnett County's own jurisdiction, no. The county says it does not regulate fences on residential lots. A town's limits or ETJ, an HOA, and easements can still apply.</p>
 <h2>The neighborhoods we work in</h2>
 <p>From the established side of town &mdash; Bentwinds, Sunset Lake, High Grove, Crooked Creek, Village of
 Sippihaw, Northwyck, Prescott Downs &mdash; out to the newer communities off the 401 and 55 corridors:
@@ -524,6 +551,33 @@ it is in Fuquay-Varina.</p>
 permit requirements are set by the Town of Holly Springs rather than Fuquay-Varina. If you're in an HOA
 neighborhood &mdash; and a lot of Holly Springs is &mdash; architectural approval usually comes before
 anything else. We'll confirm the current local requirements before we quote, not after.</p>
+<h2>What does the Town of Holly Springs allow for fences?</h2>
+<p>The Town of Holly Springs says it does not require a permit for fences, though it may require one for certain types of fences, decorative walls, or retaining walls. Because the Town doesn't say which types, it's smart to ask Development Services if your plan is unusual.</p>
+<p>The Town's published limits for residential lots:</p>
+<table class="mini-table">
+  <thead><tr><th>Where on the lot</th><th>Maximum height</th></tr></thead>
+  <tbody>
+    <tr><td>Front yard</td><td>4 feet</td></tr>
+    <tr><td>Side-corner yard</td><td>4 feet (up to 6 feet behind the halfway point of the house's depth)</td></tr>
+    <tr><td>Side-interior and rear yards</td><td>6 feet</td></tr>
+    <tr><td>Outer street edge of a subdivision</td><td>6 feet</td></tr>
+  </tbody>
+</table>
+<p>Materials differ by location, too. In front yards, side-corner yards, and the outer street edge of a subdivision, the Town lists wood or vinyl picket, brick wall, or ornamental fence only. In side-interior and rear yards, it lists wood, vinyl, ornamental fence, brick wall, or chain link. In plain terms, a tall solid privacy fence is a backyard and side-yard choice here, not a front-yard one.</p>
+<p>The finished side of the fence must face outward, toward the neighbor or street.</p>
+<h2>Where can't a fence go in Holly Springs?</h2>
+<p>The Town says fences and other permanent structures can't be placed in the right-of-way or in public easements, such as greenway, utility, water, sewer, and drainage easements. Private drainage easements are a gray area. A fence may be allowed there at the discretion of the HOA, landowner, or other group the easement serves, as long as it doesn't block or redirect surface water or damage anything underground.</p>
+<p>The Town's rules allow a fence right up to the lot line unless other standards restrict it, but the Town itself suggests setting a fence safely inside your line so it doesn't land on a neighbor's lot by mistake.</p>
+<p>Before any digging, call 811 or 1-800-632-4949 to have utilities marked. The Town says it is a member of that service and would locate Town-maintained utilities within 48 hours.</p>
+<h2>Who do I call about Holly Springs fence rules?</h2>
+<p>Start with the Town's Development Services office at 128 S. Main St. in Holly Springs, or call (919) 577-3111 if you're calling from outside Town limits. The Town also says it is the owner's job to understand and follow the neighborhood's restrictive covenants, so pull your HOA documents at the same time.</p>
+<h2>Holly Springs rules FAQ</h2>
+<h3>Can I put a solid privacy fence in my front yard?</h3>
+<p>The Town's front-yard limit is 4 feet, and its front-yard material list is wood or vinyl picket, brick wall, or ornamental only. Solid privacy panels aren't on that list.</p>
+<h3>How tall can a fence be on a corner lot?</h3>
+<p>The Town lists 4 feet in the side-corner yard, with a 6-foot allowance behind the halfway point of the house's depth. Ask Development Services to confirm how it applies to your lot.</p>
+<h3>Can I build right on the property line?</h3>
+<p>The Town's UDO generally allows it, but the Town recommends a safe margin inside your line. Your HOA may have its own rule.</p>
 <h2>Same soil, same considerations</h2>
 <p>Holly Springs is on the same Piedmont ground as Fuquay-Varina: <strong>Cecil red clay</strong> starting roughly eight inches
 below the surface, the same 47 inches of annual rain, the same late-March pine pollen that makes every
@@ -531,8 +585,7 @@ white fence in the county look dirty for three weeks. Everything we do about pos
 clearance and material choice applies here identically.</p>
 <h2>What we install in Holly Springs</h2>
 <p>Vinyl privacy and picket, wood privacy, powder-coated aluminum including pool-code enclosures, and
-chain link. With the volume of newer construction here, the most common call we get is from someone who
-just closed on a house with a bare backyard and a builder who didn't include a fence.</p>
+chain link. A newer house here may come with a bare backyard when the builder didn't include a fence.</p>
 """, "Fence installation in Holly Springs, NC 27540. Vinyl, wood privacy, aluminum pool-code and chain link fencing. Serving Holly Springs. Free estimates."),
 
 "angier": ("""
@@ -548,9 +601,30 @@ necessarily.</p>
 <p>It also cuts the other way: plenty of homes with a <em>Fuquay-Varina</em> mailing address are actually
 in Harnett County, because zip 27526 crosses the county line. If you're somewhere in that southern
 stretch, it's worth knowing which county you're actually in before you plan a fence.</p>
+<h2>Does Angier require a fence permit?</h2>
+<p>Yes, inside town limits. Angier's Unified Development Ordinance says a land use permit is required to install a fence within the corporate limits of the town. That is different from Fuquay-Varina, whose Town doesn't require a fence permit, and Holly Springs, which generally doesn't.</p>
+<p>The Town's ordinance applies in town limits and in its ETJ, the area just outside town that is still under town zoning. The fence sentence itself refers to the corporate limits, so if you're outside town limits, call the Planning Department before assuming either way.</p>
+<p>Contact the Town of Angier's permit office about an application. You can apply in person at the Planning Department, 32 W. Williams St. in Angier. Town Hall's phone number is (919) 639-2071.</p>
+<h2>What are Angier's height and material limits?</h2>
+<p>For residential lots, the ordinance's table sets these limits:</p>
+<ul class="prose-list">
+  <li><strong>Front yards:</strong> up to 4 feet. Listed materials are wood, brick, stone, wrought iron, stucco, and vinyl.</li>
+  <li><strong>Side and rear yards:</strong> up to 6 feet. Listed materials add chain link and privacy screening to that same list.</li>
+  <li><strong>Taller than 6 feet:</strong> may be approved on residential property only with a special use permit from the Board of Adjustment.</li>
+</ul>
+<p>Fences can't be installed within or across any private or public easement shown on your property survey or on a map recorded at the Register of Deeds. In wetlands or floodplain areas, the ordinance requires at least four inches of open space at the base of the fence so water can flow through.</p>
+<h2>What about homes outside the Town of Angier?</h2>
+<p>Some Angier-area homes may sit outside both town limits and the ETJ. In unincorporated Harnett County, the county says it does not regulate fences on residential lots, though easements, rights-of-way, and sight triangles still matter. If a home is in a town's limits or ETJ, that town's ordinance applies instead.</p>
+<h2>Angier rules FAQ</h2>
+<h3>Do I need a permit to build a fence in Angier?</h3>
+<p>Inside town limits, yes. The Town requires a land use permit for a fence. In unincorporated Harnett County, the county says no fence permit is required on a residential lot.</p>
+<h3>Can I build a fence taller than 6 feet in Angier?</h3>
+<p>Only with a special use permit from the Board of Adjustment on a residential property.</p>
+<h3>Can I put chain link in my front yard?</h3>
+<p>The ordinance's front-yard material list for residential lots doesn't include chain link. It appears only in the side and rear yard list. Confirm with the Planning Department for your lot.</p>
 <h2>Growing fast, on fresh lots</h2>
 <p>Angier's growth means a lot of new construction, and new construction means bare graded lots with no
-fence, no mature trees and freshly compacted subsoil. We dig those every week. Compacted new-build clay
+fence, no mature trees and freshly compacted subsoil. Compacted new-build clay
 behaves differently from an established yard &mdash; denser, less predictable &mdash; and it's worth
 setting posts accordingly.</p>
 <h2>What we install in Angier</h2>
@@ -571,6 +645,22 @@ edge in <strong>Johnston County</strong>.</p>
 <p>In practice this often means fewer restrictions than in-town Fuquay-Varina, where side and rear fences
 cap at six feet. But "fewer municipal rules" is not "no rules" &mdash; easements, setbacks, property lines
 and any HOA covenants still govern. We'll sort out which apply to your specific lot.</p>
+<h2>Which county office handles my Willow Spring address?</h2>
+<p>Willow Spring has no town government, so the answer is county planning. Wake County Planning and Development Services only has jurisdiction over unincorporated land in Wake County. To see who covers your lot, enter your address or parcel number in Wake County iMAPS and read the &quot;Jurisdiction&quot; line. Whichever agency it lists is the one to work with.</p>
+<p>An unincorporated mailing address can still sit in a town's ETJ. In the ETJ, a town's development rules apply for most building-related matters. So the iMAPS check is worth a minute, especially if your street is close to Fuquay-Varina or Garner.</p>
+<h2>Do I need a permit for a fence on the Wake County side?</h2>
+<p>Usually not for a standard yard fence. Wake County's Unified Development Ordinance exempts &quot;fences designed primarily to enclose the perimeter, wholly or partially, of a lot&quot; from its land use permit requirement. The exemption does not apply if the property is in an area of special flood hazard.</p>
+<p>If your lot is near a creek or low area, ask Wake County Planning before you order materials. Their number is (919) 856-6335.</p>
+<h2>What about the Johnston County side?</h2>
+<p>The eastern edge of Willow Spring is in Johnston County. Johnston County's Inspections page lists fences among the projects that do not require a building permit. Johnston County's planning FAQ says the county has no setback requirement for fences, but suggests keeping one completely on your side of the line. It recommends 1 to 2 feet off the property line, though the county says it cannot enforce that.</p>
+<p>Johnston County also asks owners to point out a property on its flood plain map in person, or to check the NC Flood Risk Information System. Planning's number is (919) 989-5150. If you're unsure whether your project needs a land use permit, call before you start.</p>
+<h2>Willow Spring rules FAQ</h2>
+<h3>How do I tell whether my Willow Spring address is in Wake or Johnston County?</h3>
+<p>Use Wake County's iMAPS &quot;Jurisdiction&quot; lookup, or Johnston County's online GIS map.</p>
+<h3>Does a Willow Spring fence need a Wake County permit?</h3>
+<p>Wake County exempts fences that mainly enclose the perimeter of a lot, unless the property is in a special flood hazard area.</p>
+<h3>How close to the property line can I build in Johnston County?</h3>
+<p>The county has no fence setback rule, but recommends staying 1 to 2 feet inside the line.</p>
 <h2>Bigger lots, different projects</h2>
 <p>Yards out here tend to run larger than in-town lots, which changes what makes sense. Fencing an acre is a
 different conversation from fencing a quarter-acre backyard &mdash; chain link and split-rail start to
@@ -645,12 +735,60 @@ def service_page(slug, nav_name, head_name):
             " &middot; ".join(f'<a href="{s}.html">{n}</a>' for s, n, _ in SERVICES if s != slug) +
             f'</p></div></section>' + form(f"services/{slug}", depth=1) + '</main>' + footer(1))
 
+AREA_FAQS = {
+    "fuquay-varina": [
+        ("If I'm in the ETJ, am I \"in town\"?",
+         "No. The ETJ is outside town limits. Town zoning and development standards apply there, but ETJ owners don't pay Town taxes."),
+        ("Where do I apply for a permit for a shed or addition in the ETJ?",
+         "At Fuquay-Varina Town Hall, not in downtown Raleigh. (A fence itself doesn't need a Town permit, as covered above on this page.)"),
+        ("Does Harnett County require a fence permit?",
+         "For a residential lot in Harnett County's own jurisdiction, no. The county says it does not regulate fences on residential lots. A town's limits or ETJ, an HOA, and easements can still apply."),
+    ],
+    "holly-springs": [
+        ("Can I put a solid privacy fence in my front yard?",
+         "The Town's front-yard limit is 4 feet, and its front-yard material list is wood or vinyl picket, brick wall, or ornamental only. Solid privacy panels aren't on that list."),
+        ("How tall can a fence be on a corner lot?",
+         "The Town lists 4 feet in the side-corner yard, with a 6-foot allowance behind the halfway point of the house's depth. Ask Development Services to confirm how it applies to your lot."),
+        ("Can I build right on the property line?",
+         "The Town's UDO generally allows it, but the Town recommends a safe margin inside your line. Your HOA may have its own rule."),
+    ],
+    "angier": [
+        ("Do I need a permit to build a fence in Angier?",
+         "Inside town limits, yes. The Town requires a land use permit for a fence. In unincorporated Harnett County, the county says no fence permit is required on a residential lot."),
+        ("Can I build a fence taller than 6 feet in Angier?",
+         "Only with a special use permit from the Board of Adjustment on a residential property."),
+        ("Can I put chain link in my front yard?",
+         "The ordinance's front-yard material list for residential lots doesn't include chain link. It appears only in the side and rear yard list. Confirm with the Planning Department for your lot."),
+    ],
+    "willow-spring": [
+        ("How do I tell whether my Willow Spring address is in Wake or Johnston County?",
+         "Use Wake County's iMAPS \"Jurisdiction\" lookup, or Johnston County's online GIS map."),
+        ("Does a Willow Spring fence need a Wake County permit?",
+         "Wake County exempts fences that mainly enclose the perimeter of a lot, unless the property is in a special flood hazard area."),
+        ("How close to the property line can I build in Johnston County?",
+         "The county has no fence setback rule, but recommends staying 1 to 2 feet inside the line."),
+    ],
+}
+
+def _faqpage_ld(pairs):
+    """FAQPage JSON-LD. Only call when the page does not already emit FAQ schema."""
+    return _ld({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
+            for q, a in pairs
+        ],
+    })
+
 def area_page(slug, name, zipc):
     body, desc = AREA_BODY[slug]
     title = f"Fence Company in {name}, {STATE} | {BRAND}"
     canon = f"{BASE}/areas/{slug}.html"
     nav, bc_ld = crumbs(1, [("Service Area", None), (name, None)])
-    return (head(title, desc, canon, 1, ref_ld() + bc_ld) + header(1) + nav +
+    faqs = AREA_FAQS.get(slug) or []
+    faq_ld = _faqpage_ld(faqs) if faqs else ""
+    return (head(title, desc, canon, 1, ref_ld() + faq_ld + bc_ld) + header(1) + nav +
             f'<main><section class="hero hero-inner"><div class="container hero-content">'
             f'<p class="hero-eyebrow">{name}, {STATE} &middot; {zipc}</p>'
             f'<h1>Fence Installation in {name}, {STATE}</h1>'
@@ -1448,6 +1586,110 @@ def extract_faqs(md):
 
 POSTS = [
     {
+        "slug": "hoa-fence-approval-fuquay-varina",
+        "meta_title": "HOA Fence Approval in Fuquay-Varina, NC: Step by Step",
+        "meta_desc": "HOA fence approval in Fuquay-Varina: how to read your covenants, what to submit, and what to keep, so your fence plan gets a clear, written answer.",
+        "h1": "HOA Fence Approval in Fuquay-Varina: How the Process Works",
+        "date": "2026-10-02",
+        "body": """# HOA Fence Approval in Fuquay-Varina: How the Process Works
+
+**Quick answer:** If your neighborhood has an HOA, you almost always need its written OK before you build a fence. The steps are simple: read your covenants, send in an architectural review request that describes your fence plan, wait for written approval before any work begins, and keep copies of everything. Every HOA runs this a little differently, so confirm the details with your HOA or management company.
+
+This guide explains the general process for HOA fence approval in Fuquay-Varina and nearby towns, and it's meant as homeowner info rather than legal advice. We are not your HOA, so we can't approve your fence or promise that your HOA will.
+
+## Do I need HOA approval to build a fence in Fuquay-Varina?
+
+If you live in an HOA, very likely yes. Many Fuquay-Varina neighborhoods have an HOA, and the HOA is often the real gatekeeper, because the Town doesn't require a fence permit inside town limits or the ETJ, and that doesn't cancel your HOA's rules. Our [fence permit guide](/blog/fence-permit-fuquay-varina/) covers the Town side.
+
+HOA rules and Town rules are separate, so both can apply to the same fence, and the HOA's rules can be stricter than the Town's. Our [Fuquay-Varina area page](/areas/fuquay-varina.html) has more on how the two fit together.
+
+## Where do I find my HOA's fence rules?
+
+Start with the paperwork you got at closing, since the rules usually live in one of these places:
+
+- **The covenants.** These are the neighborhood's written rules. They may be called the declaration or the "CC&Rs."
+- **The design guidelines.** Some HOAs have a separate document just for fences, sheds, and paint colors.
+- **The HOA website or management company.** Many post current forms and fence rules online, and a call or email can get you the latest version if they don't.
+- **The county Register of Deeds.** Covenants are recorded there. Harnett County's planning office, for example, points homeowners to its Register of Deeds to look up restrictive covenants.
+
+Why start with these documents? North Carolina's Planned Community Act says an owners' association may adopt and amend rules, unless its own governing documents say otherwise ([G.S. 47F-3-102(1)](https://www.ncleg.gov/EnactedLegislation/Statutes/PDF/BySection/Chapter_47F/GS_47F-3-102.pdf)). In plain terms, your HOA's own documents are what count, and since rules can change, ask the HOA or management company for the current version.
+
+## What do I send in with my fence request?
+
+Most HOAs call this an architectural review request. It goes to the architectural review committee, the group that approves outside changes to homes. Ask for their form first, because most committees want details like these:
+
+- **Fence type and material.** Vinyl, wood, aluminum, or chain link.
+- **Height.** Say how tall the fence will be in each part of the yard.
+- **Color or stain.** Some HOAs name approved colors.
+- **Style.** For example, solid privacy panels or open pickets.
+- **Location.** Show where the fence will run, plus the gate spots.
+- **A site plan.** This is your plat or survey with the fence line drawn on it. A plat is a map of your lot that shows property lines and easements.
+- **Which side faces out.** Many HOAs want the finished side facing the street or your neighbor.
+
+A product photo or a drawing of the fence helps too, and your fence installer can help you understand what details usually go into an application.
+
+## What is the step-by-step approval process?
+
+Here is the process in general terms:
+
+1. **Read the rules first.** Check what your HOA allows for height, material, color, and where the fence can go.
+2. **Pick a plan that fits.** It's usually easier to choose a fence that matches the rules than to ask the committee for an exception.
+3. **Fill out the request.** Use the HOA's form and attach your site plan and fence details.
+4. **Send it in.** Follow the HOA's instructions for where and how to submit it.
+5. **Wait for written approval.** A phone call or a friendly chat with a board member doesn't replace a written answer from the HOA.
+6. **Read the approval carefully.** Look for any conditions that come with it, such as a required color or a gate location.
+7. **Then build.** Keep the approval in your files, and don't start digging before it arrives in writing.
+
+## How long does HOA fence approval take?
+
+It varies, and it runs on the HOA's schedule, not yours. Some HOAs have a committee that meets on a set schedule, while others use a management company, so the HOA's documents or the management company can tell you how it works for your neighborhood.
+
+Because of that, it pays to apply early. If you're also picking materials, our [vinyl vs wood privacy fence guide](/blog/vinyl-vs-wood-privacy-fuquay-varina/) can help while you wait.
+
+## Does HOA approval cover everything?
+
+No. HOA approval is only one part of the picture, because your fence also has to follow the rules of your town or county, and those depend on where your lot sits. In Holly Springs, for instance, the Town's own fence page tells homeowners to follow their neighborhood covenants as well as the Town's rules. Our [Holly Springs new construction fence guide](/blog/holly-springs-new-build-fence/) walks through that after-closing sequence.
+
+An HOA's approval also won't make it okay to build on a utility or drainage easement. An easement is a strip of your land that others, like utility companies, have the right to use. Check your survey for easements before you draw your fence line on the site plan.
+
+## What slows down an HOA fence request?
+
+A few common mistakes cause most of the delays:
+
+- **Missing details.** A request with no height, color, or site plan may get sent back.
+- **No survey or plat.** Without one, the committee can't tell exactly where the fence will sit on your lot.
+- **Starting early.** Buying materials or digging before you have written approval can put you at risk of having to change or even remove the work.
+- **A plan that breaks a rule.** Check height and material limits before you apply.
+- **No copy kept.** Save your request, your plan, and the written approval.
+
+## What should I do next?
+
+Pull your covenants and design guidelines, check what your HOA says about fences, and then sketch where the fence would go on your survey. If you want a second set of eyes on your plan, [request a free estimate](/#quote) or call or text **(919) 276-8406**. We'll talk through fence types, heights, and what details usually go into an HOA request, with no pressure. If you're deciding on a material, see our [vinyl fence page](/services/vinyl-fences.html).
+
+## HOA Fence Approval FAQ
+
+### Do I need HOA approval for a fence in Fuquay-Varina?
+
+If you live in an HOA, usually yes. Check your covenants and design guidelines, and confirm with your HOA or management company before you build.
+
+### Is HOA approval the same as a town permit?
+
+No. They are separate. The HOA enforces its own neighborhood rules, and your town or county has its own rules. Both can apply, so check with both.
+
+### What do I need to include in an HOA fence request?
+
+HOAs often ask for the fence type, height, color, style, and location, plus a plat or survey with the fence line drawn on it. Your HOA's form lists what it needs.
+
+### How long does HOA fence approval take?
+
+It varies by HOA. Ask your HOA or management company how their review works, and apply before you buy materials or schedule installation.
+
+### Can a fence company get my HOA approval for me?
+
+No. Only your HOA can approve your fence. A fence company can help you understand what details usually go into the request, but the approval comes from the HOA.
+""",
+    },
+    {
         "slug": 'fence-permit-fuquay-varina',
         "meta_title": 'Do You Need a Fence Permit in Fuquay-Varina, NC?',
         "meta_desc": "Do you need a fence permit in Fuquay-Varina? Usually not, but height rules, your HOA, and the Harnett County side of 27526 still matter. Here's how.",
@@ -1533,7 +1775,7 @@ The pool gets the permit, and the barrier is inspected as part of it. Our [alumi
 
 ## What should I do next?
 
-First, confirm whether you're in town limits, the ETJ, or somewhere else, and then pull your HOA guidelines. Picking a material comes next, and our [vinyl vs wood privacy fence guide](/blog/vinyl-vs-wood-privacy-fuquay-varina/) can help. If you live in Holly Springs, the Town rules are different, so see our [Holly Springs new construction fence guide](/blog/holly-springs-new-build-fence/).
+First, confirm whether you're in town limits, the ETJ, or somewhere else, and then pull your HOA guidelines. Picking a material comes next, and our [vinyl vs wood privacy fence guide](/blog/vinyl-vs-wood-privacy-fuquay-varina/) can help. If you live in Holly Springs, the Town rules are different, so see our [Holly Springs new construction fence guide](/blog/holly-springs-new-build-fence/). For the HOA step, see our [HOA fence approval guide](/blog/hoa-fence-approval-fuquay-varina/).
 
 When you're ready, [request a free estimate](/#quote) or call or text **(919) 276-8406**. We'll check your address, look at your yard, and talk through your options with no pressure.
 
@@ -1641,7 +1883,7 @@ Wood is often the better fit if you:
 
 If several neighbors are fencing at the same time, matching height and finished side can prevent disputes down the road. The only wrong choice is picking a material from a brochure and finding out about clay, pollen, or HOA rules after the posts are set.
 
-Just bought a new home in Holly Springs? Our [Holly Springs new construction fence guide](/blog/holly-springs-new-build-fence/) covers what's different there.
+Just bought a new home in Holly Springs? Our [Holly Springs new construction fence guide](/blog/holly-springs-new-build-fence/) covers what's different there. If an HOA has to approve the fence, our [HOA fence approval guide](/blog/hoa-fence-approval-fuquay-varina/) walks through that process.
 
 ## Get a free estimate
 
@@ -1724,7 +1966,7 @@ It depends on your goals and your HOA's rules. Here are the common choices:
 - **Aluminum (if a pool is coming).** If you plan to add a pool, don't build a privacy fence that fights pool barrier rules later. Our [aluminum and pool-code fence page](/services/aluminum-pool-fences.html) covers pool-code fencing. Confirm Holly Springs and inspector requirements separately, and keep in mind this isn't legal advice.
 - **Chain link.** On larger lots, coated chain link can be a practical first fence for pets while your landscaping fills in. Your HOA rules decide whether it can stay long term.
 
-For a side-by-side look at the two most common choices, see our [vinyl vs wood privacy fence guide](/blog/vinyl-vs-wood-privacy-fuquay-varina/).
+For a side-by-side look at the two most common choices, see our [vinyl vs wood privacy fence guide](/blog/vinyl-vs-wood-privacy-fuquay-varina/). For the approval steps, see our [HOA fence approval guide](/blog/hoa-fence-approval-fuquay-varina/).
 
 ## When is the best time to install a fence in Holly Springs?
 
@@ -1740,7 +1982,7 @@ Pine pollen also coats white fences from late March into early April. If you wan
 4. Decide what you need, such as full backyard privacy, a pet area, or room for a future pool.
 5. Book an on-site estimate so the material and post plan match your actual soil and slope.
 
-When you're ready, [request a free estimate](/#quote) or call or text **(919) 276-8406**. We serve Holly Springs from nearby Fuquay-Varina, and there's no obligation.
+When you're ready, [request a free estimate](/#quote) or call or text **(919) 276-8406**. We serve Holly Springs and Fuquay-Varina, and there's no obligation.
 
 ## Holly Springs New Construction Fence FAQ
 
@@ -1762,10 +2004,16 @@ Yes. Pool barriers have their own North Carolina code requirements, so plan ahea
     },
 ]
 
+def _post_date_label(iso):
+    months = ["January", "February", "March", "April", "May", "June",
+              "July", "August", "September", "October", "November", "December"]
+    year, month, day = (int(part) for part in iso.split("-"))
+    return f"{months[month - 1]} {day}, {year}"
+
 def blog_index():
     title = f"Fence Guides for {CITY} &amp; Southern Wake | {BRAND}"
     desc = ("Fence guides for Fuquay-Varina, Holly Springs, and nearby: town fence permits, "
-            "vinyl vs wood privacy fences, and new-construction backyards.")
+            "HOA fence approval, vinyl vs wood privacy fences, and new-construction backyards.")
     canon = f"{BASE}/blog/"
     posts_ld = []
     cards = []
@@ -1780,7 +2028,7 @@ def blog_index():
         })
         cards.append(
             '<article class="service-card blog-card"><div class="service-body">'
-            f'<p class="post-date">September 26, 2026</p>'
+            f'<p class="post-date">{html.escape(_post_date_label(p["date"]))}</p>'
             f'<h2>{html.escape(p["h1"], quote=False)}</h2>'
             f'<p>{html.escape(p["meta_desc"], quote=False)}</p>'
             f'<p class="card-link"><a href="{html.escape(p["slug"])}/">Read the guide &rarr;</a></p>'
@@ -1799,7 +2047,7 @@ def blog_index():
             f'<main><section class="hero hero-inner"><div class="container hero-content">'
             f'<p class="hero-eyebrow">Fence guides</p>'
             f'<h1>Fence Guides for {CITY} &amp; Southern Wake</h1>'
-            f'<p class="hero-sub">Permits, materials, and new-construction yards &mdash; written for homeowners around {CITY}.</p>'
+            f'<p class="hero-sub">Permits, HOA approval, materials, and new-construction yards &mdash; written for homeowners around {CITY}.</p>'
             f'<div class="hero-cta"><a class="btn btn-primary btn-lg" href="#quote">Get My Free Estimate</a>'
             f'<a class="btn btn-ghost btn-lg" data-call href="tel:{PHONE_TEL}">Call {PHONE_TEXT}</a></div>'
             f'</div></section><section class="section"><div class="container">'
@@ -1873,6 +2121,19 @@ Place `og-image.jpg` here (recommended 1200×630). Every page already references
 branded image is added — no binary is committed yet.
 """)
 
+# Pages touched on 2026-10-02: the HOA post, the blog index that lists it,
+# the three posts that now link to it, and the four expanded area pages.
+_UPDATED = {
+    "blog/",
+    "blog/hoa-fence-approval-fuquay-varina/",
+    "blog/fence-permit-fuquay-varina/",
+    "blog/vinyl-vs-wood-privacy-fuquay-varina/",
+    "blog/holly-springs-new-build-fence/",
+    "areas/fuquay-varina.html",
+    "areas/holly-springs.html",
+    "areas/angier.html",
+    "areas/willow-spring.html",
+}
 urls = [("", "1.0"), ("faq.html", "0.6"), ("privacy.html", "0.3"), ("terms.html", "0.3")]
 urls += [(f"services/{s}.html", "0.9") for s, _, _ in SERVICES]
 urls += [(f"areas/{s}.html", "0.9" if s == "fuquay-varina" else "0.7") for s, _, _ in AREAS]
@@ -1880,9 +2141,8 @@ urls += [("blog/", "0.7")]
 urls += [(f"blog/{p['slug']}/", "0.6") for p in POSTS]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for u, p in urls:
-    # 2026-09-26: blog launch, Blog nav on every page, and the previous
-    # 2026-09-14 sitemap dates were already behind the 2026-09-24 terms update.
-    sm += f'  <url><loc>{BASE}/{u}</loc><lastmod>2026-09-26</lastmod><priority>{p}</priority></url>\n'
+    lastmod = "2026-10-02" if u in _UPDATED else "2026-09-26"
+    sm += f'  <url><loc>{BASE}/{u}</loc><lastmod>{lastmod}</lastmod><priority>{p}</priority></url>\n'
 write("sitemap.xml", sm + "</urlset>\n")
 
 # GitHub Pages serves the repo root. OUT stays site/ so a build can never rmtree
