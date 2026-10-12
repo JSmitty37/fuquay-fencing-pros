@@ -195,7 +195,7 @@ def form(page_source, heading="Get Your Free Fence Estimate", depth=0):
       <div class="field"><label for="e-{page_source}">Email</label>
         <input type="email" id="e-{page_source}" name="email" autocomplete="email" /></div>
       <div class="field"><label for="a-{page_source}">Street address and ZIP</label>
-        <input type="text" id="a-{page_source}" name="address" autocomplete="street-address" placeholder="Street address and ZIP where the fence would go" required />
+        <input type="text" id="a-{page_source}" name="address" autocomplete="address-line1" placeholder="Street address and ZIP where the fence would go" required />
         <span class="hint">Include the ZIP in this address. 27526 covers a lot of ground &mdash; the street and ZIP tell us if we can reach you.</span></div>
       <div class="field-row">
         <div class="field"><label for="f-{page_source}">Fence Type</label>
@@ -279,10 +279,26 @@ def biz_ld():
 "hasOfferCatalog":{{"@type":"OfferCatalog","name":"Fence Installation Services","itemListElement":[{offers}]}}}}
 </script>"""
 
-def ref_ld():
-    """Untyped @id stub. Do not use on blog pages — author/publisher reference this @id
-    and need a real @type (see _biz_node). Other pages still point at the home entity."""
-    return f'<script type="application/ld+json">{{"@context":"https://schema.org","@id":"{BIZ_ID}"}}</script>'
+OG_ALT = "Fuquay Fencing Pros logo with a white fence icon on a dark green background"
+
+def content_img(depth, lazy):
+    """Brand image. Hero uses eager; anything after the hero uses lazy."""
+    up = "../" * depth
+    loading = "lazy" if lazy else "eager"
+    return (
+        f'<figure class="content-figure"><img class="content-img" src="{up}images/og-image.jpg" '
+        f'alt="{html.escape(OG_ALT, quote=True)}" width="1200" height="630" '
+        f'loading="{loading}" decoding="async" /></figure>'
+    )
+
+def related_links(depth, pairs):
+    """pairs: (site-root path, label). Empty list renders nothing."""
+    if not pairs:
+        return ""
+    up = "../" * depth
+    bits = " &middot; ".join(
+        f'<a href="{up}{href}">{html.escape(label, quote=False)}</a>' for href, label in pairs)
+    return f'<p class="prose-cross">Related reading: {bits}</p>'
 
 def cta_actions(extra_class=""):
     """Estimate anchor + tel link. extra_class is a button-size class such as btn-lg."""
@@ -466,13 +482,13 @@ fence rules apply to your yard.</strong> Two neighbors with identical "Fuquay-Va
 can be under different height limits, different school districts and different county governments.</p>
 <div class="callout">
   <h3>Fence height in Fuquay-Varina</h3>
-  <table class="mini-table">
+  <div class="table-scroll"><table class="mini-table">
     <thead><tr><th></th><th>Corporate limits</th><th>ETJ</th></tr></thead>
     <tbody>
       <tr><td>Front yard</td><td>4 ft max, opaque fences prohibited</td><td>4 ft</td></tr>
       <tr><td>Side / rear yard</td><td><strong>6 ft max</strong></td><td><strong>No maximum</strong></td></tr>
     </tbody>
-  </table>
+  </table></div>
   <p class="callout-note">You may see other sites claim 8 feet for side and rear yards. The Town's own Land
   Development Ordinance says <strong>six</strong>. We build to the ordinance.</p>
 </div>
@@ -554,7 +570,7 @@ anything else. We'll confirm the current local requirements before we quote, not
 <h2>What does the Town of Holly Springs allow for fences?</h2>
 <p>The Town of Holly Springs says it does not require a permit for fences, though it may require one for certain types of fences, decorative walls, or retaining walls. Because the Town doesn't say which types, it's smart to ask Development Services if your plan is unusual.</p>
 <p>The Town's published limits for residential lots:</p>
-<table class="mini-table">
+<div class="table-scroll"><table class="mini-table">
   <thead><tr><th>Where on the lot</th><th>Maximum height</th></tr></thead>
   <tbody>
     <tr><td>Front yard</td><td>4 feet</td></tr>
@@ -562,7 +578,7 @@ anything else. We'll confirm the current local requirements before we quote, not
     <tr><td>Side-interior and rear yards</td><td>6 feet</td></tr>
     <tr><td>Outer street edge of a subdivision</td><td>6 feet</td></tr>
   </tbody>
-</table>
+</table></div>
 <p>Materials differ by location, too. In front yards, side-corner yards, and the outer street edge of a subdivision, the Town lists wood or vinyl picket, brick wall, or ornamental fence only. In side-interior and rear yards, it lists wood, vinyl, ornamental fence, brick wall, or chain link. In plain terms, a tall solid privacy fence is a backyard and side-yard choice here, not a front-yard one.</p>
 <p>The finished side of the fence must face outward, toward the neighbor or street.</p>
 <h2>Where can't a fence go in Holly Springs?</h2>
@@ -669,7 +685,7 @@ smarter than ringing the whole property.</p>
 <h2>What we install in Willow Spring</h2>
 <p>Vinyl, wood privacy, aluminum and pool-code fencing, and chain link. The same Piedmont red clay applies
 out here, so the same care with post drainage does too.</p>
-""", "Fence installation in Willow Spring, NC 27592. Unincorporated Wake and Johnston County fencing for larger lots. Vinyl, wood, aluminum, chain link. Free estimates."),
+""", "Fence installation in Willow Spring, NC 27592. Larger lots in Wake and Johnston counties. Vinyl, wood, aluminum, and chain link. Free estimates."),
 
 "garner": ("""
 <h2>Fence installation in Garner, NC</h2>
@@ -713,18 +729,84 @@ FAQS = [
   "Under the 2024 NC Residential Code Appendix NC-A: a 48-inch minimum barrier height, no more than a 2-inch gap at grade over non-solid surfaces, no opening that passes a 4-inch sphere, and self-closing, self-latching gates. The latch release rule runs opposite directions depending on whether the latch self-locks — at least 54 inches for non-self-locking, no more than 54 inches for self-locking."),
 ]
 
+SERVICE_TITLES = {
+    "vinyl-fences": "Vinyl Fence Installation in Fuquay-Varina, NC",
+    "wood-privacy-fences": "Wood Privacy Fences in Fuquay-Varina, NC",
+    "aluminum-pool-fences": "Aluminum Pool Fences in Fuquay-Varina, NC",
+    "chain-link-fences": "Chain Link Fences in Fuquay-Varina, NC",
+}
+SERVICE_RELATED = {
+    "vinyl-fences": [
+        ("areas/fuquay-varina.html", "Fuquay-Varina fences"),
+        ("faq.html", "Fence FAQ"),
+        ("blog/vinyl-vs-wood-privacy-fuquay-varina/", "Vinyl vs wood"),
+        ("blog/piedmont-red-clay-fence-posts/", "Red clay fence posts"),
+    ],
+    "wood-privacy-fences": [
+        ("areas/fuquay-varina.html", "Fuquay-Varina fences"),
+        ("faq.html", "Fence FAQ"),
+        ("blog/vinyl-vs-wood-privacy-fuquay-varina/", "Vinyl vs wood"),
+        ("blog/piedmont-red-clay-fence-posts/", "Red clay fence posts"),
+    ],
+    "aluminum-pool-fences": [
+        ("areas/fuquay-varina.html", "Fuquay-Varina fences"),
+        ("faq.html", "Fence FAQ"),
+        ("blog/fence-permit-fuquay-varina/", "Fence permits"),
+        ("services/vinyl-fences.html", "Vinyl fences"),
+    ],
+    "chain-link-fences": [
+        ("areas/fuquay-varina.html", "Fuquay-Varina fences"),
+        ("areas/angier.html", "Angier fences"),
+        ("faq.html", "Fence FAQ"),
+        ("blog/hoa-fence-approval-fuquay-varina/", "HOA fence approval"),
+    ],
+}
+AREA_RELATED = {
+    "fuquay-varina": [
+        ("faq.html", "Fence FAQ"),
+        ("blog/fence-permit-fuquay-varina/", "Fence permit guide"),
+        ("blog/hoa-fence-approval-fuquay-varina/", "HOA approval"),
+        ("blog/piedmont-red-clay-fence-posts/", "Red clay fence posts"),
+        ("services/wood-privacy-fences.html", "Wood privacy fences"),
+    ],
+    "holly-springs": [
+        ("blog/holly-springs-new-build-fence/", "New construction fences"),
+        ("services/vinyl-fences.html", "Vinyl fences"),
+        ("areas/fuquay-varina.html", "Fuquay-Varina"),
+    ],
+    "angier": [
+        ("services/chain-link-fences.html", "Chain link fences"),
+        ("blog/fence-permit-fuquay-varina/", "How Fuquay permits differ"),
+        ("areas/fuquay-varina.html", "Fuquay-Varina"),
+    ],
+    "willow-spring": [
+        ("services/chain-link-fences.html", "Chain link fences"),
+        ("services/wood-privacy-fences.html", "Wood privacy fences"),
+        ("blog/piedmont-red-clay-fence-posts/", "Red clay fence posts"),
+    ],
+    "garner": [
+        ("services/wood-privacy-fences.html", "Wood privacy fences"),
+        ("blog/piedmont-red-clay-fence-posts/", "Replacing posts in clay"),
+        ("areas/fuquay-varina.html", "Fuquay-Varina"),
+    ],
+}
+
 def service_page(slug, nav_name, head_name):
     body, desc = SERVICE_BODY[slug]
     plain_name = html.unescape(head_name)
-    title = f"{plain_name} in {CITY}, {STATE} | {BRAND}"
+    title = SERVICE_TITLES[slug]
     canon = f"{BASE}/services/{slug}.html"
-    svc_ld = (f'<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Service",'
-              f'"name":"{plain_name}","serviceType":"{plain_name}",'
-              f'"provider":{{"@id":"{BIZ_ID}"}},'
-              f'"areaServed":{{"@type":"City","name":"{CITY}, {STATE}"}},'
-              f'"description":"{desc}"}}</script>')
+    svc_ld = _ld({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": plain_name,
+        "serviceType": plain_name,
+        "provider": _biz_node(),
+        "areaServed": {"@type": "City", "name": f"{CITY}, {STATE}"},
+        "description": desc,
+    })
     nav, bc_ld = crumbs(1, [("Services", None), (nav_name.replace("&amp;", "&"), None)])
-    return (head(title, desc, canon, 1, ref_ld() + svc_ld + bc_ld) + header(1) + nav +
+    return (head(title, desc, canon, 1, svc_ld + bc_ld) + header(1) + nav +
             f'<main><section class="hero hero-inner"><div class="container hero-content">'
             f'<p class="hero-eyebrow">{CITY}, {STATE}</p><h1>{head_name} in {CITY}</h1>'
             f'<p class="hero-sub">Serving {CITY} and nearby. We check this town\'s ordinance and this town\'s soil before we quote.</p>'
@@ -733,7 +815,8 @@ def service_page(slug, nav_name, head_name):
             f'</div></section><section class="section"><div class="container prose">{body}'
             f'<p class="prose-cross">Other services: ' +
             " &middot; ".join(f'<a href="{s}.html">{n}</a>' for s, n, _ in SERVICES if s != slug) +
-            f'</p></div></section>' + form(f"services/{slug}", depth=1) + '</main>' + footer(1))
+            f'</p>' + related_links(1, SERVICE_RELATED[slug]) +
+            f'</div></section>' + content_img(1, lazy=True) + form(f"services/{slug}", depth=1) + '</main>' + footer(1))
 
 AREA_FAQS = {
     "fuquay-varina": [
@@ -770,11 +853,35 @@ AREA_FAQS = {
     ],
 }
 
+def web_page_ld(name, url, description):
+    """Typed page node. The business sits inside it, so no untyped @id stub is needed."""
+    return _ld({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": name,
+        "url": url,
+        "description": description,
+        "publisher": _biz_node(),
+    })
+
+def home_breadcrumb_ld():
+    return _ld({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": f"{BASE}/",
+        }],
+    })
+
 def _faqpage_ld(pairs):
-    """FAQPage JSON-LD. Only call when the page does not already emit FAQ schema."""
+    """FAQPage JSON-LD. The business is the publisher, inside this typed node."""
     return _ld({
         "@context": "https://schema.org",
         "@type": "FAQPage",
+        "publisher": _biz_node(),
         "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
             for q, a in pairs
@@ -787,8 +894,8 @@ def area_page(slug, name, zipc):
     canon = f"{BASE}/areas/{slug}.html"
     nav, bc_ld = crumbs(1, [("Service Area", None), (name, None)])
     faqs = AREA_FAQS.get(slug) or []
-    faq_ld = _faqpage_ld(faqs) if faqs else ""
-    return (head(title, desc, canon, 1, ref_ld() + faq_ld + bc_ld) + header(1) + nav +
+    page_ld = _faqpage_ld(faqs) if faqs else web_page_ld(title, canon, desc)
+    return (head(title, desc, canon, 1, page_ld + bc_ld) + header(1) + nav +
             f'<main><section class="hero hero-inner"><div class="container hero-content">'
             f'<p class="hero-eyebrow">{name}, {STATE} &middot; {zipc}</p>'
             f'<h1>Fence Installation in {name}, {STATE}</h1>'
@@ -800,13 +907,15 @@ def area_page(slug, name, zipc):
             "".join(f'<li><a href="../services/{s}.html">{n}</a></li>' for s, n, _ in SERVICES) +
             f'</ul><p class="prose-cross">Nearby: ' +
             " &middot; ".join(f'<a href="{s}.html">{n}</a>' for s, n, _ in AREAS if s != slug) +
-            f'</p></div></section>' + form(f"areas/{slug}", f"Free Fence Estimate in {name}", depth=1) +
+            f'</p>' + related_links(1, AREA_RELATED[slug]) +
+            f'</div></section>' + content_img(1, lazy=True) +
+            form(f"areas/{slug}", f"Free Fence Estimate in {name}", depth=1) +
             '</main>' + footer(1))
 
 def home():
-    title = f"Fence Company in {CITY}, {STATE} | {BRAND} &mdash; Free Estimates"
-    desc = (f"{BRAND} installs vinyl, wood privacy, aluminum pool-code and chain link fences in "
-            f"{CITY}, NC 27526 and southern Wake County. Serving {CITY} and nearby. Free estimates.")
+    title = f"{CITY} Fence Installation | Free Estimates"
+    desc = (f"Vinyl, wood, aluminum, and chain link fence installation in {CITY}, NC "
+            f"and southern Wake County. Free estimates.")
     cards = ""
     for s, n, h in SERVICES:
         blurb = {"vinyl-fences":"Low-maintenance privacy and picket vinyl &mdash; no painting, no staining, and it shrugs off Piedmont humidity.",
@@ -817,11 +926,12 @@ def home():
                   f'<p class="card-link"><a href="services/{s}.html">{n} details &rarr;</a></p></div></article>')
     zips = "".join(f'<li><strong><a href="areas/{s}.html">{n}</a></strong> <span>{z}</span></li>'
                    for s, n, z in AREAS)
-    return (head(title, desc, f"{BASE}/", 0, biz_ld()) + header(0) +
+    return (head(title, desc, f"{BASE}/", 0, biz_ld() + home_breadcrumb_ld()) + header(0) +
 f"""<main>
 <section class="hero" aria-labelledby="hero-heading">
   <div class="hero-overlay"></div>
   <div class="container hero-content">
+    {content_img(0, lazy=False)}
     <p class="hero-eyebrow">{CITY} &amp; Southern Wake County, {STATE}</p>
     <h1 id="hero-heading">Fence Installation in {CITY}, {STATE} &mdash; Done Right the First Time</h1>
     <p class="hero-sub">Vinyl, wood privacy, aluminum and chain link, built for Piedmont clay and Carolina
@@ -856,7 +966,8 @@ f"""<main>
            approval. We'll tell you what you actually need.</p></div>
       <div class="why-item"><h3>Built for red clay</h3>
         <p>Under about eight inches of topsoil this town is dense Cecil clay. Post drainage and a crowned
-           collar are what keep a fence plumb through our freeze-thaw cycles.</p></div>
+           collar are what keep a fence plumb through our freeze-thaw cycles.
+           <a href="blog/piedmont-red-clay-fence-posts/">Why red clay loosens fence posts</a>.</p></div>
       <div class="why-item"><h3>Every fence style</h3>
         <p>Vinyl, wood, aluminum and chain link &mdash; serving {CITY} and nearby, whatever the property needs.</p></div>
     </div>
@@ -881,28 +992,32 @@ def faq_page():
     title = f"Fence FAQ &mdash; {CITY}, {STATE} | {BRAND}"
     desc = ("Permits, height limits, HOA approval, post depth, red clay staining and NC pool barrier code "
             f"— answered for {CITY} homeowners.")
-    qs = ",".join(
-        '{"@type":"Question","name":%s,"acceptedAnswer":{"@type":"Answer","text":%s}}'
-        % (_json(q), _json(a)) for q, a in FAQS)
-    faq_ld = ('<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage",'
-              '"mainEntity":[' + qs + ']}</script>')
     nav, bc_ld = crumbs(0, [("FAQ", None)])
     body = "".join(f'<div class="faq-item"><h2>{html.escape(q)}</h2><p>{html.escape(a)}</p></div>'
                    for q, a in FAQS)
-    return (head(title, desc, f"{BASE}/faq.html", 0, ref_ld() + faq_ld + bc_ld) + header(0) + nav +
+    more = related_links(0, [
+        ("services/wood-privacy-fences.html", "Wood privacy fences"),
+        ("services/vinyl-fences.html", "Vinyl fences"),
+        ("areas/fuquay-varina.html", "Fuquay-Varina"),
+        ("blog/piedmont-red-clay-fence-posts/", "Red clay fence posts"),
+        ("blog/fence-permit-fuquay-varina/", "Fence permits"),
+    ])
+    return (head(title, desc, f"{BASE}/faq.html", 0, _faqpage_ld(FAQS) + bc_ld) + header(0) + nav +
             f'<main><section class="hero hero-inner"><div class="container hero-content">'
             f'<p class="hero-eyebrow">Fence FAQ</p><h1>Fence Questions, Answered for {CITY}</h1>'
             f'<p class="hero-sub">Permits, heights, HOAs, clay and pool code &mdash; the questions we get most.</p>'
-            f'</div></section><section class="section"><div class="container prose faq-list">{body}</div></section>'
-            + form("faq", depth=0) + '</main>' + footer(0))
+            f'</div></section><section class="section"><div class="container prose faq-list">{body}{more}</div></section>'
+            + content_img(0, lazy=True) + form("faq", depth=0) + '</main>' + footer(0))
 
 def _json(s):
     return '"' + s.replace('\\', '\\\\').replace('"', '\\"') + '"'
 
 def privacy_page():
     title = f"Privacy Policy | {BRAND}"
+    desc = (f"Privacy policy for {BRAND}. What the estimate form collects, how we use it, "
+            "and how to ask us to delete it.")
     nav, bc_ld = crumbs(0, [("Privacy Policy", None)])
-    return (head(title, f"Privacy policy for {BRAND}.", f"{BASE}/privacy.html", 0, ref_ld() + bc_ld)
+    return (head(title, desc, f"{BASE}/privacy.html", 0, web_page_ld(title, f"{BASE}/privacy.html", desc) + bc_ld)
             + header(0) + nav + f"""<main><section class="section"><div class="container prose">
 <h1>Privacy Policy</h1>
 <p><em>Last updated: October 2026</em></p>
@@ -935,20 +1050,20 @@ also call {PHONE_TEXT}. Program details, including message frequency and help in
 purposes. Text-messaging originator opt-in data and consent will not be shared with any third parties.</p>
 <h2>Contact</h2>
 <p>Questions about this policy? Call {PHONE_TEXT}.</p>
-</div></section></main>""" + footer(0))
+</div></section>""" + content_img(0, lazy=True) + form("privacy", depth=0) + "</main>" + footer(0))
 
 def terms_page():
     title = f"Terms and Conditions | {BRAND}"
     nav, bc_ld = crumbs(0, [("Terms and Conditions", None)])
     desc = f"Terms and conditions for {BRAND}, including SMS text messaging terms."
-    return (head(title, desc, f"{BASE}/terms.html", 0, ref_ld() + bc_ld)
+    return (head(title, desc, f"{BASE}/terms.html", 0, web_page_ld("Terms and Conditions", f"{BASE}/terms.html", desc) + bc_ld)
             + header(0) + nav + f"""<main><section class="section"><div class="container prose">
 <h1>Terms and Conditions</h1>
-<p><em>Last updated: September 2026</em></p>
+<p><em>Last updated: October 2026</em></p>
 <h2>Who operates this site</h2>
-<p>This website is operated by Smith Asset Group LLC, doing business as {BRAND} (&ldquo;we&rdquo; or
+<p>This website is operated by {BRAND} (the operator of this website) (&ldquo;we&rdquo; or
 &ldquo;us&rdquo;). {BRAND} is a referral and lead service for homeowners in {CITY}, North Carolina and
-nearby communities.</p>
+nearby communities. The only public contact for this site is {PHONE_TEXT}.</p>
 <h2>We are not the fence contractor</h2>
 <p>We connect you with an independent licensed local fence contractor. We are not that contractor, and we
 do not install the fence ourselves. If you decide to hire the contractor, your agreement for the work is
@@ -966,7 +1081,7 @@ or using it for anything unlawful.</p>
 <p>Estimate requests are free and do not require you to purchase anything. Please give accurate project
 details so we can tell whether a local contractor can help.</p>
 <h2>Limitation of liability</h2>
-<p>This site is provided as-is. To the fullest extent allowed by law, Smith Asset Group LLC is not liable
+<p>This site is provided as-is. To the fullest extent allowed by law, {BRAND} (the operator of this website) is not liable
 for indirect, incidental, or consequential damages arising from your use of the site, or for the
 contractor&rsquo;s acts, omissions, pricing, scheduling, or workmanship.</p>
 <h2>SMS / Text Messaging Terms</h2>
@@ -986,12 +1101,12 @@ marketing blasts.</p>
 <p>These terms are governed by the laws of the State of North Carolina.</p>
 <h2>Contact</h2>
 <p>Questions about these terms? Call {PHONE_TEXT}.</p>
-</div></section></main>""" + footer(0))
+</div></section>""" + content_img(0, lazy=True) + form("terms", depth=0) + "</main>" + footer(0))
 
 # ================================= ASSETS =================================
 CSS = """:root{--ink:#14281d;--ink-2:#243a2c;--paper:#fff;--mute:#5d6b62;--line:#dfe6e1;
 --accent:#2f7d54;--accent-d:#245f41;--warm:#f6f8f6;--rad:10px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
+*{box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:clip}
 body{margin:0;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
 img{max-width:100%;height:auto;display:block}
@@ -1074,7 +1189,10 @@ border:1px solid var(--line);border-radius:8px;font-size:.92rem}
 .inline-cta{background:var(--warm);border:1px solid var(--line);border-left:4px solid var(--accent);
 border-radius:var(--rad);padding:1rem 1.15rem;margin:1.4rem 0}
 .inline-cta p{margin:0 0 .8rem}
-.prose{max-width:74ch}
+.prose{max-width:74ch;overflow-wrap:break-word}
+.content-figure{margin:0 0 1.2rem}
+.hero .content-figure{margin:0 0 1rem}
+.content-img{width:min(100%,280px);height:auto;border-radius:8px}
 .prose h2{font-size:1.28rem;margin:2rem 0 .6rem;letter-spacing:-.015em}
 .prose h2:first-child{margin-top:0}
 .prose p{margin:0 0 1rem}
@@ -1085,6 +1203,7 @@ border-radius:var(--rad);padding:1rem 1.15rem;margin:1.4rem 0}
 border-radius:var(--rad);padding:1.1rem 1.2rem;margin:1.4rem 0}
 .callout h3{margin:0 0 .7rem;font-size:1rem}
 .callout-note{font-size:.87rem;color:var(--mute);margin:.7rem 0 0}
+.table-scroll{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
 .mini-table{width:100%;border-collapse:collapse;font-size:.9rem}
 .mini-table th,.mini-table td{text-align:left;padding:.45rem .5rem;border-bottom:1px solid var(--line)}
 .mini-table th{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--mute)}
@@ -1104,7 +1223,7 @@ border-radius:var(--rad);padding:1.1rem 1.2rem;margin:1.4rem 0}
 .field{margin-bottom:.85rem;display:flex;flex-direction:column}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
 .field label{font-size:.83rem;font-weight:650;margin-bottom:.3rem}
-.field input,.field select{padding:.65rem .7rem;border:1.5px solid var(--line);border-radius:8px;
+.field input,.field select{width:100%;min-width:0;max-width:100%;padding:.65rem .7rem;border:1.5px solid var(--line);border-radius:8px;
 font-size:.95rem;font-family:inherit;background:#fff;color:var(--ink)}
 .field input:focus,.field select:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
 .hint{font-size:.78rem;color:var(--mute);margin-top:.25rem}
@@ -1137,6 +1256,9 @@ justify-content:center;gap:.5rem}
 .mobile-call-bar{display:flex}body{padding-bottom:3.4rem}
 .footer-inner{grid-template-columns:1fr}.footer-bottom-inner{flex-direction:column}}
 @media(max-width:420px){.field-row{grid-template-columns:1fr}
+.header-inner{gap:.4rem}
+.brand-line1{font-size:.92rem}
+.btn-sm{padding:.5rem .65rem}
 .cta-band-inner{align-items:stretch}
 .cta-actions,.inline-cta-actions{flex-direction:column}
 .cta-actions .btn,.inline-cta-actions .btn{width:100%}}
@@ -1339,8 +1461,9 @@ Open `build.py`, edit the CONFIG block, re-run `python3 build.py`:
    after `NC` or `North Carolina` when one is there, otherwise the last 5-digit group starting with 27,
    otherwise the last 5-digit group, or `""`. Email is optional. Zip 27526 spans ~98 sq mi across two
    counties, so zip alone cannot qualify a lead here.
-5. **Schema** — one shared business `@id` across all pages (not duplicate entities), plus BreadcrumbList,
-   Service and FAQPage.
+5. **Schema** — one shared business `@id` across all pages. Inner pages put that typed
+   business inside Service, FAQPage, Article, or WebPage nodes. Every JSON-LD block has
+   an `@type`. BreadcrumbList is on every page.
 6. **Real local content** per area page — ordinance specifics, the Wake/Harnett split, Cecil clay,
    red-clay staining, pollen timing.
 
@@ -1513,7 +1636,7 @@ def _render_block(kind, data, depth):
         for row in body_rows:
             tbody += "<tr>" + "".join(f"<td>{_inline(c, depth)}</td>" for c in _cells(row)) + "</tr>"
         tbody += "</tbody>"
-        return f'<table class="mini-table">{thead}{tbody}</table>'
+        return f'<div class="table-scroll"><table class="mini-table">{thead}{tbody}</table></div>'
     return ""
 
 def _mid_cta_index(blocks):
@@ -1585,6 +1708,77 @@ def extract_faqs(md):
     return faqs
 
 POSTS = [
+    {
+        "slug": "piedmont-red-clay-fence-posts",
+        "meta_title": "Why Piedmont Red Clay Eats Fence Posts",
+        "meta_desc": "Why red clay around Fuquay-Varina holds water against fence posts, and the usual fixes: gravel, a crowned collar, and ground-contact wood.",
+        "h1": "Why Piedmont Red Clay Eats Fence Posts (And How to Set Them Right)",
+        "date": "2026-10-12",
+        "body": """# Why Piedmont Red Clay Eats Fence Posts (And How to Set Them Right)
+
+**Quick answer:** Red clay holds water, turns sticky when wet, and bakes hard when dry, and some clays also swell and shrink. Soils mapped around Fuquay-Varina swell less than that reputation suggests, but a post hole can still trap water, rot the wood, and let freeze and thaw work the post loose. Common practice is gravel for drainage, concrete crowned above the soil, and a ground-contact post when the post is wood.
+
+Fence post installation in Fuquay-Varina starts with the dirt under the panels.
+
+## What red clay soil in NC actually does
+
+Clay particles are tiny, so they hold more water than sand, feel sticky when wet, and turn hard when dry. NC State Extension notes that some fine soils swell and shrink enough to affect yard work. The plain-language source is the [NC State Extension Gardener Handbook chapter on soils](https://content.ces.ncsu.edu/extension-gardener-handbook/1-soils-and-plant-nutrients).
+
+North Carolina's official state soil is Cecil, a deep red Piedmont soil that does not match the heaving-clay story. A [state soil guide](https://www.soils4teachers.org/files/s4t/k12outreach/nc-state-soil-booklet.pdf) says Cecil is dominated by kaolinite, a clay mineral that does not shrink and swell the way some other clays do. The [USDA series description](https://soilseries.sc.egov.usda.gov/OSD_Docs/C/Cecil.html) calls Cecil well drained, with red clay under a thinner top layer, so it can be sticky and hard to dig without being a high-swell soil.
+
+Wake County is not all Cecil. The USDA also maps Fuquay, a sandier soil whose sandy surface is often about 20 to 40 inches thick, with low shrink-swell potential. Details are in the [Fuquay series description](https://soilseries.sc.egov.usda.gov/OSD_Docs/F/FUQUAY.html). Fuquay-Varina takes part of its name from that soil, which is a clue that a map is not a promise about your hole. Check the address in the USDA [Web Soil Survey](https://websoilsurvey.nrcs.usda.gov/), and see our [Fuquay-Varina area page](/areas/fuquay-varina.html) for how fence rules change from lot to lot.
+
+## Why a post hole in clay still holds water
+
+A soil survey can call the ground well drained and still leave a wet post hole, because digging smears clay along the sides and that smear slows water down. Rain, a downspout, or a low spot then fills the hole so the water sits against the post, and the hole acts like a cup.
+
+Wood that stays wet can rot at the soil line, where the damage hides until the fence leans, and steel can rust on that same line. Vinyl panels do not rot, but they still need a post that stays straight.
+
+Piedmont frost is shallow, but it still matters if the hole is wet. The 2024 North Carolina Residential Code lists a minimum frost line depth of 12 inches in Table R301.2. A note says to check that figure with the local jurisdiction. This [code sample](https://shop.iccsafe.org/media/wysiwyg/material/5711L24-Sample.pdf) shows the table. The table is about buildings, not a backyard fence-post law. Even so, water in a hole can freeze, expand, and thaw, and a loose post can creep through the winter.
+
+We are not quoting an ordinance depth, a permit fee, or an inspection rule for an ordinary yard fence. Our [fence FAQ](/faq.html) and our [fence permit guide](/blog/fence-permit-fuquay-varina/) cover the permit question, and the depths below should be read as common practice.
+
+## Common practice for fence post installation in Fuquay-Varina
+
+A common practice is to bury about one third of the post. For a 6-foot fence, that often means about 24 to 36 inches, deeper than the frost figure used for many house footings. If an inspector or your HOA writes a depth down, follow that paper. Otherwise, ask why that depth fits your yard.
+
+New lots need a second look, because builders often strip, grade, and pack the soil until the fill is denser than an older yard. Our [Holly Springs new-build fence guide](/blog/holly-springs-new-build-fence/) covers packed fill next door, and the same lots show up on new streets in Fuquay-Varina. Call 811 before anyone digs so utility lines can be marked. That call is a safety step, not a fence permit.
+
+## Gravel, a crown above grade, and ground-contact posts
+
+A layer of gravel at the bottom gives water a place to sit away from the wood, but gravel will not dry a yard that stays soggy for days. If puddles linger, fix the grade or move the line before you set posts.
+
+When a post goes in concrete, crown the top above the surrounding soil and slope it away from the wood, so rain runs off instead of back down the hole. North Carolina road specs say to smooth fence-post concrete and slope it away from the post, and that wording is in [NCDOT Section 866](https://connect.ncdot.gov/projects/construction/ConstManRefDocs/866,%202012%20Standard%20Specifications.pdf). That spec is not your fence law. Do not leave a bowl around the post.
+
+Bury ground-contact wood, not lumber labeled only for use above ground. The USDA Forest Service notes that fence posts are treated to Use Category UC4A, which means general ground contact, in [Guidelines for selection and use of pressure-treated wood](https://research.fs.usda.gov/treesearch/59612). Read the end tag for the words ground contact, not just the word treated, and coat any fresh cut so the untreated core is not left open. Termites are a known concern in North Carolina. Treatment slows rot and insect damage, but it cannot save a post that stands in a wet hole.
+
+## Wood fences and vinyl fences share the hole problem
+
+On a wood privacy fence, the post is the structure and the piece most likely to rot, so board-on-board and shadowbox styles still depend on that post work. Our [wood privacy fence page](/services/wood-privacy-fences.html) covers styles people ask about in town. Vinyl panels do not rot the way wood does, but a leaning post still ruins the line, and clay splash can stain white vinyl near the ground. Our [vinyl fence page](/services/vinyl-fences.html) covers stains, pollen, and styles, and our [vinyl versus wood guide](/blog/vinyl-vs-wood-privacy-fuquay-varina/) compares the two for a local yard. If an HOA must approve color, height, or which side faces out, start with our [HOA fence approval guide](/blog/hoa-fence-approval-fuquay-varina/).
+
+## What to notice before you ask for quotes
+
+After a hard rain, see if water stands on the fence line and if orange clay shows up in the first foot. Note whether the lot is fresh fill or an older yard, and mark the gates, because those posts carry more load. Bring those notes and any HOA rules to the estimate, and ask about the gravel, the concrete crown, and the tag on a wood post. When you want that visit, [request a free estimate](/#quote) or call or text **(919) 276-8406**.
+
+## Red clay fence post FAQ
+
+### Does Piedmont red clay always swell and crack fence posts?
+
+No. Clay holds water, and many clays swell and shrink, but Cecil and Fuquay are both described as low shrink-swell soils. The usual damage is a wet hole that rots wood or lets freeze and thaw loosen the post, and your lot may be sandier than the yard next door.
+
+### How deep should posts be for fence post installation in Fuquay-Varina?
+
+There is no single ordinance depth for an ordinary home fence post. Common practice is about one third of the post below grade, often about 24 to 36 inches for a 6-foot fence, with drainage at the bottom of the hole. Follow any depth an inspector or your HOA puts in writing.
+
+### Should fence posts in red clay be set in concrete?
+
+Many installers use concrete because it helps hold the post steady, but drainage decides whether that helps. Gravel underneath, and a top crowned above the soil, keeps the concrete from turning into a cup. Some crews skip concrete and tamp the soil in firm layers, so ask which plan fits your yard.
+
+### What kind of wood post holds up in North Carolina ground?
+
+Choose a pressure-treated post rated for ground contact, often labeled UC4A, and keep the fence boards off the soil. Above-ground treated lumber is a different product. Treatment slows rot and insect damage, but it cannot fix a hole that stays full of water.
+""",
+    },
     {
         "slug": "hoa-fence-approval-fuquay-varina",
         "meta_title": "HOA Fence Approval in Fuquay-Varina, NC: Step by Step",
@@ -1803,6 +1997,7 @@ Usually, yes. HOA rules are separate from Town rules, so get written approval fr
         "meta_desc": 'Vinyl vs wood privacy fence for a Fuquay-Varina yard: compare upkeep, looks, red clay stains, and HOA rules so you can choose with confidence.',
         "h1": 'Vinyl vs Wood Privacy Fence: Which Is Right for Your Fuquay-Varina Yard?',
         "date": "2026-09-26",
+        "updated": "2026-10-12",
         "body": """# Vinyl vs Wood Privacy Fence: Which Is Right for Your Fuquay-Varina Yard?
 
 **Quick answer:** Both vinyl and wood make a good privacy fence in Fuquay-Varina. Choose vinyl if you want less upkeep and a clean, uniform look. Choose wood if you like a classic look and don't mind staining and sealing it on a regular schedule. Either way, our red clay, humid summers, and your HOA rules should shape the choice as much as the material itself.
@@ -1857,7 +2052,7 @@ See our [wood privacy fence page](/services/wood-privacy-fences.html) for style 
 
 This matters for both materials, because under about eight inches of topsoil, Fuquay-Varina sits on dense red clay. As a common industry practice, about one-third of each post goes below ground, which is roughly 24 to 36 inches deep for a 6-foot fence.
 
-Depth isn't the whole story. Gravel at the bottom of the hole and a sloped collar at the top that sheds water help keep posts from working loose as the ground freezes and thaws. New-build lots are often packed with dense, uneven fill dirt, which makes good post work even more important.
+Depth isn't the whole story. Gravel at the bottom of the hole and a sloped collar at the top that sheds water help keep posts from working loose as the ground freezes and thaws. New-build lots are often packed with dense, uneven fill dirt, which makes good post work even more important. Our guide on [why Piedmont red clay eats fence posts](/blog/piedmont-red-clay-fence-posts/) explains drainage, a crowned collar, and ground-contact wood.
 
 ## Do height limits or HOA rules affect which material I can use?
 
@@ -2011,9 +2206,9 @@ def _post_date_label(iso):
     return f"{months[month - 1]} {day}, {year}"
 
 def blog_index():
-    title = f"Fence Guides for {CITY} &amp; Southern Wake | {BRAND}"
-    desc = ("Fence guides for Fuquay-Varina, Holly Springs, and nearby: town fence permits, "
-            "HOA fence approval, vinyl vs wood privacy fences, and new-construction backyards.")
+    title = f"Fence Guides for {CITY} Homeowners"
+    desc = ("Fence guides for Fuquay-Varina and nearby towns: permits, HOA approval, "
+            "vinyl versus wood, red clay posts, and new yards.")
     canon = f"{BASE}/blog/"
     posts_ld = []
     cards = []
@@ -2043,29 +2238,39 @@ def blog_index():
         "blogPost": posts_ld,
     }
     nav, bc_ld = crumbs(1, [("Blog", None)])
+    more = related_links(1, [
+        ("services/vinyl-fences.html", "Vinyl fences"),
+        ("services/wood-privacy-fences.html", "Wood privacy fences"),
+        ("services/aluminum-pool-fences.html", "Aluminum and pool fences"),
+        ("services/chain-link-fences.html", "Chain link"),
+        ("areas/fuquay-varina.html", "Fuquay-Varina"),
+        ("areas/holly-springs.html", "Holly Springs"),
+        ("faq.html", "Fence FAQ"),
+    ])
     return (head(title, desc, canon, 1, _ld(blog_ld) + bc_ld) + header(1) + nav +
             f'<main><section class="hero hero-inner"><div class="container hero-content">'
             f'<p class="hero-eyebrow">Fence guides</p>'
             f'<h1>Fence Guides for {CITY} &amp; Southern Wake</h1>'
-            f'<p class="hero-sub">Permits, HOA approval, materials, and new-construction yards &mdash; written for homeowners around {CITY}.</p>'
+            f'<p class="hero-sub">Permits, HOA approval, materials, clay, and new-construction yards &mdash; written for homeowners around {CITY}.</p>'
             f'<div class="hero-cta"><a class="btn btn-primary btn-lg" href="#quote">Get My Free Estimate</a>'
             f'<a class="btn btn-ghost btn-lg" data-call href="tel:{PHONE_TEL}">Call {PHONE_TEXT}</a></div>'
             f'</div></section><section class="section"><div class="container">'
-            f'<div class="card-grid">{"".join(cards)}</div>'
-            f'</div></section>' + cta_band() + form("blog", depth=1) + "</main>" + footer(1))
+            f'<div class="card-grid">{"".join(cards)}</div>{more}'
+            f'</div></section>' + content_img(1, lazy=True) + cta_band() + form("blog", depth=1) + "</main>" + footer(1))
 
 def blog_post(post):
     slug, depth = post["slug"], 2
     canon = f"{BASE}/blog/{slug}/"
     h1, desc = post["h1"], post["meta_desc"]
     faqs = extract_faqs(post["body"])
+    modified = post.get("updated", post["date"])
     article = {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": h1,
         "description": desc,
         "datePublished": post["date"],
-        "dateModified": post["date"],
+        "dateModified": modified,
         "image": f"{BASE}/images/og-image.jpg",
         "mainEntityOfPage": {"@type": "WebPage", "@id": canon},
         "author": {"@id": BIZ_ID},
@@ -2081,18 +2286,19 @@ def blog_post(post):
     }
     extra_meta = (
         f'<meta property="article:published_time" content="{post["date"]}" />\n'
-        f'<meta property="article:modified_time" content="{post["date"]}" />\n'
+        f'<meta property="article:modified_time" content="{modified}" />\n'
     )
     nav, bc_ld = crumbs(depth, [("Blog", "blog/"), (h1, None)])
+    blocks = _ld(article) + (_ld(faq_ld) if faqs else "") + bc_ld
     body = md_to_html(post["body"], depth, insert_ctas=True)
-    return (head(post["meta_title"], desc, canon, depth, _ld(article) + _ld(faq_ld) + bc_ld,
+    return (head(post["meta_title"], desc, canon, depth, blocks,
                  og_type="article", extra_meta=extra_meta) + header(depth) + nav +
             f'<main><section class="hero hero-inner"><div class="container hero-content">'
             f'<p class="hero-eyebrow">Fence guide</p><h1>{html.escape(h1, quote=False)}</h1>'
             f'<div class="hero-cta"><a class="btn btn-primary btn-lg" href="#quote">Get My Free Estimate</a>'
             f'<a class="btn btn-ghost btn-lg" data-call href="tel:{PHONE_TEL}">Call {PHONE_TEXT}</a></div>'
             f'</div></section><section class="section"><div class="container prose blog-post">{body}'
-            f'</div></section>' + form(f"blog/{slug}", depth=depth) + "</main>" + footer(depth))
+            f'</div></section>' + content_img(depth, lazy=True) + form(f"blog/{slug}", depth=depth) + "</main>" + footer(depth))
 
 # ================================== BUILD ==================================
 if os.path.isdir(OUT): shutil.rmtree(OUT)
@@ -2116,24 +2322,13 @@ write("README.md", README)
 os.makedirs(os.path.join(OUT, "images"), exist_ok=True)
 write("images/README.md", """# Open Graph image
 
-Place `og-image.jpg` here (recommended 1200×630). Every page already references
-`/images/og-image.jpg` via `og:image`. This note is a placeholder until the
-branded image is added — no binary is committed yet.
+`og-image.jpg` (1200×630) is the image every page uses for `og:image` and for the
+on-page logo. Width and height attributes match those pixels.
 """)
 
-# Pages touched on 2026-10-02: the HOA post, the blog index that lists it,
-# the three posts that now link to it, and the four expanded area pages.
-_UPDATED = {
-    "blog/",
-    "blog/hoa-fence-approval-fuquay-varina/",
-    "blog/fence-permit-fuquay-varina/",
-    "blog/vinyl-vs-wood-privacy-fuquay-varina/",
-    "blog/holly-springs-new-build-fence/",
-    "areas/fuquay-varina.html",
-    "areas/holly-springs.html",
-    "areas/angier.html",
-    "areas/willow-spring.html",
-}
+# 2026-10-12: every public URL changed (legal wording, schema, titles, descriptions,
+# images, internal links, or the new red-clay post). Article datePublished stays
+# on each post; sitemap lastmod follows the page edit.
 urls = [("", "1.0"), ("faq.html", "0.6"), ("privacy.html", "0.3"), ("terms.html", "0.3")]
 urls += [(f"services/{s}.html", "0.9") for s, _, _ in SERVICES]
 urls += [(f"areas/{s}.html", "0.9" if s == "fuquay-varina" else "0.7") for s, _, _ in AREAS]
@@ -2141,7 +2336,7 @@ urls += [("blog/", "0.7")]
 urls += [(f"blog/{p['slug']}/", "0.6") for p in POSTS]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for u, p in urls:
-    lastmod = "2026-10-02" if u in _UPDATED else "2026-09-26"
+    lastmod = "2026-10-12"
     sm += f'  <url><loc>{BASE}/{u}</loc><lastmod>{lastmod}</lastmod><priority>{p}</priority></url>\n'
 write("sitemap.xml", sm + "</urlset>\n")
 

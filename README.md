@@ -42,8 +42,9 @@ Open `build.py`, edit the CONFIG block, re-run `python3 build.py`:
    after `NC` or `North Carolina` when one is there, otherwise the last 5-digit group starting with 27,
    otherwise the last 5-digit group, or `""`. Email is optional. Zip 27526 spans ~98 sq mi across two
    counties, so zip alone cannot qualify a lead here.
-5. **Schema** — one shared business `@id` across all pages (not duplicate entities), plus BreadcrumbList,
-   Service and FAQPage.
+5. **Schema** — one shared business `@id` across all pages. Inner pages put that typed
+   business inside Service, FAQPage, Article, or WebPage nodes. Every JSON-LD block has
+   an `@type`. BreadcrumbList is on every page.
 6. **Real local content** per area page — ordinance specifics, the Wake/Harnett split, Cecil clay,
    red-clay staining, pollen timing.
 
