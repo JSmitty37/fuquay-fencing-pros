@@ -1,5 +1,4 @@
 # Open Graph image
 
-Place `og-image.jpg` here (recommended 1200×630). Every page already references
-`/images/og-image.jpg` via `og:image`. This note is a placeholder until the
-branded image is added — no binary is committed yet.
+`og-image.jpg` (1200×630) is the image every page uses for `og:image` and for the
+on-page logo. Width and height attributes match those pixels.
