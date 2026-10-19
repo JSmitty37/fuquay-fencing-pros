@@ -464,6 +464,8 @@ different rules. We'll tell you which applies to your lot before we quote it.</p
   <li><strong>Back and side boundary lines</strong> where appearance from the street isn't a factor</li>
   <li><strong>Around outbuildings</strong> and equipment</li>
 </ul>
+<p>Dogs, bigger lots, budget, airflow, and black or green coated chain link versus
+galvanized are covered in <a href="../blog/chain-link-fence-southern-wake/">when chain link still makes sense in southern Wake</a>.</p>
 <p>The same ordinance details apply as any other fence: finished side facing outward, a 2-inch clearance at
 grade for drainage, and keep it about 3 inches inside the property line so there's no boundary dispute
 later.</p>
@@ -755,7 +757,9 @@ SERVICE_RELATED = {
         ("services/vinyl-fences.html", "Vinyl fences"),
     ],
     "chain-link-fences": [
+        ("blog/chain-link-fence-southern-wake/", "Chain link in southern Wake"),
         ("areas/fuquay-varina.html", "Fuquay-Varina fences"),
+        ("areas/holly-springs.html", "Holly Springs fences"),
         ("areas/angier.html", "Angier fences"),
         ("faq.html", "Fence FAQ"),
         ("blog/hoa-fence-approval-fuquay-varina/", "HOA fence approval"),
@@ -1709,6 +1713,81 @@ def extract_faqs(md):
 
 POSTS = [
     {
+        "slug": "chain-link-fence-southern-wake",
+        "meta_title": "When Chain Link Still Makes Sense in Southern Wake",
+        "meta_desc": "Chain link fence in Fuquay-Varina for dogs, bigger lots, and budget. Coated versus galvanized in Holly Springs and Southern Wake.",
+        "h1": "When Chain Link Still Makes Sense in Southern Wake",
+        "date": "2026-10-19",
+        "body": """# When Chain Link Still Makes Sense in Southern Wake
+
+**Quick answer:** A chain link fence in Fuquay-Varina still makes sense for a dog, a long property line, or a big back lot. Choose it when you want to spend less per foot than wood or vinyl. You can see through the mesh, and air can move through it. Inside Fuquay-Varina town limits, chain link must be black or green coated. It will not give you a private yard, and your HOA may still say no.
+
+Homeowners around Southern Wake still pick this fence for pets, property lines, and lots bigger than a standard backyard. Holly Springs, about five miles northwest in zip code 27540, faces the same choice and uses its own town rules.
+
+## A chain link fence for dogs
+
+A chain link fence for dogs lets you watch the pet from a porch or a window. The dog can see the yard instead of a blank wall. A climber may still get over the mesh, and a digger may still go under it, so describe the dog when you ask for an estimate.
+
+Fuquay-Varina rules include a 2-inch clearance at grade for drainage so rainwater can pass, and that gap is for water rather than a promise that every pet stays in. If the dog digs, ask what still lets water drain, and remember that a gate that does not latch is an open door. This is not a pool barrier. Pool rules are separate, and our [aluminum and pool-code fence page](/services/aluminum-pool-fences.html) plus our [fence FAQ](/faq.html) cover them.
+
+## Bigger lots, where the length adds up
+
+On a small backyard, the price gap may not decide the material. On a bigger lot it often does, because fencing an acre is a different conversation from fencing a quarter-acre backyard, and cost per foot starts to decide the plan. You see that on larger lots in the ETJ, the area just outside Fuquay-Varina town limits that still follows town zoning, and out toward the Harnett County line. A fence around just the area you use is often smarter than ringing the whole property.
+
+In Holly Springs, coated chain link can be a practical first fence for pets while the landscaping fills in, and HOA rules decide whether it can stay long term. See our [Holly Springs area page](/areas/holly-springs.html) and, for a bare new yard, our [new-build fence guide](/blog/holly-springs-new-build-fence/). Our [chain link fence page](/services/chain-link-fences.html) covers the install, and our [Fuquay-Varina area page](/areas/fuquay-varina.html) shows why two homes with the same address can follow different rules. Zip code 27526 spreads across Wake County and Harnett County, so check the lot rather than the city on the mail.
+
+## Usually less per foot than wood or vinyl
+
+Chain link is usually less per foot than wood or vinyl, which is why people still use it when the boundary is long. Length, gates, soil, and coating change the bill, so there is no dollar figure here.
+
+Around Fuquay-Varina the soil under the grass is often dense red clay, and a post hole can hold water. Wood can rot there, and steel can rust on that same wet line. Gravel at the bottom, and a top that slopes off the post, give the water a way out. Our guide on [why red clay eats fence posts](/blog/piedmont-red-clay-fence-posts/) covers that step. For a look at your line, [request a free estimate](/#quote) or call or text **(919) 276-8406**.
+
+## How chain link holds up in our weather
+
+Chain link does not rot or need stain the way wood does. Central North Carolina gets about 47 inches of rain a year, with humid air from June into September, and that weather is hard on wood. A zinc coat on galvanized wire slows rust, and a black or green vinyl coat covers the metal. Rust can still start at scrapes, cut ends, gates, or where a post sits in a wet clay hole. Pine pollen from late March into early April sticks to local fences and shows more on dark mesh than on silver wire.
+
+## You can see through it, and air can move
+
+Pet owners often want this fence because they can see the dog and whoever is at the gate, while neighbors can see in as well. The open mesh lets air move, so wind has less of a wall to push, the yard feels less closed in, and light still reaches the grass.
+
+Privacy slats are strips, often plastic, woven into the mesh to block most of the view. They add some privacy and cut some of the breeze, but they are not a wood or vinyl wall. For that solid look, compare our [wood privacy page](/services/wood-privacy-fences.html), our [vinyl fence page](/services/vinyl-fences.html), and our [vinyl versus wood guide](/blog/vinyl-vs-wood-privacy-fuquay-varina/). Inside Fuquay-Varina town limits, the Town does not allow solid fences in the front yard, so check those rules and your HOA before adding slats out front.
+
+## Black or green coated versus galvanized
+
+Galvanized chain link is the silver-gray fence. The zinc layer slows rust, and black or green coating adds vinyl over the metal. The coated version disappears against a treeline far better than most people expect, while silver wire stands out against pines and grass.
+
+Inside Fuquay-Varina town limits, color is a rule. The Town's Land Development Ordinance calls chain link out by name. Inside the corporate limits, **chain link must be black or green coated** — bare galvanized is not an approved material. In nonresidential zones it is prohibited in front yards entirely.
+
+Out in the ETJ, the rules loosen considerably: the ordinance states that no fence material is prohibited and there is no maximum height in side and rear yards. Same mailing address, different rules. Our [fence permit guide](/blog/fence-permit-fuquay-varina/) explains town limits, the ETJ, and the Harnett County side of 27526.
+
+Holly Springs uses its own material list. In front yards, side-corner yards, and the outer street edge of a subdivision, the Town lists wood or vinyl picket, brick wall, or ornamental fence only. In side-interior and rear yards, it lists wood, vinyl, ornamental fence, brick wall, or chain link. Chain link there belongs on the side or the back, not the front. Confirm the town rules, because an HOA can be stricter, and our [HOA approval guide](/blog/hoa-fence-approval-fuquay-varina/) walks through the written step.
+
+## Looks, privacy, and what you give up
+
+If looks and privacy come first, wood or vinyl may be worth more per foot where people see the fence. Keep chain link on the long run that stays out of sight. Some HOAs allow chain link only in the back, and some do not allow it at all, so get that answer in writing before materials arrive.
+
+Other Fuquay-Varina details still apply, the same as any other fence: finished side facing outward, a 2-inch clearance at grade for drainage, and keep it about 3 inches inside the property line so there's no boundary dispute later. Find the survey pins and call 811 before anyone digs, because that call marks utility lines and is not a fence permit. Then [request a free estimate](/#quote) or call or text **(919) 276-8406** with the street and ZIP.
+
+## Chain link fence FAQ
+
+### Is a chain link fence allowed in Fuquay-Varina?
+
+Inside the corporate limits, chain link must be black or green coated, and bare galvanized is not an approved material. In the ETJ, the ordinance states that no fence material is prohibited. An HOA can still say no.
+
+### Is chain link a good fence for dogs?
+
+It fits when you want to see the dog without a solid wall, but it will not stop every climber or digger and it will not give privacy. A gate that latches matters as much as the mesh.
+
+### Is a chain link fence cheaper than wood or vinyl?
+
+It is usually less per foot than wood or vinyl. A long line, extra gates, or hard clay can still raise the job, and no single price fits every yard.
+
+### Does Holly Springs use the same chain link rule as Fuquay-Varina?
+
+Holly Springs is its own town, with chain link on the side and rear list but not on the front-yard list. The black or green coat rule is for Fuquay-Varina town limits, so confirm Holly Springs with the Town and your HOA.
+""",
+    },
+    {
         "slug": "piedmont-red-clay-fence-posts",
         "meta_title": "Why Piedmont Red Clay Eats Fence Posts",
         "meta_desc": "Why red clay around Fuquay-Varina holds water against fence posts, and the usual fixes: gravel, a crowned collar, and ground-contact wood.",
@@ -2207,8 +2286,8 @@ def _post_date_label(iso):
 
 def blog_index():
     title = f"Fence Guides for {CITY} Homeowners"
-    desc = ("Fence guides for Fuquay-Varina and nearby towns: permits, HOA approval, "
-            "vinyl versus wood, red clay posts, and new yards.")
+    desc = ("Fence guides for Fuquay-Varina and southern Wake: chain link, permits, "
+            "HOA approval, vinyl versus wood, and red clay.")
     canon = f"{BASE}/blog/"
     posts_ld = []
     cards = []
@@ -2251,7 +2330,7 @@ def blog_index():
             f'<main><section class="hero hero-inner"><div class="container hero-content">'
             f'<p class="hero-eyebrow">Fence guides</p>'
             f'<h1>Fence Guides for {CITY} &amp; Southern Wake</h1>'
-            f'<p class="hero-sub">Permits, HOA approval, materials, clay, and new-construction yards &mdash; written for homeowners around {CITY}.</p>'
+            f'<p class="hero-sub">Permits, HOA approval, chain link, clay, and new-construction yards &mdash; written for homeowners around {CITY}.</p>'
             f'<div class="hero-cta"><a class="btn btn-primary btn-lg" href="#quote">Get My Free Estimate</a>'
             f'<a class="btn btn-ghost btn-lg" data-call href="tel:{PHONE_TEL}">Call {PHONE_TEXT}</a></div>'
             f'</div></section><section class="section"><div class="container">'
@@ -2335,8 +2414,15 @@ urls += [(f"areas/{s}.html", "0.9" if s == "fuquay-varina" else "0.7") for s, _,
 urls += [("blog/", "0.7")]
 urls += [(f"blog/{p['slug']}/", "0.6") for p in POSTS]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+# Pages edited for the southern Wake chain-link guide use that post's date.
+# Older URLs keep the 2026-10-12 sitewide edit.
+EDITED_LASTMOD = {
+    "blog/",
+    "blog/chain-link-fence-southern-wake/",
+    "services/chain-link-fences.html",
+}
 for u, p in urls:
-    lastmod = "2026-10-12"
+    lastmod = "2026-10-19" if u in EDITED_LASTMOD else "2026-10-12"
     sm += f'  <url><loc>{BASE}/{u}</loc><lastmod>{lastmod}</lastmod><priority>{p}</priority></url>\n'
 write("sitemap.xml", sm + "</urlset>\n")
 
