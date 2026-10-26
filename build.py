@@ -494,6 +494,7 @@ can be under different height limits, different school districts and different c
   <p class="callout-note">You may see other sites claim 8 feet for side and rear yards. The Town's own Land
   Development Ordinance says <strong>six</strong>. We build to the ordinance.</p>
 </div>
+<p>Front, side, and rear yards, corner lots, and the ETJ are covered in our <a href="../blog/fence-height-limits-fuquay-varina/">fence height limits guide</a>.</p>
 <h2>You probably don't need a permit &mdash; but you do need your HOA</h2>
 <p>Straight from the Town's FAQ: <em>a permit is not required for the installation of a fence in
 Fuquay-Varina's corporate limits or ETJ.</em> A pool, a shed or a detached garage does need one. A fence
@@ -647,7 +648,7 @@ behaves differently from an established yard &mdash; denser, less predictable &m
 setting posts accordingly.</p>
 <h2>What we install in Angier</h2>
 <p>Vinyl privacy, wood privacy, aluminum and pool-code enclosures, and chain link for larger lots &mdash;
-and out this way, lots do get larger. Free estimates, same as everywhere we work.</p>
+and out this way, lots do get larger. When the run is long, our guide to <a href="../blog/chain-link-fence-southern-wake/">when chain link still makes sense in southern Wake</a> covers dogs, budget, and how coat rules differ by town. Free estimates, same as everywhere we work.</p>
 """, "Fence installation in Angier, NC 27501. Harnett County fencing — vinyl, wood privacy, aluminum and chain link. Serving Angier. Free estimates."),
 
 "willow-spring": ("""
@@ -681,9 +682,7 @@ and any HOA covenants still govern. We'll sort out which apply to your specific 
 <p>The county has no fence setback rule, but recommends staying 1 to 2 feet inside the line.</p>
 <h2>Bigger lots, different projects</h2>
 <p>Yards out here tend to run larger than in-town lots, which changes what makes sense. Fencing an acre is a
-different conversation from fencing a quarter-acre backyard &mdash; chain link and split-rail start to
-compete with privacy fence on cost, and partial enclosures around just the area you actually use are often
-smarter than ringing the whole property.</p>
+different conversation from fencing a quarter-acre backyard. On a long line, <a href="../blog/chain-link-fence-southern-wake/">chain link can still make sense in southern Wake</a> when cost per foot matters more than a solid wall, and a partial enclosure around the area you use is often smarter than ringing the whole property.</p>
 <h2>What we install in Willow Spring</h2>
 <p>Vinyl, wood privacy, aluminum and pool-code fencing, and chain link. The same Piedmont red clay applies
 out here, so the same care with post drainage does too.</p>
@@ -767,6 +766,7 @@ SERVICE_RELATED = {
 }
 AREA_RELATED = {
     "fuquay-varina": [
+        ("blog/fence-height-limits-fuquay-varina/", "Fence height limits"),
         ("faq.html", "Fence FAQ"),
         ("blog/fence-permit-fuquay-varina/", "Fence permit guide"),
         ("blog/hoa-fence-approval-fuquay-varina/", "HOA approval"),
@@ -1713,6 +1713,89 @@ def extract_faqs(md):
 
 POSTS = [
     {
+        "slug": "fence-height-limits-fuquay-varina",
+        "meta_title": "Fence Height Limits in Fuquay-Varina",
+        "meta_desc": "Fence height in Fuquay-Varina: 4 feet in front, 6 feet on the side and back in town, and no Town cap in the ETJ.",
+        "h1": "Fence Height Limits in Fuquay-Varina",
+        "date": "2026-10-26",
+        "body": """# Fence Height Limits in Fuquay-Varina
+
+**Quick answer:** Fence height in Fuquay-Varina depends on the yard and on where the lot sits. Inside town limits, a front yard fence can be up to 4 feet, and it cannot be solid. A side or back yard fence can be up to 6 feet. In the Fuquay-Varina ETJ, the side and back yard have no Town height cap, while the front yard rule is still written as 4 feet. This is homeowner information, not legal advice. Confirm your lot with the Town of Fuquay-Varina Planning Department at (919) 552-1429 before you build.
+
+A Fuquay-Varina mailing address does not tell you which rules cover the yard. Our [area page](/areas/fuquay-varina.html) explains why two homes in the same zip can differ, and our [fence permit guide](/blog/fence-permit-fuquay-varina/) plus our [fence FAQ](/faq.html) cover the Town's no-permit rule for town limits and the ETJ.
+
+## What is the front yard fence height in Fuquay-Varina, NC?
+
+The Town's Land Development Ordinance is the rule book for fences, and section 9-1303 says a front yard fence cannot be taller than 4 feet. That limit runs along the front property line, or the right-of-way, and along the side lines up to the front wall of the house. The Town posts the current book, amended May 4, 2026, on its [document downloads page](https://www.fuquay-varina.org/299/Document-Downloads), and the fence wording is on [this page](https://online.flippingbook.com/view/1031340238/223/).
+
+The same sentence bans opaque fences in the front yard. Opaque means you cannot see through the fence, so a solid panel stays behind the front wall of the house, while a low open fence can sit out front if it is 4 feet or under. That front yard sentence is not split between town limits and the ETJ the way the side and back sentence is, so ask Planning how it applies if you are in the ETJ.
+
+## How tall can a side or back yard fence be?
+
+Inside town limits, a side or back yard fence can be up to 6 feet. That part of the yard starts at the front wall of the house and runs to the back property line. In the ETJ, the same section says there is no maximum fence height in the side or back yard.
+
+| Yard | Inside town limits | In the ETJ |
+| --- | --- | --- |
+| Front yard | 4 ft max; no solid fences | 4 ft |
+| Side and back yard | 6 ft max | No Town maximum |
+
+Other websites sometimes say 8 feet is allowed in town. The Town's rule book says 6 feet inside town limits. No Town maximum in the ETJ still leaves the front yard limit, easements, the right-of-way, and your HOA in place.
+
+## What is the Fuquay-Varina ETJ, and why do people get it wrong?
+
+ETJ means extraterritorial jurisdiction. It is land outside town limits where the Town still applies its zoning rules, so the fence rules can cover the lot even though you are not inside the town.
+
+A Fuquay-Varina street address is not proof you are inside town limits, because zip code 27526 includes town limits, the ETJ, and land outside both. "No maximum" does not mean any height is fine, and the county has not taken over a lot that sits in the ETJ. If the lot is outside both, the Town's answer may not apply.
+
+The Town's [fence FAQ](https://www.fuquay-varina.org/Faq.aspx?QID=218) says a permit is not required in the corporate limits or the ETJ, while Town standards stay mandatory even when a neighborhood has its own rules. Pools, sheds, and detached garages do need permits. To see which office covers your lot, use the jurisdiction line on Wake County iMAPS, as our [area page](/areas/fuquay-varina.html) explains, or call the Town of Fuquay-Varina Planning Department at (919) 552-1429. That number is the Town's, from the same FAQ page and from its [site plan checklist](https://www.fuquay-varina.org/DocumentCenter/View/9927/Site-Plan-Submittal-Checklist-PDF), and it is not our business line.
+
+## What about corner lots and sight triangles?
+
+The fence section does not print a separate corner-lot height. The 4-foot front yard limit still follows the side lines up to the front wall of the house, and a corner lot also has a side along a second street, where a tall solid fence can block a driver's view.
+
+[Section 9-1617](https://online.flippingbook.com/view/1031340238/479/) points sight distance to the Town's street specs instead of listing one fence height. [Page 61](https://online.flippingbook.com/view/1031340238/61/) says a hedge, tree, or shrub between the building setback and the street cannot block the site triangle at a street intersection. The [street specs](https://www.fuquay-varina.org/DocumentCenter/View/18292/SECTION-060-Streets) say a sight triangle applies at street intersections, and that shrubs and ground cover less than 42 inches tall may be allowed there. That 42-inch figure is about plants, not a fence height. The specs also say the Town can notify an owner to remove a sight-distance block on private property, so call Planning at (919) 552-1429 before you choose a height near a corner. If the road belongs to the state, ask which office sets the sight rule.
+
+## Can an HOA require a shorter fence?
+
+Yes. The Town's fence FAQ says to check your homeowners' association or your deed, because those private rules can be stricter than the Town's, and the Town's rules still apply on top of them. We are not your HOA, so we cannot approve the fence or promise that your HOA will. Our [HOA fence approval guide](/blog/hoa-fence-approval-fuquay-varina/) shows how to get a written answer before any work starts.
+
+## What else does the Town require besides height?
+
+Section 9-1303 and the Town's fence FAQ also cover these points.
+
+- **Finished side out.** The finished surface faces the street or the neighbor, in town limits and in the ETJ.
+- **A gap at the ground.** Inside town limits, many fences need at least 2 inches of clearance so rainwater can pass. That gap does not apply to masonry, hedges, chain link, split rail, or the like. In the ETJ, the 2-inch gap is written for privacy fences only.
+- **Easements and the street.** Fences are not allowed in utility, drainage, stormwater, or similar easements, or in the public right-of-way. The right-of-way typically ends 2 feet behind the sidewalk, or 5 feet behind the curb where there is no sidewalk.
+- **Landscape buffers.** On a residential lot, a fence in a perimeter buffer must sit at least 8 feet from the rear or side property line.
+- **Inside your line.** The Town's FAQ says a fence should sit at least 3 inches inside the property line, so you avoid a boundary dispute.
+- **Materials.** Inside town limits, chain link must be plastic coated or powder coated in black or green. In the ETJ, no fence material is prohibited. Chain link is prohibited in a nonresidential front yard.
+
+For a backyard fence inside town limits, compare our [wood privacy page](/services/wood-privacy-fences.html), our [vinyl fence page](/services/vinyl-fences.html), and our [chain link page](/services/chain-link-fences.html). A pool fence follows separate safety rules, so use our [aluminum and pool-code page](/services/aluminum-pool-fences.html) instead of these yard heights.
+
+## Why should you call NC 811 before anyone digs?
+
+The Town's [Call Before You Dig page](https://www.fuquay-varina.org/315/Call-Before-You-Dig) says North Carolina law requires notice to the utilities at least 3 working days before you dig. Call 811. North Carolina 811 alerts the utilities at no charge, and they mark their lines. Skipping the call can damage property or injure someone. The call is not a fence permit, and it does not replace your HOA. When you want a look at the line, [request a free estimate](/#quote) or call or text **(919) 276-8406**.
+
+## Fence height FAQ
+
+### What is the front yard fence height in Fuquay-Varina?
+
+It is 4 feet, up to the front wall of the house, and a solid fence is not allowed there. Confirm the lot with the Town Planning Department at (919) 552-1429.
+
+### How tall can a backyard fence be in Fuquay-Varina?
+
+Inside town limits, side and back yard fences can be up to 6 feet, starting at the front wall of the house. In the ETJ the Town sets no maximum for those yards, and your HOA may still set a lower one.
+
+### Do corner lots have a separate fence height?
+
+The fence section does not print one. The 4-foot front rule still runs to the front wall of the house, and sight distance is in the Town's street specs, so ask Planning before you build near a corner.
+
+### Can my HOA make the fence shorter than the Town allows?
+
+Yes. HOA rules can be stricter, the Town's rules still apply, and you need the HOA answer in writing before work begins.
+""",
+    },
+    {
         "slug": "chain-link-fence-southern-wake",
         "meta_title": "When Chain Link Still Makes Sense in Southern Wake",
         "meta_desc": "Chain link fence in Fuquay-Varina for dogs, bigger lots, and budget. Coated versus galvanized in Holly Springs and Southern Wake.",
@@ -1968,6 +2051,7 @@ No. Only your HOA can approve your fence. A fence company can help you understan
         "meta_desc": "Do you need a fence permit in Fuquay-Varina? Usually not, but height rules, your HOA, and the Harnett County side of 27526 still matter. Here's how.",
         "h1": 'Do You Need a Fence Permit in Fuquay-Varina, NC?',
         "date": "2026-09-26",
+        "updated": "2026-10-26",
         "body": """# Do You Need a Fence Permit in Fuquay-Varina, NC?
 
 **Quick answer:** Usually not. You don't need a fence permit in Fuquay-Varina if your home is inside town limits or the Town's ETJ, which is the area just outside town limits that still follows town zoning rules. You still have to follow the Town's height rules, and your HOA will likely need to approve your fence first. If your home is on the Harnett County side of zip code 27526, check with Harnett County instead.
@@ -2005,7 +2089,7 @@ It depends on whether you're inside town limits or in the ETJ, as summarized on 
 | Front yard | 4 ft max; no solid fences | 4 ft |
 | Side and back yard | 6 ft max | No Town maximum |
 
-You may see other websites say 8 feet is allowed. The Town's ordinance says 6 feet inside town limits, and that's what we build to.
+You may see other websites say 8 feet is allowed. The Town's ordinance says 6 feet inside town limits, and that's what we build to. Front, side, and rear yards, corner lots, and the ETJ are covered in our [fence height limits guide](/blog/fence-height-limits-fuquay-varina/).
 
 "No Town maximum" in the ETJ does not mean "no rules." Your HOA rules, easements, and setbacks still apply. A setback is the distance a structure has to stay back from a property line or buffer.
 
@@ -2286,8 +2370,8 @@ def _post_date_label(iso):
 
 def blog_index():
     title = f"Fence Guides for {CITY} Homeowners"
-    desc = ("Fence guides for Fuquay-Varina and southern Wake: chain link, permits, "
-            "HOA approval, vinyl versus wood, and red clay.")
+    desc = ("Fence guides for Fuquay-Varina and southern Wake: height limits, permits, "
+            "HOA approval, chain link, and red clay.")
     canon = f"{BASE}/blog/"
     posts_ld = []
     cards = []
@@ -2330,7 +2414,7 @@ def blog_index():
             f'<main><section class="hero hero-inner"><div class="container hero-content">'
             f'<p class="hero-eyebrow">Fence guides</p>'
             f'<h1>Fence Guides for {CITY} &amp; Southern Wake</h1>'
-            f'<p class="hero-sub">Permits, HOA approval, chain link, clay, and new-construction yards &mdash; written for homeowners around {CITY}.</p>'
+            f'<p class="hero-sub">Height limits, permits, HOA approval, chain link, and clay &mdash; written for homeowners around {CITY}.</p>'
             f'<div class="hero-cta"><a class="btn btn-primary btn-lg" href="#quote">Get My Free Estimate</a>'
             f'<a class="btn btn-ghost btn-lg" data-call href="tel:{PHONE_TEL}">Call {PHONE_TEXT}</a></div>'
             f'</div></section><section class="section"><div class="container">'
@@ -2414,15 +2498,27 @@ urls += [(f"areas/{s}.html", "0.9" if s == "fuquay-varina" else "0.7") for s, _,
 urls += [("blog/", "0.7")]
 urls += [(f"blog/{p['slug']}/", "0.6") for p in POSTS]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-# Pages edited for the southern Wake chain-link guide use that post's date.
+# Height-limit edits use 2026-10-26. The chain-link guide keeps 2026-10-19.
 # Older URLs keep the 2026-10-12 sitewide edit.
-EDITED_LASTMOD = {
+LASTMOD_1026 = {
     "blog/",
+    "blog/fence-height-limits-fuquay-varina/",
+    "blog/fence-permit-fuquay-varina/",
+    "areas/fuquay-varina.html",
+    "areas/willow-spring.html",
+    "areas/angier.html",
+}
+EDITED_LASTMOD = {
     "blog/chain-link-fence-southern-wake/",
     "services/chain-link-fences.html",
 }
 for u, p in urls:
-    lastmod = "2026-10-19" if u in EDITED_LASTMOD else "2026-10-12"
+    if u in LASTMOD_1026:
+        lastmod = "2026-10-26"
+    elif u in EDITED_LASTMOD:
+        lastmod = "2026-10-19"
+    else:
+        lastmod = "2026-10-12"
     sm += f'  <url><loc>{BASE}/{u}</loc><lastmod>{lastmod}</lastmod><priority>{p}</priority></url>\n'
 write("sitemap.xml", sm + "</urlset>\n")
 
