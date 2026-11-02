@@ -368,6 +368,7 @@ white fence in town looks dirty for a few weeks. Wash after the pollen drops, no
   <li><strong>Vinyl picket</strong> &mdash; a better fit for the older streets near the historic districts</li>
   <li><strong>Semi-privacy and lattice-top</strong> &mdash; privacy with some light through</li>
 </ul>
+<p>A 6-foot solid panel is a common backyard choice inside Fuquay-Varina town limits. Front yards, corner lots, and the ETJ use different height rules. Those are in our <a href="../blog/fence-height-limits-fuquay-varina/">fence height limits guide</a>.</p>
 <p>Ask about UV-inhibited formulations. With <strong>216 sunny days</strong> and about 35 days over 90&deg;F
 a year, a south- or west-facing run takes noticeably more sun than the same fence on the north side.</p>
 """, "Vinyl fence installation in Fuquay-Varina, NC. Low-maintenance privacy and picket vinyl built for Piedmont humidity, red clay and sun. Free estimates."),
@@ -392,6 +393,7 @@ are specific.</p>
   <li><strong>Native subterranean termites</strong> are a year-round concern statewide. Any untreated wood
       in ground contact is at risk.</li>
 </ul>
+<p>The 2-inch gap and the 6-foot side and rear cap are town-limits rules. Front yards, corner lots, and the ETJ are different. See our <a href="../blog/fence-height-limits-fuquay-varina/">fence height limits guide</a>.</p>
 <h2>Posts are where the job is won or lost</h2>
 <p>Under about eight inches of friendly sandy loam, Fuquay-Varina is <strong>dense red clay</strong> &mdash;
 35 to 70 percent clay content. Essentially every post hole in this town is a clay hole. A few consequences
@@ -715,7 +717,7 @@ FAQS = [
  ("Do I need a permit to build a fence in Fuquay-Varina?",
   "No. The Town of Fuquay-Varina does not require a permit to install a fence inside the corporate limits or the ETJ. Pools, sheds, detached garages and other accessory structures do require permits. If your fence is going around a pool, the pool is permitted and the barrier gets inspected."),
  ("How tall can my fence be?",
-  "Inside Fuquay-Varina's corporate limits, side and rear yard fences max out at 6 feet and front yard fences at 4 feet, with opaque fences prohibited in front yards. In the ETJ there is no maximum height for side and rear yards. Some websites list 8 feet for Fuquay-Varina — the Town's own Land Development Ordinance says six."),
+  "Inside Fuquay-Varina's corporate limits, side and rear yard fences max out at 6 feet and front yard fences at 4 feet, with opaque fences prohibited in front yards. In the ETJ there is no maximum height for side and rear yards. Some websites list 8 feet for Fuquay-Varina — the Town's own Land Development Ordinance says six. Front yards, side and rear yards, corner lots, and the ETJ are covered in our [fence height limits guide](/blog/fence-height-limits-fuquay-varina/)."),
  ("How do I know if I'm in the town limits or the ETJ?",
   "Your mailing address won't tell you. Zip 27526 covers about 98 square miles across both Wake and Harnett counties, while the Town itself is about 17.6 square miles and entirely in Wake County. The Town's Planning Department can confirm your jurisdiction, and we check it before quoting."),
  ("Does my HOA have to approve the fence?",
@@ -880,6 +882,10 @@ def home_breadcrumb_ld():
         }],
     })
 
+def _faq_plain(text):
+    """FAQ JSON-LD text. Visible answers may use markdown links; schema stays plain."""
+    return _MD_LINK.sub(lambda m: m.group(1), text)
+
 def _faqpage_ld(pairs):
     """FAQPage JSON-LD. The business is the publisher, inside this typed node."""
     return _ld({
@@ -887,7 +893,8 @@ def _faqpage_ld(pairs):
         "@type": "FAQPage",
         "publisher": _biz_node(),
         "mainEntity": [
-            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
+            {"@type": "Question", "name": q,
+             "acceptedAnswer": {"@type": "Answer", "text": _faq_plain(a)}}
             for q, a in pairs
         ],
     })
@@ -964,7 +971,8 @@ f"""<main>
     <div class="why-grid">
       <div class="why-item"><h3>We know which rules apply to your lot</h3>
         <p>Inside the town limits, side and rear fences cap at 6 feet. In the ETJ there's no maximum. Same
-           27526 address, different rules &mdash; we check before we quote.</p></div>
+           27526 address, different rules &mdash; we check before we quote. Front, side, rear, corner lots,
+           and the ETJ are in our <a href="blog/fence-height-limits-fuquay-varina/">fence height limits guide</a>.</p></div>
       <div class="why-item"><h3>No permit needed &mdash; but your HOA matters</h3>
         <p>Fuquay-Varina doesn't require a fence permit. Your HOA almost certainly requires written
            approval. We'll tell you what you actually need.</p></div>
@@ -997,7 +1005,7 @@ def faq_page():
     desc = ("Permits, height limits, HOA approval, post depth, red clay staining and NC pool barrier code "
             f"— answered for {CITY} homeowners.")
     nav, bc_ld = crumbs(0, [("FAQ", None)])
-    body = "".join(f'<div class="faq-item"><h2>{html.escape(q)}</h2><p>{html.escape(a)}</p></div>'
+    body = "".join(f'<div class="faq-item"><h2>{html.escape(q)}</h2><p>{_inline(a, 0)}</p></div>'
                    for q, a in FAQS)
     more = related_links(0, [
         ("services/wood-privacy-fences.html", "Wood privacy fences"),
@@ -1712,6 +1720,91 @@ def extract_faqs(md):
     return faqs
 
 POSTS = [
+    {
+        "slug": "willow-spring-fence-rules",
+        "meta_title": "Fence Rules in Willow Spring, NC",
+        "meta_desc": "Willow Spring fence rules: which county covers your lot, Wake and Johnston setbacks, easements, NC 811, and HOA approval.",
+        "h1": "Fence Rules in Willow Spring, NC",
+        "date": "2026-11-02",
+        "body": """# Fence Rules in Willow Spring, NC
+
+**Quick answer:** Willow Spring fence rules depend on the lot, not the name on the mail. [Johnston County's town list](https://www.johnstonnc.gov/happ/content.cfm?pageid=Towns) includes some parts of Willow Spring and does not name a Town of Willow Spring. A lot can also sit in Wake County, or in a nearby town's planning area. Check the parcel before you build. This is homeowner information, not legal advice. See our [Willow Spring area page](/areas/willow-spring.html).
+
+## Which county covers a Willow Spring fence?
+
+Johnston County's town list says some parts of Willow Spring are in Johnston County. Wake County's [Southern Regional Center](https://www.wake.gov/departments-government/health-human-services/health-human-services-locations/southern-regional-center) names Willow Spring as a community it serves. Wake County also gives a Willow Spring address, 3321 NC Hwy 42, Willow Spring, NC 27592, for a [county park](https://www.wake.gov/departments-government/facilities-design-construction/facilities-design-construction-projects/completed-projects/beech-bluff-county-park-project) in the southeast corner of the county.
+
+Your mailing address does not pick the office. Two homes can both say Willow Spring and still answer to different counties.
+
+On the Wake County side, use [iMAPS](https://maps.raleighnc.gov/iMAPS/). Wake County Planning says to enter the address or parcel number and read the "Jurisdiction" line. The agency named there is the one to follow. Planning only covers unincorporated Wake County. If the line names a town, that town's rules apply. Those steps are on the county's [About PDS page](https://www.wake.gov/departments-government/planning-and-development-services/about-pds).
+
+That town area can be an ETJ, which means extraterritorial jurisdiction. Wake County says an ETJ lets a town apply its development rules outside the town limits. You do not pay that town's taxes just for being in the ETJ. For a fence, the town's development rules can still be the ones that count.
+
+On the Johnston County side, [Planning and Zoning](https://www.johnstonnc.gov/planning/content.cfm?pageid=33) handles zoning in the unincorporated part of the county. The [planning FAQ](https://www.johnstonnc.gov/planning/faqs.cfm) says you can look up zoning in [GIS MapClick](https://www.johnstonnc.gov/gis), or stop by the Planning Office.
+
+## What fence rules does Wake County publish?
+
+Wake County says setbacks and other design rules are in its Unified Development Ordinance. The county links that book on [Municode](https://library.municode.com/nc/wake_county/codes/unified_development_ordinance) from its [UDO page](https://www.wake.gov/departments-government/planning-development-inspections/planning/planwake-comprehensive-plan/planwake-unified-development-ordinance).
+
+Those plain-language county pages do not print a front-yard or backyard fence height for unincorporated lots. If the Jurisdiction line says Wake County, open the ordinance or call Wake County Planning before you order panels. Their number is 919-856-6335. That number is the county planning office's, from its About PDS page, and it is not our business line.
+
+If the Jurisdiction line names Fuquay-Varina, use the town's height rules instead. Those are in our [fence height limits guide](/blog/fence-height-limits-fuquay-varina/).
+
+## What does Johnston County say about a fence?
+
+Johnston County's [building-permit page](https://www.johnstonnc.gov/planning/content.cfm?pageid=58) lists fences with the projects that do not need a building permit. That is not a promise about every other approval. The planning FAQ says a land use permit is how the county looks at setbacks, flood plain, zoning, the proposed use, and the 911 address.
+
+On the fence line, the county is direct. It does not have a setback requirement for fences. It asks you to keep the fence completely on your side of the property line. It also says there are no setbacks for fences or trees. It advises you not to build right on the line, in case the line is not where you think. It recommends 1 to 2 feet off the property line, and it says the county cannot enforce that recommendation.
+
+If the lot may be in a flood plain, the county asks you to point the property out on its flood plain map at the Planning Office, or to check the North Carolina Flood Risk Information System. Planning's number is (919) 989-5150. That number is Johnston County Planning's, from the same FAQ page, and it is not our business line.
+
+## What about drainage easements and utility lines?
+
+An easement is a strip of your land that someone else has a right to use. Look at your plat, the recorded map of the lot. Johnston County's stormwater guide says a plat can show easements, setbacks, stream buffers, and wetlands. Wake County's [iMAPS page](https://www.wake.gov/departments-government/geographic-information-services-gis/maps-apps-data/imaps-information) says the maps are for information and are not surveys, so do not treat the screen as your property corners.
+
+On the Johnston County side, the county's [homeowner drainage guide](https://www.johnstonnc.gov/utilities/content.cfm?pageid=379) says a drainage easement is where runoff is expected, such as a swale, ditch, or pipe. It says you generally cannot put improvements there, including fences. Do not place a fence across or in the easement if it blocks drainage. The county's guide says water can back up and the bottom of the fence can rot faster. The county does not maintain those easements. A property owner or an HOA does.
+
+The Wake County pages used here do not print that same no-fence sentence for every unincorporated lot. Still read the plat. If a drainage or utility easement is drawn on it, ask before you build on that strip.
+
+## Why call 811 before anyone digs?
+
+North Carolina law says the person who will dig must give notice first. For a normal yard, that notice has to be at least three full working days before the start date. The law is [G.S. 87-122](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByArticle/Chapter_87/Article_8A.html). [G.S. 87-119](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByArticle/Chapter_87/Article_8A.html) says the notification center may not charge you for giving that notice.
+
+You reach the center through [NC 811](https://nc811.org/). Dial 811, or 1-800-632-4949. NC 811 says it marks primary utility lines. Private lines on private property are not marked. The call is a safety step. It is not a fence permit, and it does not replace your HOA. When you want a look at the line, [request a free estimate](/#quote) or call or text **(919) 276-8406**.
+
+## What if an HOA has its own fence rules?
+
+County rules and HOA rules are separate. North Carolina law says an owners' association may adopt and amend rules, unless its own documents say otherwise. That is [G.S. 47F-3-102](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_47F/GS_47F-3-102.html). Your covenants, sometimes called CC&Rs, and any design guidelines are the papers that count.
+
+Read the current rules. Send the fence type, height, color, and a sketch on your plat. Wait for a written yes before anyone digs. We are not your HOA, so we cannot approve the fence or promise that your HOA will. Our [HOA fence approval guide](/blog/hoa-fence-approval-fuquay-varina/) walks through that process.
+
+## Should you fence the whole lot or only part of it?
+
+If the lot is large, fencing every foot of the boundary is a different job from fencing the part you use. The county pages above do not say you must fence the whole lot, and they do not ban a fence around only part of the yard. That choice is practical homeowner planning, not a county height rule.
+
+A full line means more posts, more gates, and a better chance of crossing a ditch, woods, or an easement. A partial fence around the yard you use, a dog area, or a garden is often the simpler plan. On a long run, our guide to [chain link in southern Wake](/blog/chain-link-fence-southern-wake/) covers dogs, budget, and how coat rules differ once you are inside a town. For a solid section, see our [wood privacy fence page](/services/wood-privacy-fences.html).
+
+Bring the plat, the map result, and any HOA rules to the estimate. [Request a free estimate](/#quote) or call or text **(919) 276-8406**.
+
+## Willow Spring fence FAQ
+
+### How do I tell if my Willow Spring lot is in Wake County or Johnston County?
+
+Use Wake County iMAPS and read the Jurisdiction line, or use Johnston County GIS MapClick. The city on your mail is not the test.
+
+### Does Johnston County set a fence setback?
+
+No. The county says it has no fence setback. It recommends 1 to 2 feet inside your line, and it says it cannot enforce that tip.
+
+### Do I need a building permit for a fence in Johnston County?
+
+The county's permits page lists fences with projects that do not need a building permit. If the lot may be in a flood plain, call Johnston County Planning at (919) 989-5150 before you start.
+
+### Does an HOA approval replace the county rules?
+
+No. Get the HOA answer in writing, and still follow the county or town that the map names for your lot.
+""",
+    },
     {
         "slug": "fence-height-limits-fuquay-varina",
         "meta_title": "Fence Height Limits in Fuquay-Varina",
@@ -2498,8 +2591,17 @@ urls += [(f"areas/{s}.html", "0.9" if s == "fuquay-varina" else "0.7") for s, _,
 urls += [("blog/", "0.7")]
 urls += [(f"blog/{p['slug']}/", "0.6") for p in POSTS]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+# Willow Spring fence-rules post, and the pages that link to the height guide, use 2026-11-02.
 # Height-limit edits use 2026-10-26. The chain-link guide keeps 2026-10-19.
 # Older URLs keep the 2026-10-12 sitewide edit.
+LASTMOD_1102 = {
+    "",
+    "faq.html",
+    "services/vinyl-fences.html",
+    "services/wood-privacy-fences.html",
+    "blog/",
+    "blog/willow-spring-fence-rules/",
+}
 LASTMOD_1026 = {
     "blog/",
     "blog/fence-height-limits-fuquay-varina/",
@@ -2513,7 +2615,9 @@ EDITED_LASTMOD = {
     "services/chain-link-fences.html",
 }
 for u, p in urls:
-    if u in LASTMOD_1026:
+    if u in LASTMOD_1102:
+        lastmod = "2026-11-02"
+    elif u in LASTMOD_1026:
         lastmod = "2026-10-26"
     elif u in EDITED_LASTMOD:
         lastmod = "2026-10-19"
