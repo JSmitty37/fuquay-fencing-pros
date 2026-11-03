@@ -83,8 +83,9 @@ Remove any parking / default URL Redirect / conflicting `@` or `www` records fir
 The ordinance figures on these pages (6 ft side/rear in corporate limits, 4 ft front, no maximum in the
 ETJ, no permit required, 2-inch ground clearance) come from the Town of Fuquay-Varina's own Land
 Development Ordinance and FAQ. Third-party fence-law aggregator sites list 8 ft for side/rear — **that is
-wrong**. Pool barrier figures come from the 2024 NC Residential Code Appendix NC-A. Re-verify before
-launch; codes change.
+wrong**. Pool barrier figures come from the 2018 NC Residential Code, Appendix V (AV105.2), as quoted by the
+NC Office of the State Fire Marshal. The 2024 NC code was postponed, so the 2018 code is still in effect.
+Re-verify before each content change; codes change.
 
 **No invented reviews, ratings, years in business or job counts appear anywhere on this site.** Keep it
 that way — add real ones when you have them.
