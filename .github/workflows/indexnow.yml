@@ -1,0 +1,48 @@
+# Tells Bing (and other IndexNow engines) which pages changed after each push to main.
+# The key file at the repo root (a71fcdfabfa286138f9794efd2bc1478.txt) proves we own the site. The key is public by design.
+name: IndexNow
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Wait for GitHub Pages to publish
+        run: sleep 120
+      - name: Submit changed pages
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          python3 - <<'PY'
+          import json, os, subprocess, urllib.request
+          host = "fuquayfencingpros.com"
+          key = "a71fcdfabfa286138f9794efd2bc1478"
+          before, after = os.environ["BEFORE"], os.environ["AFTER"]
+          try:
+              out = subprocess.check_output(["git", "diff", "--name-only", before, after], text=True)
+          except subprocess.CalledProcessError:
+              out = subprocess.check_output(["git", "ls-files", "*.html"], text=True)
+          urls = []
+          for f in out.split():
+              if not f.endswith(".html") or f.startswith("site/") or not os.path.exists(f):
+                  continue
+              path = f[:-len("index.html")] if f.endswith("index.html") else f
+              urls.append(f"https://{host}/{path}")
+          if not urls:
+              print("No page changes.")
+              raise SystemExit(0)
+          body = json.dumps({"host": host, "key": key,
+                             "keyLocation": f"https://{host}/{key}.txt",
+                             "urlList": urls[:10000]}).encode()
+          req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body,
+                                       headers={"Content-Type": "application/json; charset=utf-8"})
+          with urllib.request.urlopen(req, timeout=30) as r:
+              print(r.status, len(urls), "URLs submitted")
+          PY

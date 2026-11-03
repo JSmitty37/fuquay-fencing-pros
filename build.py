@@ -57,6 +57,9 @@ def head(title, desc, canon, depth, extra_ld="", og_type="website", extra_meta="
 <meta property="og:description" content="{desc}" />
 <meta property="og:url" content="{canon}" />
 <meta property="og:image" content="{BASE}/images/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="{html.escape(OG_ALT, quote=True)}" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{title}" />
 <meta name="twitter:description" content="{desc}" />
@@ -143,8 +146,11 @@ def crumbs(depth, trail):
             items.append({"name": label, "url": None})
     nav = ('<nav class="crumbs" aria-label="Breadcrumb"><div class="container">'
            + ' <span class="sep">/</span> '.join(parts) + '</div></nav>')
+    # Google requires "item" on every crumb except the last, so label-only
+    # middle crumbs ("Services", "Service Area") stay visible but leave the JSON-LD.
+    kept = [it for k, it in enumerate(items) if it["url"] or k == len(items) - 1]
     li = []
-    for i, it in enumerate(items, 1):
+    for i, it in enumerate(kept, 1):
         u = f',"item":"{it["url"]}"' if it["url"] else ""
         li.append(f'{{"@type":"ListItem","position":{i},"name":"{it["name"]}"{u}}}')
     ld = ('<script type="application/ld+json">{"@context":"https://schema.org",'
@@ -254,7 +260,7 @@ def footer(depth):
 def _biz_node():
     """Typed business node for @id references. No street or postal address."""
     return {
-        "@type": ["HomeAndConstructionBusiness", "GeneralContractor"],
+        "@type": "HomeAndConstructionBusiness",
         "@id": BIZ_ID,
         "name": BRAND,
         "url": f"{BASE}/",
@@ -271,24 +277,28 @@ def biz_ld():
         f'{{"@type":"Offer","itemOffered":{{"@type":"Service","name":"{html.unescape(h)}"}}}}'
         for _, _, h in SERVICES)
     return f"""<script type="application/ld+json">
-{{"@context":"https://schema.org","@type":["HomeAndConstructionBusiness","GeneralContractor"],
+{{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness",
 "@id":"{BIZ_ID}","name":"{BRAND}","url":"{BASE}/","telephone":"{PHONE_TEL}",
 "image":"{BASE}/images/og-image.jpg","priceRange":"$$",
-"description":"Residential fence installation in {CITY}, NC and southern Wake County. Vinyl, wood privacy, aluminum pool-code and chain link fencing.",
+"description":"Free fence estimates in {CITY}, NC and southern Wake County, connecting homeowners with an independent local fence contractor. Vinyl, wood privacy, aluminum pool and chain link fencing.",
 "areaServed":[{areas}],
 "hasOfferCatalog":{{"@type":"OfferCatalog","name":"Fence Installation Services","itemListElement":[{offers}]}}}}
 </script>"""
 
-OG_ALT = "Fuquay Fencing Pros logo with a white fence icon on a dark green background"
+OG_ALT = "White vinyl privacy fence with square posts along a green backyard lawn"
 
 def content_img(depth, lazy):
     """Brand image. Hero uses eager; anything after the hero uses lazy."""
     up = "../" * depth
     loading = "lazy" if lazy else "eager"
     return (
-        f'<figure class="content-figure"><img class="content-img" src="{up}images/og-image.jpg" '
-        f'alt="{html.escape(OG_ALT, quote=True)}" width="1200" height="630" '
-        f'loading="{loading}" decoding="async" /></figure>'
+        # Shown at most 280px wide, so serve a 560px (2x) copy of the photo. og-image.jpg stays
+        # the 1200x630 social image.
+        f'<figure class="content-figure"><picture>'
+        f'<source type="image/webp" srcset="{up}images/vinyl-fence-560.webp" />'
+        f'<img class="content-img" src="{up}images/vinyl-fence-560.jpg" '
+        f'alt="{html.escape(OG_ALT, quote=True)}" width="560" height="294" '
+        f'loading="{loading}" decoding="async" /></picture></figure>'
     )
 
 def related_links(depth, pairs):
@@ -362,7 +372,7 @@ where soil is still exposed.</p>
 </ul>
 <p>And a local timing note: <strong>pine pollen peaks from late March into early April</strong> here. Every
 white fence in town looks dirty for a few weeks. Wash after the pollen drops, not during.</p>
-<h2>Styles we install</h2>
+<h2>Vinyl styles to choose from</h2>
 <ul class="prose-list">
   <li><strong>Vinyl privacy</strong> &mdash; 6 ft solid panels, the standard choice for backyards in town limits</li>
   <li><strong>Vinyl picket</strong> &mdash; a better fit for the older streets near the historic districts</li>
@@ -822,7 +832,7 @@ and any HOA covenants still govern. We'll sort out which apply to your specific 
 <h2>Bigger lots, different projects</h2>
 <p>Yards out here tend to run larger than in-town lots, which changes what makes sense. Fencing an acre is a
 different conversation from fencing a quarter-acre backyard. On a long line, <a href="../blog/chain-link-fence-southern-wake/">chain link can still make sense in southern Wake</a> when cost per foot matters more than a solid wall, and a partial enclosure around the area you use is often smarter than ringing the whole property.</p>
-<h2>What we install in Willow Spring</h2>
+<h2>Fence types for Willow Spring homes</h2>
 <p>Vinyl, wood privacy, aluminum and pool-code fencing, and chain link. The same Piedmont red clay applies
 out here, so the same care with post drainage does too.</p>
 """, "Fence installation in Willow Spring, NC 27592. Larger lots in Wake and Johnston counties. Vinyl, wood, aluminum, and chain link. Free estimates."),
@@ -905,7 +915,7 @@ FAQS = [
  ("Why does my white vinyl fence look orange at the bottom?",
   "Red clay. Our Cecil-series soil is iron-rich, and rain splashing off bare ground carries iron oxide that bonds chemically to the surface rather than sitting on it. It concentrates in the bottom 12 to 18 inches. Getting grass or mulch established along the fence line prevents it better than any cleaner removes it, and it should be cleaned with the right chemistry rather than high pressure."),
  ("When is the best time of year to install a fence?",
-  "Spring and fall. Piedmont clay is sticky and gums an auger when saturated, and close to concrete when baked in midsummer. We install year-round, but those are the easiest working windows. One scheduling note: pine pollen peaks from late March into early April, so if appearance matters for photos, plan around it."),
+  "Spring and fall. Piedmont clay is sticky and gums an auger when saturated, and close to concrete when baked in midsummer. Fences go in year-round, but those are the easiest working windows. One scheduling note: pine pollen peaks from late March into early April, so if appearance matters for photos, plan around it."),
  ("What does North Carolina require for a pool fence?",
   "The 2018 North Carolina Residential Code is still in effect, because the 2024 code was postponed ([NC Office of the State Fire Marshal](https://ncosfm.gov/news/press-releases/2025/04/07/north-carolina-delays-implementation-2024-state-building-code)). Its Appendix V says a pool barrier must be at least 48 inches tall, with no more than a 2-inch gap at the bottom (4 inches over a solid surface), no opening that passes a 4-inch sphere, and gates that open outward and are self-closing and self-latching ([OSFM interpretation](https://ncosfm.gov/formal-interpretations/2025-0214-orange-county-inspections-division-2018-ncrc-av105-barrier-requirements/open)). Our [aluminum and pool fence page](/services/aluminum-pool-fences.html) has the details."),
 ]
@@ -1108,7 +1118,7 @@ def area_page(slug, name, zipc):
             f'<div class="hero-cta"><a class="btn btn-primary btn-lg" href="#quote">Get My Free Estimate</a>'
             f'<a class="btn btn-ghost btn-lg" data-call href="tel:{PHONE_TEL}">Call {PHONE_TEXT}</a></div>'
             f'</div></section><section class="section"><div class="container prose">{body}'
-            f'<h2>Fence styles we install in {name}</h2><ul class="prose-list">' +
+            f'<h2>Fence services in {name}</h2><ul class="prose-list">' +
             "".join(f'<li><a href="../services/{s}.html">{n}</a></li>' for s, n, _ in SERVICES) +
             f'</ul><p class="prose-cross">Nearby: ' +
             " &middot; ".join(f'<a href="{s}.html">{n}</a>' for s, n, _ in AREAS if s != slug) +
@@ -1153,7 +1163,7 @@ f"""<main>
   <div class="container">
     <div class="section-head"><p class="eyebrow">Our Services</p>
       <h2>Fence Installation for {CITY} Homeowners</h2>
-      <p class="section-lead">Every style we install is matched to your yard, your HOA, and the ground under it.</p></div>
+      <p class="section-lead">Every style is matched to your yard, your HOA, and the ground under it.</p></div>
     <div class="card-grid">{cards}</div>
   </div>
 </section>
@@ -2781,8 +2791,10 @@ write("README.md", README)
 os.makedirs(os.path.join(OUT, "images"), exist_ok=True)
 write("images/README.md", """# Open Graph image
 
-`og-image.jpg` (1200×630) is the image every page uses for `og:image` and for the
-on-page logo. Width and height attributes match those pixels.
+`og-image.jpg` (1200×630) is the image every page uses for `og:image`.
+
+`vinyl-fence-560.webp` and `vinyl-fence-560.jpg` (560×294) are smaller copies of the same photo for the on-page
+image, which is shown at most 280px wide. Width and height attributes match those pixels.
 """)
 
 # 2026-10-12: every public URL changed (legal wording, schema, titles, descriptions,
