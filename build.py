@@ -383,9 +383,10 @@ are specific.</p>
   <li><strong>Humidity and 47 inches of rain a year.</strong> The north-facing side of a board fence stays
       damp longest and mildews first. Pressure-treated or naturally rot-resistant species in ground contact
       is not optional in this climate.</li>
-  <li><strong>Ground contact.</strong> Fuquay-Varina's ordinance already requires a <strong>2-inch minimum
-      clearance</strong> between the bottom of the fence and finished grade, for stormwater drainage. That
-      rule also happens to be exactly what keeps the bottom board from wicking moisture year-round.</li>
+  <li><strong>Ground contact.</strong> Inside town limits, Fuquay-Varina's ordinance calls for a <strong>2-inch
+      minimum clearance</strong> between the bottom of most fences and finished grade, so stormwater can drain
+      (<a href="https://online.flippingbook.com/view/1031340238/223/" rel="noopener">Land Development Ordinance</a>, <a href="https://www.fuquay-varina.org/Faq.aspx?QID=218" rel="noopener">Town fence FAQ</a>). That gap also keeps the bottom
+      board from sitting in wet soil.</li>
   <li><strong>Freeze-thaw ratcheting.</strong> We average a January low near 30&deg;F but only about 3
       inches of snow. That means dozens of shallow freeze-thaw cycles a season rather than one deep freeze.
       In high-clay soil that cycling works a post loose over time &mdash; arguably harder on a fence than a
@@ -408,43 +409,68 @@ worth knowing before you compare quotes:</p>
       predictable than an established yard.</li>
 </ul>
 <p>Industry practice in this soil is roughly <strong>one third of post length below grade</strong> &mdash;
-about 24 to 36 inches for a 6-foot fence. That is a practice standard, not a code requirement; the state
-building code's 12-inch footing minimum applies to structures, and Fuquay-Varina does not require a permit
-or inspection for a residential fence at all.</p>
+about 24 to 36 inches for a 6-foot fence. That is a practice standard, not a code requirement. Fuquay-Varina
+does not require a permit for a fence inside town limits or the ETJ (<a href="https://www.fuquay-varina.org/Faq.aspx?QID=218" rel="noopener">Town fence FAQ</a>).</p>
 """, "Wood privacy fence installation in Fuquay-Varina, NC. Board-on-board and shadowbox privacy fencing set properly in Piedmont red clay. Free estimates."),
 
 "aluminum-pool-fences": ("""
-<h2>Aluminum fencing and North Carolina pool-barrier code</h2>
-<p>Powder-coated aluminum is the go-to for pool enclosures and for open yards where you want a boundary
-without blocking the view. It does not rust, it does not need painting, and it handles our humidity
-without complaint.</p>
-<h2>If it's going around a pool, the code is specific</h2>
-<p>Pool barriers in North Carolina fall under the <strong>2024 NC Residential Code, Appendix NC-A</strong>,
-which took effect January 1, 2025. The requirements that most often cause a failed inspection:</p>
+<h2>Aluminum fencing for pools and open yards</h2>
+<p>Powder-coated aluminum is a common pick for pool fences and for yards where you want a boundary
+without blocking the view. It does not need paint, and it holds up in our humid summers.</p>
+<h2>Which North Carolina pool code applies right now?</h2>
+<p>The <strong>2018 North Carolina Residential Code</strong> is still the code in effect. A newer 2024 code was
+set to start on January 1, 2025, but the NC Office of the State Fire Marshal (OSFM) says that start was
+postponed and the 2018 code stays in effect for now (<a href="https://ncosfm.gov/news/press-releases/2025/04/07/north-carolina-delays-implementation-2024-state-building-code" rel="noopener">OSFM: 2024 code delayed</a>,
+<a href="https://www.ncosfm.gov/codes/codes-current-and-past" rel="noopener">OSFM: current codes</a>). Some websites still say the 2024 code is in force. If you are not
+sure, ask your inspector which edition they use.</p>
+<h2>What does the code say about a pool barrier?</h2>
+<p>Pool barriers are in Appendix V, Section AV105, of the 2018 code. In a February 2025 letter, OSFM quoted
+these rules from Section AV105.2 (<a href="https://ncosfm.gov/formal-interpretations/2025-0214-orange-county-inspections-division-2018-ncrc-av105-barrier-requirements/open" rel="noopener">OSFM interpretation, Feb. 14, 2025</a>):</p>
 <ul class="prose-list">
-  <li><strong>48 inches minimum height</strong>, measured from grade on the pool side</li>
-  <li><strong>2-inch maximum gap</strong> between grade and the bottom of the barrier over a non-solid
-      surface &mdash; 4 inches over a solid surface like concrete</li>
-  <li><strong>No opening may pass a 4-inch sphere</strong></li>
-  <li><strong>Gates must be self-closing and self-latching</strong></li>
-  <li>The latch release rule runs in <em>opposite directions</em> depending on hardware: a non-self-locking
-      release must sit <strong>at least 54 inches</strong> above the surface, while a self-locking release
-      must sit <strong>no more than 54 inches</strong> above it. This is the single most commonly missed
-      detail on a pool gate.</li>
-  <li>Pool equipment stays <strong>at least 36 inches</strong> outside the barrier</li>
+  <li><strong>Height:</strong> the top of the barrier must be at least <strong>48 inches</strong> above grade,
+      measured on the side away from the pool.</li>
+  <li><strong>Gap at the bottom:</strong> no more than <strong>2 inches</strong> between grade and the bottom
+      of the barrier. Over concrete or another solid surface, the limit is 4 inches.</li>
+  <li><strong>Openings:</strong> no opening can let a <strong>4-inch sphere</strong> pass through.</li>
+  <li><strong>Gates:</strong> walk-through gates must open outward, away from the pool, and must be
+      <strong>self-closing and self-latching</strong>. Gates must also be able to take a lock.</li>
+  <li><strong>Low latches:</strong> if the latch release is less than 54 inches from the bottom of the gate,
+      it must be on the pool side, at least 3 inches below the top of the gate. The gate and barrier also
+      can't have any opening larger than 1/2 inch within 18 inches of the release.</li>
 </ul>
-<h2>The Fuquay-Varina wrinkle</h2>
-<p>A fence alone needs no permit in Fuquay-Varina. <strong>A pool does</strong> &mdash; and the Town runs its
-own Inspections Department rather than deferring to Wake County, so your barrier gets inspected locally at
-134 N. Main Street. If your address is on the Harnett County side of the 27526 zip, that inspection is
-Harnett County's instead.</p>
-<p>One conflict worth planning around: the Town caps <strong>front-yard fences at 4 feet</strong> and
-prohibits opaque fencing in front yards. Since the pool-barrier minimum is 48 inches &mdash; exactly 4 feet
-&mdash; a front-yard pool enclosure sits precisely at the ceiling with no margin. Most pools here are better
-sited where the 6-foot side and rear yard limit applies.</p>
-<p>We'll confirm current requirements with the Town before we build. Codes change, and we would rather make
-a phone call than fail an inspection.</p>
-""", "Aluminum and pool-code fence installation in Fuquay-Varina, NC. Rust-proof powder-coated aluminum built to NC 2024 pool barrier code. Free estimates."),
+<p>The spacing between pickets also has rules, and they depend on how far apart the horizontal rails are.
+Your inspector checks those details.</p>
+<p>OSFM's pool barrier question page adds a few more points (<a href="https://www.ncosfm.gov/residential/av1052-pool-barriers-automated-covers-and-other-common-questions-addressed/open" rel="noopener">OSFM: common pool barrier questions</a>):</p>
+<ul class="prose-list">
+  <li>The barrier must be permanent. You should not be able to remove, lift, or move it without a tool.</li>
+  <li>The barrier must be placed so nearby structures, equipment, or similar objects can't be used to climb
+      it. OSFM says a structure next to the barrier must be 3 feet away from it.</li>
+  <li>The code does not set a distance between the barrier and the edge of the pool.</li>
+</ul>
+<h2>Do I need a permit for a pool fence in Fuquay-Varina?</h2>
+<p>A fence by itself does not need a permit inside Fuquay-Varina town limits or the ETJ, but a pool does
+(<a href="https://www.fuquay-varina.org/Faq.aspx?QID=218" rel="noopener">Town of Fuquay-Varina fence FAQ</a>). OSFM has said the barrier for a new pool is part of the
+pool's permit, not a separate one (<a href="https://ncosfm.gov/administrative/2043-swimming-pool-barrier-permits" rel="noopener">OSFM: swimming pool barrier permits</a>). Ask the office
+that issues your pool permit when the barrier will be inspected.</p>
+<h2>Watch the 4-foot front yard limit</h2>
+<p>Inside Fuquay-Varina town limits, a front yard fence can't be taller than 4 feet, and solid fences aren't
+allowed there (<a href="https://online.flippingbook.com/view/1031340238/223/" rel="noopener">Land Development Ordinance, fence section</a>). A pool barrier has to be at
+least 48 inches, which is exactly 4 feet, so a front yard pool barrier has no room to spare. Most pools fit
+better in the side or back yard. Our <a href="../blog/fence-height-limits-fuquay-varina/">fence height
+limits guide</a> covers each yard. Before you plan a fence near the front of the house, call the Town of
+Fuquay-Varina Planning Department at (919) 552-1429. That is the Town's number, not ours.</p>
+<p>This page is homeowner information, not legal advice. The inspector has the final word.</p>
+<h2>Sources</h2>
+<ul class="prose-list">
+  <li><a href="https://ncosfm.gov/news/press-releases/2025/04/07/north-carolina-delays-implementation-2024-state-building-code" rel="noopener">NC Office of the State Fire Marshal: North Carolina delays implementation of 2024 State Building Code (April 7, 2025)</a></li>
+  <li><a href="https://www.ncosfm.gov/codes/codes-current-and-past" rel="noopener">NC Office of the State Fire Marshal: Codes, current and past</a></li>
+  <li><a href="https://ncosfm.gov/formal-interpretations/2025-0214-orange-county-inspections-division-2018-ncrc-av105-barrier-requirements/open" rel="noopener">OSFM formal interpretation, 2018 NCRC AV105 barrier requirements (Feb. 14, 2025)</a></li>
+  <li><a href="https://www.ncosfm.gov/residential/av1052-pool-barriers-automated-covers-and-other-common-questions-addressed/open" rel="noopener">OSFM: AV105.2 pool barriers, automated covers and other common questions</a></li>
+  <li><a href="https://ncosfm.gov/administrative/2043-swimming-pool-barrier-permits" rel="noopener">OSFM: Swimming pool barrier permits</a></li>
+  <li><a href="https://www.fuquay-varina.org/Faq.aspx?QID=218" rel="noopener">Town of Fuquay-Varina: fence FAQ</a></li>
+  <li><a href="https://online.flippingbook.com/view/1031340238/223/" rel="noopener">Town of Fuquay-Varina Land Development Ordinance, fence section</a> (full ordinance on the Town's <a href="https://www.fuquay-varina.org/299/Document-Downloads" rel="noopener">document downloads page</a>)</li>
+</ul>
+""", "Aluminum pool fence installation in Fuquay-Varina, NC, with the NC pool barrier rules in effect now: 48-inch height, gap limits, and self-closing gates."),
 
 "chain-link-fences": ("""
 <h2>Chain link &mdash; the practical option</h2>
@@ -453,8 +479,9 @@ chain link still does it better per dollar than anything else. Galvanized or bla
 coated version disappears against a treeline far better than most people expect.</p>
 <h2>What Fuquay-Varina's ordinance says about chain link specifically</h2>
 <p>The Town's Land Development Ordinance calls chain link out by name. Inside the corporate limits,
-<strong>chain link must be black or green coated</strong> &mdash; bare galvanized is not an approved
-material. In nonresidential zones it is prohibited in front yards entirely.</p>
+<strong>chain link must be coated in black or green</strong>. In a nonresidential front yard it is not allowed
+at all (<a href="https://online.flippingbook.com/view/1031340238/223/" rel="noopener">Land Development Ordinance, fence section</a>; full ordinance on the Town's
+<a href="https://www.fuquay-varina.org/299/Document-Downloads" rel="noopener">document downloads page</a>).</p>
 <p>Out in the <strong>ETJ</strong>, the rules loosen considerably: the ordinance states that no fence
 material is prohibited and there is no maximum height in side and rear yards. Same mailing address,
 different rules. We'll tell you which applies to your lot before we quote it.</p>
@@ -468,19 +495,19 @@ different rules. We'll tell you which applies to your lot before we quote it.</p
 </ul>
 <p>Dogs, bigger lots, budget, airflow, and black or green coated chain link versus
 galvanized are covered in <a href="../blog/chain-link-fence-southern-wake/">when chain link still makes sense in southern Wake</a>.</p>
-<p>The same ordinance details apply as any other fence: finished side facing outward, a 2-inch clearance at
-grade for drainage, and keep it about 3 inches inside the property line so there's no boundary dispute
-later.</p>
+<p>Other Town details still apply. The finished side faces out, and the Town's fence FAQ says to keep a fence
+at least 3 inches inside the property line so there's no boundary dispute later
+(<a href="https://www.fuquay-varina.org/Faq.aspx?QID=218" rel="noopener">Town fence FAQ</a>). The ordinance's 2-inch ground gap does not apply to chain link inside town
+limits.</p>
 """, "Chain link fence installation in Fuquay-Varina, NC. Galvanized and black vinyl-coated chain link for pets, property lines and large lots. Free estimates."),
 }
 
 AREA_BODY = {
 "fuquay-varina": ("""
 <h2>One zip code, two counties, two sets of rules</h2>
-<p>Fuquay-Varina has exactly one zip code &mdash; <strong>27526</strong> &mdash; and it covers roughly
-<strong>98 square miles</strong> against a town of about 17.6. The zip is nearly five times the size of the
-municipality, and it crosses a county line: the Town itself sits entirely in <strong>Wake County</strong>,
-while the southern part of the zip is in <strong>Harnett County</strong>.</p>
+<p>Fuquay-Varina's zip code, <strong>27526</strong>, covers much more land than the Town itself. The Town
+is in <strong>Wake County</strong>, while the southern part of the zip reaches into
+<strong>Harnett County</strong>.</p>
 <p>The practical consequence catches almost everyone: <strong>your mailing address does not tell you which
 fence rules apply to your yard.</strong> Two neighbors with identical "Fuquay-Varina, NC 27526" addresses
 can be under different height limits, different school districts and different county governments.</p>
@@ -494,46 +521,47 @@ can be under different height limits, different school districts and different c
     </tbody>
   </table></div>
   <p class="callout-note">You may see other sites claim 8 feet for side and rear yards. The Town's own Land
-  Development Ordinance says <strong>six</strong>. We build to the ordinance.</p>
+  Development Ordinance says <strong>six</strong> inside town limits
+  (<a href="https://online.flippingbook.com/view/1031340238/223/" rel="noopener">fence section</a>; full ordinance on the Town's <a href="https://www.fuquay-varina.org/299/Document-Downloads" rel="noopener">document downloads page</a>).</p>
 </div>
 <p>Front, side, and rear yards, corner lots, and the ETJ are covered in our <a href="../blog/fence-height-limits-fuquay-varina/">fence height limits guide</a>.</p>
 <h2>You probably don't need a permit &mdash; but you do need your HOA</h2>
-<p>Straight from the Town's FAQ: <em>a permit is not required for the installation of a fence in
-Fuquay-Varina's corporate limits or ETJ.</em> A pool, a shed or a detached garage does need one. A fence
+<p>The Town's fence FAQ says a permit is not required to install a fence in Fuquay-Varina's corporate
+limits or ETJ (<a href="https://www.fuquay-varina.org/Faq.aspx?QID=218" rel="noopener">Town fence FAQ</a>). A pool, a shed or a detached garage does need one. A fence
 does not.</p>
-<p>What you almost certainly <em>do</em> need is written architectural approval from your HOA. In a town
-where a large share of homes sit in newer master-planned communities &mdash; South Lakes, North Lakes,
-Serenity, Sunset Bluffs, Brighton Ridge &mdash; the HOA is the real gatekeeper, not the municipality. That
-surprises people, because it's the reverse of what they expect. Older pockets like the Fuquay Springs
-historic district or the Village of Sippihaw often have no HOA at all.</p>
+<p>If your home is in an HOA, you also need its written approval. The same FAQ says HOA rules or deed
+restrictions can be stricter, and the Town's standards still apply on top of them. We can't approve a
+fence for your HOA or promise that your HOA will.</p>
 <p>For how that approval usually works, see our <a href="../blog/hoa-fence-approval-fuquay-varina/">HOA fence approval guide</a>.</p>
-<h2>Other ordinance details we build to</h2>
+<h2>Other Town fence rules</h2>
+<p>These come from the Town's <a href="https://www.fuquay-varina.org/Faq.aspx?QID=218" rel="noopener">fence FAQ</a> and its <a href="https://online.flippingbook.com/view/1031340238/223/" rel="noopener">Land Development Ordinance</a>.</p>
 <ul class="prose-list">
   <li>Finished side faces outward, toward the street or your neighbor</li>
-  <li>Minimum <strong>2-inch clearance</strong> from the bottom of the fence to grade, for stormwater drainage</li>
-  <li>Set the fence about <strong>3 inches inside your property line</strong> to avoid boundary disputes</li>
-  <li>No fences in public right-of-way or in utility, drainage or stormwater easements; 8 feet off the line
-      in landscape buffer easements</li>
-  <li>Chain link inside town limits must be black or green coated</li>
+  <li>A <strong>2-inch clearance</strong> from the bottom of most fences to grade inside town limits, for
+      stormwater (masonry, hedges, chain link and split rail are exceptions)</li>
+  <li>Set the fence at least <strong>3 inches inside your property line</strong> to avoid boundary disputes</li>
+  <li>No fences in the public right-of-way or in utility, drainage or stormwater easements; a fence in a
+      landscape buffer on a home lot sits at least 8 feet off the rear or side line</li>
+  <li>Chain link inside town limits must be coated in black or green</li>
 </ul>
 <h2>How do I know if I'm in town limits, the ETJ, or Harnett County?</h2>
 <p>Check your lot, not your mailing address. A Fuquay-Varina address can sit in three different places, and each one has its own rule-maker.</p>
 <ul class="prose-list">
   <li><strong>Town limits.</strong> The Town's rules apply.</li>
-  <li><strong>The ETJ.</strong> This is the area outside town limits that is still subject to the Town's zoning and development standards. It is not an annexation. ETJ owners don't pay Town taxes or vote in Town elections.</li>
+  <li><strong>The ETJ.</strong> This is the area outside town limits that is still subject to the Town's zoning and development standards. ETJ owners don't pay Town taxes or vote in Town elections (<a href="https://www.fuquay-varina.org/1688/ETJ-Expansion" rel="noopener">Town: ETJ expansion</a>).</li>
   <li><strong>Outside both.</strong> Your county sets the rules, if it sets any.</li>
 </ul>
-<p>The ETJ is bigger than it used to be. Wake County approved 9,215 acres for the Town's ETJ in October 2019, and the change took effect on December 20, 2019. So an older map, or a neighbor's memory of the area, may be out of date. State law currently stops any town from growing its Wake County ETJ past its January 1, 2025 size, through December 31, 2028.</p>
-<p>Two quick ways to check. Wake County's iMAPS property search shows a &quot;Jurisdiction&quot; line that names the permitting agency for an address. You can also call the Town of Fuquay-Varina Planning Department at (919) 552-1429.</p>
+<p>The ETJ is bigger than it used to be. Wake County approved 9,215 acres for the Town's ETJ on October 21, 2019, and the change took effect on December 20, 2019 (<a href="https://www.fuquay-varina.org/1688/ETJ-Expansion" rel="noopener">Town: ETJ expansion</a>). So an older map, or a neighbor's memory of the area, may be out of date. State law now stops any town from growing its Wake County ETJ past its January 1, 2025 size, through December 31, 2028 (<a href="https://ncleg.gov/EnactedLegislation/SessionLaws/HTML/2025-2026/SL2025-30.html" rel="noopener">Session Law 2025-30</a>, <a href="https://www.wake.gov/departments-government/planning/extraterritorial-jurisdiction-etj" rel="noopener">Wake County: ETJ</a>).</p>
+<p>Two quick ways to check. Wake County's <a href="https://www.wake.gov/departments-government/geographic-information-services-gis/maps-apps-data/imaps-information" rel="noopener">iMAPS</a> property search shows a &quot;Jurisdiction&quot; line that names the permitting agency for an address. You can also call the Town of Fuquay-Varina Planning Department at (919) 552-1429. That is the Town's number, not ours.</p>
 <h2>What if my home is on the Harnett County side of 27526?</h2>
-<p>The southern part of 27526 is in Harnett County. If the county map shows your lot in Harnett County and outside any town, Harnett County's planning office says the county does not regulate fences on residential lots, and no fence permit is required.</p>
+<p>The southern part of 27526 is in Harnett County. If the county map shows your lot in Harnett County and outside any town, Harnett County's planning office says the county does not regulate fences on residential lots, and no fence permit is required (<a href="https://www.harnett.org/planning/" rel="noopener">Harnett County Planning</a>).</p>
 <p>That is not the same as &quot;anything goes.&quot; Harnett County's planning office says a fence:</p>
 <ul class="prose-list">
   <li>cannot sit in an easement or right-of-way;</li>
   <li>must stay outside the NCDOT sight triangle, a 10-foot by 70-foot area;</li>
   <li>should ideally sit about a foot inside the property line, to avoid disputes with a neighbor.</li>
 </ul>
-<p>Fences in a required landscape buffer, a manufactured home park, or a non-residential development are regulated. Neighborhood covenants are a private matter there too. The county says it does not enforce them, and it points owners to the Register of Deeds to look them up.</p>
+<p>Fences in a required landscape buffer, a manufactured home park, or a non-residential development are regulated. Neighborhood covenants and deed restrictions are a private matter there too. The county says it does not enforce them, and its planning page links to the Register of Deeds for looking up covenants and deeds.</p>
 <p>If an address falls inside a town's limits or ETJ, that town's rules apply instead.</p>
 <h2>Fuquay-Varina rules FAQ</h2>
 <h3>If I'm in the ETJ, am I &quot;in town&quot;?</h3>
@@ -547,10 +575,9 @@ historic district or the Village of Sippihaw often have no HOA at all.</p>
 Sippihaw, Northwyck, Prescott Downs &mdash; out to the newer communities off the 401 and 55 corridors:
 South Lakes, North Lakes, Serenity, Sunset Bluffs, Lakestone Village, Maggie Run, Rowland's Grant and
 Brighton Ridge.</p>
-<p>Roughly <strong>48% of the housing in 27526 was built in the last sixteen years</strong>, and builders
-here almost never include a fence. If you just closed on a new build and are staring at a bare graded lot,
-you're in the majority &mdash; and it's usually worth talking to your neighbors, because fencing a run of
-adjoining yards at the same time is cheaper for everyone.</p>
+<p>If you just closed on a new build and are looking at a bare graded lot, talk with your neighbors before
+you pick a fence. Fencing a run of next-door yards at the same time can line up heights, styles and
+finished sides, and it can save everyone a second crew trip.</p>
 <h2>A little local history</h2>
 <p>The town is two towns. <strong>Fuquay Springs</strong> grew up around a mineral spring a Fuquay
 descendant turned up while plowing a field around 1858 &mdash; the spring house still stands in Fuquay
@@ -559,6 +586,15 @@ soldier named Ballentine that way; he married her and named his store and post o
 The two merged in 1963, and you can still walk between the two downtowns in about fifteen minutes &mdash;
 S. Main on the Fuquay side, Broad Street on the Varina side, where Aviator Brewing sits in the 1903 train
 depot.</p>
+<h2>Sources</h2>
+<ul class="prose-list">
+  <li><a href="https://www.fuquay-varina.org/Faq.aspx?QID=218" rel="noopener">Town of Fuquay-Varina: fence FAQ</a></li>
+  <li><a href="https://online.flippingbook.com/view/1031340238/223/" rel="noopener">Town of Fuquay-Varina Land Development Ordinance, fence section</a> (full ordinance on the Town's <a href="https://www.fuquay-varina.org/299/Document-Downloads" rel="noopener">document downloads page</a>)</li>
+  <li><a href="https://www.fuquay-varina.org/1688/ETJ-Expansion" rel="noopener">Town of Fuquay-Varina: ETJ expansion</a></li>
+  <li><a href="https://ncleg.gov/EnactedLegislation/SessionLaws/HTML/2025-2026/SL2025-30.html" rel="noopener">N.C. Session Law 2025-30</a> and <a href="https://www.wake.gov/departments-government/planning/extraterritorial-jurisdiction-etj" rel="noopener">Wake County: extraterritorial jurisdiction</a></li>
+  <li><a href="https://www.wake.gov/departments-government/geographic-information-services-gis/maps-apps-data/imaps-information" rel="noopener">Wake County: iMAPS</a></li>
+  <li><a href="https://www.harnett.org/planning/" rel="noopener">Harnett County Planning Services</a></li>
+</ul>
 """, "Fence installation in Fuquay-Varina, NC 27526. Serving Fuquay-Varina — Town 6-ft ordinance, ETJ rules, HOA approvals and Piedmont red clay. Free estimates."),
 
 "holly-springs": ("""
@@ -793,36 +829,77 @@ out here, so the same care with post drainage does too.</p>
 
 "garner": ("""
 <h2>Fence installation in Garner, NC</h2>
-<p>Garner sits about fourteen miles northeast of Fuquay-Varina on the southern edge of Raleigh &mdash;
-roughly <strong>41,500</strong> residents and, conveniently, a single zip code: <strong>27529</strong>.</p>
-<h2>An older housing stock, and what that means</h2>
-<p>Garner is a different kind of market from the new-build communities closer to Fuquay-Varina. There's real
-established housing here, and established housing means <strong>replacement work</strong> rather than
-first-time installation &mdash; fences that went in fifteen or twenty years ago and have reached the end of
-their service life.</p>
-<p>That's a different job. Old posts have to come out, and in Piedmont clay a post set in concrete two
-decades ago does not want to leave. Sometimes the existing line can be reused, sometimes it can't. It's
-also a chance to fix whatever the original installer got wrong &mdash; usually ground clearance, usually
-drainage at the post base.</p>
-<h2>Garner has its own ordinance</h2>
-<p>As an incorporated Wake County town, Garner sets its own fence standards, height limits and permit
-requirements. They are not Fuquay-Varina's. We'll confirm the current rules with the Town before quoting
-your project.</p>
-<h2>What we install in Garner</h2>
-<p>Vinyl privacy and picket, wood privacy, powder-coated aluminum and pool-code enclosures, chain link, and
-replacement of existing fencing. Free estimates.</p>
-""", "Fence installation in Garner, NC 27529. New and replacement fencing — vinyl, wood privacy, aluminum pool-code, chain link. Serving Garner. Free estimates."),
+<p>Garner sits northeast of Fuquay-Varina on the southern edge of Raleigh, in zip code
+<strong>27529</strong>. It is its own town, so Fuquay-Varina's fence rules do not carry over. Here is what
+the Town of Garner posts about residential fences (<a href="https://www.garnernc.gov/departments/planning/citizen-resources/fences" rel="noopener">Town of Garner: Fences</a>).</p>
+<h2>Do I need a permit for a fence in Garner?</h2>
+<p>Sometimes. The Town says an approved <strong>Zoning Compliance Permit</strong> is required before
+building certain residential fences and walls. The page does not list which ones, so the Town asks you to
+contact a member of the Planning Department before you fill out the application. That is different from
+Fuquay-Varina, where the Town says a fence needs no permit.</p>
+<h2>How tall can a fence be in Garner?</h2>
+<p>Garner sorts fences into two kinds. A <strong>solid</strong> fence is a privacy-style fence, or any fence
+that is hard to see through. An <strong>open</strong> fence is one you can see through, like chain link or
+split rail. In residential districts, the Town lists these heights:</p>
+<div class="table-scroll"><table class="mini-table">
+  <thead><tr><th>Yard</th><th>Open fence</th><th>Solid fence</th></tr></thead>
+  <tbody>
+    <tr><td>Front and corner side yards</td><td>4 ft</td><td>4 ft</td></tr>
+    <tr><td>Side and rear yards</td><td>Any structurally sound height</td><td>6 ft (up to 8 ft only as a special exception from the Board of Adjustment)</td></tr>
+  </tbody>
+</table></div>
+<p>The Town adds that these heights apply only if the fence does not block the view drivers and people on
+foot need on driveways and streets. On a corner or next to a driveway, ask Planning before you pick a
+height.</p>
+<h2>Where can a fence go on my lot?</h2>
+<ul class="prose-list">
+  <li><strong>Property line.</strong> The Town's ordinance has no fence setback, but the Town recommends
+      putting the fence at least <strong>6 inches inside</strong> your property line.</li>
+  <li><strong>Access and utility easements.</strong> A fence is not allowed in an access or utility
+      easement.</li>
+  <li><strong>Drainage easements.</strong> A fence may be allowed in a drainage easement under certain
+      conditions. If a fence is approved in an easement, the Town requires a signed easement waiver.</li>
+  <li><strong>Your application.</strong> The Town asks you to note any easements on the application,
+      including their size and type.</li>
+</ul>
+<p>Find your plat or survey before you plan the fence line. It shows your property lines and any easements.
+If you live in an HOA, get its written approval too. We can't approve a fence for your HOA or promise that
+your HOA will.</p>
+<h2>Pool fences in Garner</h2>
+<p>The Town says a pool must be fully separated from neighboring lots and streets by a fence or wall at least
+4 feet tall, built so small children can't pass through. North Carolina's pool barrier code also applies.
+Our <a href="../services/aluminum-pool-fences.html">aluminum and pool fence page</a> covers the state rules.</p>
+<h2>Replacing an older fence</h2>
+<p>Garner has many established neighborhoods, and a lot of fence work here is replacement. Old posts have to
+come out, and in Piedmont clay a post set in concrete years ago does not want to leave. A replacement is also a
+chance to fix drainage at the post base. Our <a href="../blog/piedmont-red-clay-fence-posts/">red clay fence
+post guide</a> explains why.</p>
+<h2>Garner fence FAQ</h2>
+<h3>Do I need a permit to build a fence in Garner?</h3>
+<p>For certain residential fences and walls, yes. The Town requires an approved Zoning Compliance Permit first,
+and it asks you to talk with Planning before you apply.</p>
+<h3>How tall can a backyard privacy fence be in Garner?</h3>
+<p>Up to 6 feet in side and rear yards. A solid fence up to 8 feet needs a special exception from the Board of
+Adjustment.</p>
+<h3>Can I put a fence in an easement in Garner?</h3>
+<p>Not in an access or utility easement. A drainage easement may be allowed under certain conditions, with a
+signed easement waiver.</p>
+<h2>Sources</h2>
+<ul class="prose-list">
+  <li><a href="https://www.garnernc.gov/departments/planning/citizen-resources/fences" rel="noopener">Town of Garner Planning: Fences</a></li>
+</ul>
+""", "Fence installation in Garner, NC 27529: the Town's zoning permit, 4- and 6-foot height limits, easement rules, and pool fences, with sources. Free estimates."),
 }
 
 FAQS = [
  ("Do I need a permit to build a fence in Fuquay-Varina?",
-  "No. The Town of Fuquay-Varina does not require a permit to install a fence inside the corporate limits or the ETJ. Pools, sheds, detached garages and other accessory structures do require permits. If your fence is going around a pool, the pool is permitted and the barrier gets inspected."),
+  "No. The [Town of Fuquay-Varina's fence FAQ](https://www.fuquay-varina.org/Faq.aspx?QID=218) says a permit is not required to install a fence inside the corporate limits or the ETJ. Pools, sheds, detached garages and other accessory structures do require permits. A barrier around a new pool is part of the pool's permit ([NC Office of the State Fire Marshal](https://ncosfm.gov/administrative/2043-swimming-pool-barrier-permits))."),
  ("How tall can my fence be?",
-  "Inside Fuquay-Varina's corporate limits, side and rear yard fences max out at 6 feet and front yard fences at 4 feet, with opaque fences prohibited in front yards. In the ETJ there is no maximum height for side and rear yards. Some websites list 8 feet for Fuquay-Varina — the Town's own Land Development Ordinance says six. Front yards, side and rear yards, corner lots, and the ETJ are covered in our [fence height limits guide](/blog/fence-height-limits-fuquay-varina/)."),
+  "Inside Fuquay-Varina's corporate limits, side and rear yard fences max out at 6 feet and front yard fences at 4 feet, with opaque fences prohibited in front yards. In the ETJ there is no maximum height for side and rear yards. Some websites list 8 feet for Fuquay-Varina — the Town's own [Land Development Ordinance](https://online.flippingbook.com/view/1031340238/223/) says six. Front yards, side and rear yards, corner lots, and the ETJ are covered in our [fence height limits guide](/blog/fence-height-limits-fuquay-varina/)."),
  ("How do I know if I'm in the town limits or the ETJ?",
-  "Your mailing address won't tell you. Zip 27526 covers about 98 square miles across both Wake and Harnett counties, while the Town itself is about 17.6 square miles and entirely in Wake County. The Town's Planning Department can confirm your jurisdiction, and we check it before quoting."),
+  "Your mailing address won't tell you. Zip 27526 reaches well past town limits, and its southern part is in Harnett County. Wake County's [iMAPS](https://www.wake.gov/departments-government/geographic-information-services-gis/maps-apps-data/imaps-information) shows a Jurisdiction line for an address, or you can call the Town of Fuquay-Varina Planning Department at (919) 552-1429. That is the Town's number, not ours."),
  ("Does my HOA have to approve the fence?",
-  "Almost certainly, and this is the step people skip. HOA covenants can be stricter than the Town's standards, and Town standards still apply on top of them. In Fuquay-Varina the HOA is usually the real gatekeeper, not the municipality — the opposite of what most homeowners expect."),
+  "If your home is in an HOA, get its written approval before work starts. The [Town's fence FAQ](https://www.fuquay-varina.org/Faq.aspx?QID=218) says HOA rules or deed restrictions can be stricter than the Town's, and the Town's standards still apply on top of them. We can't approve a fence for your HOA or promise that it will be approved. Our [HOA fence approval guide](/blog/hoa-fence-approval-fuquay-varina/) walks through the steps."),
  ("How deep do fence posts need to go here?",
   "There is no inspected code depth for a residential fence post in Fuquay-Varina, because fences aren't permitted. Industry practice in our soil is roughly one third of the post length below grade — about 24 to 36 inches for a 6-foot fence. In Piedmont clay, drainage at the base of the hole matters as much as depth."),
  ("Why does my white vinyl fence look orange at the bottom?",
@@ -830,7 +907,7 @@ FAQS = [
  ("When is the best time of year to install a fence?",
   "Spring and fall. Piedmont clay is sticky and gums an auger when saturated, and close to concrete when baked in midsummer. We install year-round, but those are the easiest working windows. One scheduling note: pine pollen peaks from late March into early April, so if appearance matters for photos, plan around it."),
  ("What does North Carolina require for a pool fence?",
-  "Under the 2024 NC Residential Code Appendix NC-A: a 48-inch minimum barrier height, no more than a 2-inch gap at grade over non-solid surfaces, no opening that passes a 4-inch sphere, and self-closing, self-latching gates. The latch release rule runs opposite directions depending on whether the latch self-locks — at least 54 inches for non-self-locking, no more than 54 inches for self-locking."),
+  "The 2018 North Carolina Residential Code is still in effect, because the 2024 code was postponed ([NC Office of the State Fire Marshal](https://ncosfm.gov/news/press-releases/2025/04/07/north-carolina-delays-implementation-2024-state-building-code)). Its Appendix V says a pool barrier must be at least 48 inches tall, with no more than a 2-inch gap at the bottom (4 inches over a solid surface), no opening that passes a 4-inch sphere, and gates that open outward and are self-closing and self-latching ([OSFM interpretation](https://ncosfm.gov/formal-interpretations/2025-0214-orange-county-inspections-division-2018-ncrc-av105-barrier-requirements/open)). Our [aluminum and pool fence page](/services/aluminum-pool-fences.html) has the details."),
 ]
 
 SERVICE_TITLES = {
@@ -896,8 +973,9 @@ AREA_RELATED = {
     ],
     "garner": [
         ("services/wood-privacy-fences.html", "Wood privacy fences"),
+        ("services/aluminum-pool-fences.html", "Pool fence rules"),
         ("blog/piedmont-red-clay-fence-posts/", "Replacing posts in clay"),
-        ("areas/fuquay-varina.html", "Fuquay-Varina"),
+        ("blog/hoa-fence-approval-fuquay-varina/", "HOA fence approval"),
     ],
 }
 
@@ -964,6 +1042,14 @@ AREA_FAQS = {
          "Wake County exempts fences that mainly enclose the perimeter of a lot, unless the property is in a special flood hazard area."),
         ("How close to the property line can I build in Johnston County?",
          "The county has no fence setback rule, but recommends staying 1 to 2 feet inside the line."),
+    ],
+    "garner": [
+        ("Do I need a permit to build a fence in Garner?",
+         "For certain residential fences and walls, yes. The Town requires an approved Zoning Compliance Permit first, and it asks you to talk with Planning before you apply."),
+        ("How tall can a backyard privacy fence be in Garner?",
+         "Up to 6 feet in side and rear yards. A solid fence up to 8 feet needs a special exception from the Board of Adjustment."),
+        ("Can I put a fence in an easement in Garner?",
+         "Not in an access or utility easement. A drainage easement may be allowed under certain conditions, with a signed easement waiver."),
     ],
 }
 
@@ -1082,8 +1168,9 @@ f"""<main>
            27526 address, different rules &mdash; we check before we quote. Front, side, rear, corner lots,
            and the ETJ are in our <a href="blog/fence-height-limits-fuquay-varina/">fence height limits guide</a>.</p></div>
       <div class="why-item"><h3>No permit needed &mdash; but your HOA matters</h3>
-        <p>Fuquay-Varina doesn't require a fence permit. Your HOA almost certainly requires written
-           approval. We'll tell you what you actually need.</p></div>
+        <p>Fuquay-Varina doesn't require a fence permit in town limits or the ETJ. If you're in an HOA, plan on
+           getting its written approval first. Our <a href="blog/fence-permit-fuquay-varina/">fence permit
+           guide</a> links the Town's own rules.</p></div>
       <div class="why-item"><h3>Built for red clay</h3>
         <p>Under about eight inches of topsoil this town is dense Cecil clay. Post drainage and a crowned
            collar are what keep a fence plumb through our freeze-thaw cycles.
@@ -1098,8 +1185,8 @@ f"""<main>
   <div class="container area-inner"><div class="area-copy">
     <p class="eyebrow">Service Area</p>
     <h2>Serving {CITY} &amp; Southern Wake County</h2>
-    <p>From downtown Fuquay-Varina out to Holly Springs, Angier, Willow Spring and Garner. Zip 27526 covers
-       about 98 square miles across two counties, so tell us your street address and we'll confirm we can
+    <p>From downtown Fuquay-Varina out to Holly Springs, Angier, Willow Spring and Garner. Zip 27526 reaches
+       well past town limits and into Harnett County, so tell us your street address and we'll confirm we can
        reach you.</p>
     <ul class="zip-list">{zips}</ul>
     <p class="area-note">Not sure if you're in our area?
@@ -1622,8 +1709,9 @@ Remove any parking / default URL Redirect / conflicting `@` or `www` records fir
 The ordinance figures on these pages (6 ft side/rear in corporate limits, 4 ft front, no maximum in the
 ETJ, no permit required, 2-inch ground clearance) come from the Town of Fuquay-Varina's own Land
 Development Ordinance and FAQ. Third-party fence-law aggregator sites list 8 ft for side/rear — **that is
-wrong**. Pool barrier figures come from the 2024 NC Residential Code Appendix NC-A. Re-verify before
-launch; codes change.
+wrong**. Pool barrier figures come from the 2018 NC Residential Code, Appendix V (AV105.2), as quoted by the
+NC Office of the State Fire Marshal. The 2024 NC code was postponed, so the 2018 code is still in effect.
+Re-verify before each content change; codes change.
 
 **No invented reviews, ratings, years in business or job counts appear anywhere on this site.** Keep it
 that way — add real ones when you have them.
@@ -2002,6 +2090,7 @@ Yes. HOA rules can be stricter, the Town's rules still apply, and you need the H
         "meta_desc": "Chain link fence in Fuquay-Varina for dogs, bigger lots, and budget. Coated versus galvanized in Holly Springs and Southern Wake.",
         "h1": "When Chain Link Still Makes Sense in Southern Wake",
         "date": "2026-10-19",
+        "updated": "2026-11-03",
         "body": """# When Chain Link Still Makes Sense in Southern Wake
 
 **Quick answer:** A chain link fence in Fuquay-Varina still makes sense for a dog, a long property line, or a big back lot. Choose it when you want to spend less per foot than wood or vinyl. You can see through the mesh, and air can move through it. Inside Fuquay-Varina town limits, chain link must be black or green coated. It will not give you a private yard, and your HOA may still say no.
@@ -2040,11 +2129,11 @@ Privacy slats are strips, often plastic, woven into the mesh to block most of th
 
 Galvanized chain link is the silver-gray fence. The zinc layer slows rust, and black or green coating adds vinyl over the metal. The coated version disappears against a treeline far better than most people expect, while silver wire stands out against pines and grass.
 
-Inside Fuquay-Varina town limits, color is a rule. The Town's Land Development Ordinance calls chain link out by name. Inside the corporate limits, **chain link must be black or green coated** — bare galvanized is not an approved material. In nonresidential zones it is prohibited in front yards entirely.
+Inside Fuquay-Varina town limits, color is a rule. The Town's [Land Development Ordinance](https://online.flippingbook.com/view/1031340238/223/) calls chain link out by name. Inside the corporate limits, **chain link must be black or green coated** — bare galvanized is not an approved material. In nonresidential zones it is prohibited in front yards entirely.
 
 Out in the ETJ, the rules loosen considerably: the ordinance states that no fence material is prohibited and there is no maximum height in side and rear yards. Same mailing address, different rules. Our [fence permit guide](/blog/fence-permit-fuquay-varina/) explains town limits, the ETJ, and the Harnett County side of 27526.
 
-Holly Springs uses its own material list. In front yards, side-corner yards, and the outer street edge of a subdivision, the Town lists wood or vinyl picket, brick wall, or ornamental fence only. In side-interior and rear yards, it lists wood, vinyl, ornamental fence, brick wall, or chain link. Chain link there belongs on the side or the back, not the front. Confirm the town rules, because an HOA can be stricter, and our [HOA approval guide](/blog/hoa-fence-approval-fuquay-varina/) walks through the written step.
+Holly Springs uses its own material list, posted on the [Town's fence page](https://www.hollyspringsnc.gov/2174/Fences). In front yards, side-corner yards, and the outer street edge of a subdivision, the Town lists wood or vinyl picket, brick wall, or ornamental fence only. In side-interior and rear yards, it lists wood, vinyl, ornamental fence, brick wall, or chain link. Chain link there belongs on the side or the back, not the front. Confirm the town rules, because an HOA can be stricter, and our [HOA approval guide](/blog/hoa-fence-approval-fuquay-varina/) walks through the written step.
 
 ## Looks, privacy, and what you give up
 
@@ -2077,6 +2166,7 @@ Holly Springs is its own town, with chain link on the side and rear list but not
         "meta_desc": "Why red clay around Fuquay-Varina holds water against fence posts, and the usual fixes: gravel, a crowned collar, and ground-contact wood.",
         "h1": "Why Piedmont Red Clay Eats Fence Posts (And How to Set Them Right)",
         "date": "2026-10-12",
+        "updated": "2026-11-03",
         "body": """# Why Piedmont Red Clay Eats Fence Posts (And How to Set Them Right)
 
 **Quick answer:** Red clay holds water, turns sticky when wet, and bakes hard when dry, and some clays also swell and shrink. Soils mapped around Fuquay-Varina swell less than that reputation suggests, but a post hole can still trap water, rot the wood, and let freeze and thaw work the post loose. Common practice is gravel for drainage, concrete crowned above the soil, and a ground-contact post when the post is wood.
@@ -2097,7 +2187,7 @@ A soil survey can call the ground well drained and still leave a wet post hole, 
 
 Wood that stays wet can rot at the soil line, where the damage hides until the fence leans, and steel can rust on that same line. Vinyl panels do not rot, but they still need a post that stays straight.
 
-Piedmont frost is shallow, but it still matters if the hole is wet. The 2024 North Carolina Residential Code lists a minimum frost line depth of 12 inches in Table R301.2. A note says to check that figure with the local jurisdiction. This [code sample](https://shop.iccsafe.org/media/wysiwyg/material/5711L24-Sample.pdf) shows the table. The table is about buildings, not a backyard fence-post law. Even so, water in a hole can freeze, expand, and thaw, and a loose post can creep through the winter.
+Piedmont frost is shallow, but it still matters if the hole is wet. The newer 2024 North Carolina Residential Code lists a minimum frost line depth of 12 inches in Table R301.2, with a note to check that figure with the local jurisdiction. This [code sample](https://shop.iccsafe.org/media/wysiwyg/material/5711L24-Sample.pdf) shows the table. That code has been published but has not taken effect yet, and the [NC Office of the State Fire Marshal](https://ncosfm.gov/news/press-releases/2025/04/07/north-carolina-delays-implementation-2024-state-building-code) says the 2018 code is still in effect. Either way, the table is about buildings, not a backyard fence-post law. Even so, water in a hole can freeze, expand, and thaw, and a loose post can creep through the winter.
 
 We are not quoting an ordinance depth, a permit fee, or an inspection rule for an ordinary yard fence. Our [fence FAQ](/faq.html) and our [fence permit guide](/blog/fence-permit-fuquay-varina/) cover the permit question, and the depths below should be read as common practice.
 
@@ -2252,7 +2342,7 @@ No. Only your HOA can approve your fence. A fence company can help you understan
         "meta_desc": "Do you need a fence permit in Fuquay-Varina? Usually not, but height rules, your HOA, and the Harnett County side of 27526 still matter. Here's how.",
         "h1": 'Do You Need a Fence Permit in Fuquay-Varina, NC?',
         "date": "2026-09-26",
-        "updated": "2026-10-26",
+        "updated": "2026-11-03",
         "body": """# Do You Need a Fence Permit in Fuquay-Varina, NC?
 
 **Quick answer:** Usually not. You don't need a fence permit in Fuquay-Varina if your home is inside town limits or the Town's ETJ, which is the area just outside town limits that still follows town zoning rules. You still have to follow the Town's height rules, and your HOA will likely need to approve your fence first. If your home is on the Harnett County side of zip code 27526, check with Harnett County instead.
@@ -2261,25 +2351,23 @@ This guide covers what does matter: which rules cover your lot, how tall you can
 
 ## Do I need a fence permit in Fuquay-Varina?
 
-The Town's own answer is no: a permit is not required to install a fence inside Fuquay-Varina's town limits or its ETJ. We summarize this on our [fence FAQ page](/faq.html).
+The Town's own answer is no. Its [fence FAQ](https://www.fuquay-varina.org/Faq.aspx?QID=218) says a permit is not required to install a fence inside Fuquay-Varina's town limits or its ETJ. We summarize this on our [fence FAQ page](/faq.html).
 
-Other projects are different, because pools, sheds, detached garages, and other outbuildings all need permits. If your fence goes around a pool, the pool gets the permit and the fence gets inspected as part of it.
+Other projects are different, because pools, sheds, detached garages, and other outbuildings all need permits. If your fence goes around a new pool, the barrier is part of the pool's permit, according to the [NC Office of the State Fire Marshal](https://ncosfm.gov/administrative/2043-swimming-pool-barrier-permits).
 
 So a normal backyard privacy fence in town usually needs no Town permit. For unusual cases, like corner lots, fences near easements, or commercial property, check with the Town's Planning Department first.
 
 ## What is the ETJ, and how do I know if I'm in it?
 
-ETJ is short for "extraterritorial jurisdiction." In plain terms, it's the ring of land just outside town limits that still follows the Town's zoning rules, so the Town's fence rules can apply there even though you're not technically in town.
+ETJ is short for "extraterritorial jurisdiction." The Town describes it as the area outside town limits that is still subject to Town zoning and development standards ([Town: ETJ expansion](https://www.fuquay-varina.org/1688/ETJ-Expansion)). So the Town's fence rules can apply there even though you're not technically in town.
 
-Here's the catch: your mailing address won't tell you if you're in town, in the ETJ, or neither. Fuquay-Varina has one zip code, 27526, and it covers about 98 square miles.
-
-The Town itself is only about 17.6 square miles, and it sits entirely in Wake County. The southern part of the zip reaches into Harnett County.
+Here's the catch: your mailing address won't tell you if you're in town, in the ETJ, or neither. Fuquay-Varina's zip code, 27526, covers much more land than the Town. The Town is in Wake County, and the southern part of the zip reaches into Harnett County.
 
 That means two neighbors with the same "Fuquay-Varina, NC 27526" address can fall under different rules. To find out where you stand:
 
-- Look up your lot on your county's online GIS map, which shows property lines and tax records. Use the Wake County or Harnett County map, depending on where you live.
+- Look up your lot on [Wake County iMAPS](https://www.wake.gov/departments-government/geographic-information-services-gis/maps-apps-data/imaps-information). Its property search shows a "Jurisdiction" line for the address. If you are in Harnett County, use the county's own map.
 - Check your property tax bill.
-- Call the Town of Fuquay-Varina Planning Department to confirm, or let us check it for you before we quote.
+- Call the Town of Fuquay-Varina Planning Department at (919) 552-1429 to confirm. That is the Town's number, not ours.
 
 ## How tall can a fence be in Fuquay-Varina?
 
@@ -2290,21 +2378,25 @@ It depends on whether you're inside town limits or in the ETJ, as summarized on 
 | Front yard | 4 ft max; no solid fences | 4 ft |
 | Side and back yard | 6 ft max | No Town maximum |
 
-You may see other websites say 8 feet is allowed. The Town's ordinance says 6 feet inside town limits, and that's what we build to. Front, side, and rear yards, corner lots, and the ETJ are covered in our [fence height limits guide](/blog/fence-height-limits-fuquay-varina/).
+You may see other websites say 8 feet is allowed. The Town's [Land Development Ordinance](https://online.flippingbook.com/view/1031340238/223/) says 6 feet inside town limits. Front, side, and rear yards, corner lots, and the ETJ are covered in our [fence height limits guide](/blog/fence-height-limits-fuquay-varina/).
 
 "No Town maximum" in the ETJ does not mean "no rules." Your HOA rules, easements, and setbacks still apply. A setback is the distance a structure has to stay back from a property line or buffer.
 
 ## What if I'm on the Harnett County side of 27526?
 
-If your home is in the southern part of 27526, you may be outside both the town limits and the ETJ. In that case, the Town of Fuquay-Varina's "no permit" answer may not apply to you, and Harnett County (plus your HOA, if you have one) sets the rules.
+If your home is in the southern part of 27526, you may be outside both the town limits and the ETJ. In that case, the Town of Fuquay-Varina's "no permit" answer may not apply to you, and Harnett County sets the rules.
 
-We won't guess at Harnett County permit rules, fees, or height limits, so please confirm directly with Harnett County before you build. Give us your street address and we'll check which rules apply before we quote.
+[Harnett County Planning](https://www.harnett.org/planning/) says the county does not regulate fences on residential lots, and no fence permit is required. It still says a fence:
+
+- cannot sit in an easement or right-of-way;
+- must stay outside the NCDOT 10-foot by 70-foot sight triangle;
+- is best built about 1 foot inside the property line, to avoid a dispute with a neighbor.
+
+Fences in a required landscape buffer, a manufactured home park, or a non-residential development are regulated. The county also says it does not enforce restrictive covenants or deed restrictions, so your HOA rules are a private matter. If a town's limits or ETJ cover your lot, that town's rules apply instead.
 
 ## Does my HOA have to approve my fence?
 
-If you live in an HOA, almost certainly. In Fuquay-Varina, the HOA is often the real gatekeeper, even though the Town doesn't require a fence permit. That's especially true in newer neighborhoods such as South Lakes, North Lakes, Serenity, Sunset Bluffs, and Brighton Ridge.
-
-HOA rules can be stricter than the Town's, and Town rules still apply on top of them. We are not your HOA, so we can't approve your fence or promise that your HOA will.
+If you live in an HOA, plan on it. The Town doesn't require a fence permit, but your HOA can still require approval. The Town's [fence FAQ](https://www.fuquay-varina.org/Faq.aspx?QID=218) says HOA rules or deed restrictions can be stricter than the Town's, and Town rules still apply on top of them. We are not your HOA, so we can't approve your fence or promise that your HOA will.
 
 Here's how the approval process usually works:
 
@@ -2313,23 +2405,25 @@ Here's how the approval process usually works:
 3. Submit it before any work starts. Approval runs on the HOA's schedule, not yours.
 4. Wait for written approval before you buy materials.
 
-We can help you understand what details usually go into an application. Some older areas, like parts of the Village of Sippihaw, may have no HOA at all, but Town rules still apply there.
+We can help you understand what details usually go into an application. If your home is not in an HOA, the Town rules still apply.
 
 ## What should I check before anyone starts digging?
 
 A few details cause most of the costly mistakes:
 
-- **Property lines.** Find your survey pins, the metal markers buried at the corners of your lot. Fences are usually set a few inches inside the line to avoid disputes with neighbors.
-- **Easements.** An easement is a strip of your land that others, like utility companies, have the right to use. Fences often can't go in utility, drainage, or stormwater easements, or in the public right-of-way along the street.
-- **Finished side.** The nicer side of the fence usually faces out, toward the street or your neighbor.
-- **Ground gap.** Leave about 2 inches between the bottom of the fence and the ground so rainwater can drain.
-- **Chain link color.** Inside town limits, chain link should be black or green coated.
+These come from the Town's [fence FAQ](https://www.fuquay-varina.org/Faq.aspx?QID=218) and its [Land Development Ordinance](https://online.flippingbook.com/view/1031340238/223/):
+
+- **Property lines.** Find your survey pins, the metal markers buried at the corners of your lot. The Town's FAQ says to set a fence at least 3 inches inside the line to avoid disputes with neighbors.
+- **Easements.** An easement is a strip of your land that others, like utility companies, have the right to use. Fences are not allowed in utility, drainage, or stormwater easements, or in the public right-of-way along the street.
+- **Finished side.** The finished side of the fence faces out, toward the street or your neighbor.
+- **Ground gap.** Inside town limits, most fences need at least 2 inches between the bottom of the fence and the ground so rainwater can drain. Chain link, split rail, and masonry are exceptions.
+- **Chain link color.** Inside town limits, chain link must be coated in black or green.
 
 ## Do pool fences follow different rules?
 
-Yes. A pool fence is a safety barrier, not just a privacy fence. Under the 2024 NC Residential Code (Appendix NC-A), a pool barrier must be at least 48 inches tall, with self-closing, self-latching gates and limits on gaps and openings.
+Yes. A pool fence is a safety barrier, not just a privacy fence. The 2018 North Carolina Residential Code is still in effect, because the 2024 code was postponed ([NC Office of the State Fire Marshal](https://ncosfm.gov/news/press-releases/2025/04/07/north-carolina-delays-implementation-2024-state-building-code)). Under its Appendix V, a pool barrier must be at least 48 inches tall, with self-closing, self-latching gates and limits on gaps and openings ([OSFM interpretation](https://ncosfm.gov/formal-interpretations/2025-0214-orange-county-inspections-division-2018-ncrc-av105-barrier-requirements/open)).
 
-The pool gets the permit, and the barrier is inspected as part of it. Our [aluminum and pool-code fence page](/services/aluminum-pool-fences.html) has more detail. The inspector and the code book have the final word.
+The barrier for a new pool is part of the pool's permit. Our [aluminum and pool-code fence page](/services/aluminum-pool-fences.html) has more detail. The inspector and the code book have the final word.
 
 ## What should I do next?
 
@@ -2361,7 +2455,7 @@ Usually, yes. HOA rules are separate from Town rules, so get written approval fr
         "meta_desc": 'Vinyl vs wood privacy fence for a Fuquay-Varina yard: compare upkeep, looks, red clay stains, and HOA rules so you can choose with confidence.',
         "h1": 'Vinyl vs Wood Privacy Fence: Which Is Right for Your Fuquay-Varina Yard?',
         "date": "2026-09-26",
-        "updated": "2026-10-12",
+        "updated": "2026-11-03",
         "body": """# Vinyl vs Wood Privacy Fence: Which Is Right for Your Fuquay-Varina Yard?
 
 **Quick answer:** Both vinyl and wood make a good privacy fence in Fuquay-Varina. Choose vinyl if you want less upkeep and a clean, uniform look. Choose wood if you like a classic look and don't mind staining and sealing it on a regular schedule. Either way, our red clay, humid summers, and your HOA rules should shape the choice as much as the material itself.
@@ -2420,7 +2514,7 @@ Depth isn't the whole story. Gravel at the bottom of the hole and a sloped colla
 
 ## Do height limits or HOA rules affect which material I can use?
 
-They can. Inside Fuquay-Varina town limits, back and side yard fences generally max out at 6 feet, and front yard fences at 4 feet with no solid fences. In the ETJ, which is the area just outside town limits that still follows town zoning rules, the Town sets no maximum for side and back yards. Our [fence FAQ](/faq.html) and our [Fuquay-Varina fence permit guide](/blog/fence-permit-fuquay-varina/) explain these rules.
+They can. Inside Fuquay-Varina town limits, back and side yard fences generally max out at 6 feet, and front yard fences at 4 feet with no solid fences ([Land Development Ordinance](https://online.flippingbook.com/view/1031340238/223/)). In the ETJ, which is the area just outside town limits that still follows town zoning rules, the Town sets no maximum for side and back yards. Our [fence FAQ](/faq.html) and our [Fuquay-Varina fence permit guide](/blog/fence-permit-fuquay-varina/) explain these rules.
 
 Many newer neighborhoods also need written HOA approval before any fence goes in. HOAs often care about color, height, how see-through the fence is, gate placement, and which side faces out, not just vinyl versus wood. We don't claim most HOAs require vinyl or ban wood, so check your own guidelines.
 
@@ -2472,6 +2566,7 @@ Inside town limits, side and back yard fences can generally be up to 6 feet. In 
         "meta_desc": 'Just closed on a new build? Our Holly Springs new construction fence guide covers Town rules, HOA approval, builder fill dirt, and choosing a material.',
         "h1": 'Holly Springs New Construction Fence Guide: What to Do After You Close',
         "date": "2026-09-26",
+        "updated": "2026-11-03",
         "body": """# Holly Springs New Construction Fence Guide: What to Do After You Close
 
 **Quick answer:** Planning a Holly Springs new construction fence for a bare backyard? Don't start with the fence material. Start by checking the Town of Holly Springs fence rules and getting your HOA's approval process going, since that step often takes the longest. Then pick a material that suits our red clay and humid weather, and make sure the posts are set for packed builder fill dirt.
@@ -2488,7 +2583,7 @@ A new-build yard usually has a few things in common. The back and sides are wide
 
 No. Holly Springs is its own town, so the Town of Holly Springs sets its own fence standards, height limits, and any permit requirements. Fuquay-Varina's "no Town fence permit" answer is a Fuquay-Varina rule only. Our [Fuquay-Varina fence permit guide](/blog/fence-permit-fuquay-varina/) explains that rule, but don't assume it carries over.
 
-We aren't going to list Holly Springs height limits, permit fees, or a "no permit needed" claim here. Please confirm the current rules with the Town of Holly Springs before you settle on height, style, or timing. We also confirm local requirements before we quote, not after, as noted on our [Holly Springs area page](/areas/holly-springs.html).
+Here is what the [Town of Holly Springs fence page](https://www.hollyspringsnc.gov/2174/Fences) says. The Town does not require a permit for fences. A front yard fence can be up to 4 feet, and side and rear yard fences can be up to 6 feet. Fences can't go in the street right-of-way or in public easements, like greenway, utility, water, sewer, or drainage easements. Our [Holly Springs area page](/areas/holly-springs.html) covers corner lots and who to call. Rules can change, so confirm them with the Town of Holly Springs before you settle on height, style, or timing. We also confirm local requirements before we quote, not after, as noted on our [Holly Springs area page](/areas/holly-springs.html).
 
 A simple way to start is to check the Town of Holly Springs planning or development resources for fence standards. At the same time, pull your HOA guidelines, and bring both to your estimate.
 
@@ -2547,7 +2642,7 @@ When you're ready, [request a free estimate](/#quote) or call or text **(919) 27
 
 ### Do I need a fence permit in Holly Springs?
 
-Check with the Town of Holly Springs. It's a separate town from Fuquay-Varina with its own rules, so Fuquay-Varina's answer doesn't apply.
+The [Town of Holly Springs](https://www.hollyspringsnc.gov/2174/Fences) says it does not require a permit for fences. Its height limits, easement rules, and your HOA rules still apply.
 
 ### Do I need HOA approval for a fence on my new build?
 
@@ -2703,6 +2798,18 @@ sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps
 # Height-limit edits use 2026-10-26. The chain-link guide keeps 2026-10-19.
 # Older URLs keep the 2026-10-12 sitewide edit.
 LASTMOD_1103 = {
+    "",
+    "blog/piedmont-red-clay-fence-posts/",
+    "faq.html",
+    "areas/fuquay-varina.html",
+    "areas/garner.html",
+    "services/aluminum-pool-fences.html",
+    "services/wood-privacy-fences.html",
+    "services/chain-link-fences.html",
+    "blog/fence-permit-fuquay-varina/",
+    "blog/holly-springs-new-build-fence/",
+    "blog/chain-link-fence-southern-wake/",
+    "blog/vinyl-vs-wood-privacy-fuquay-varina/",
     "areas/holly-springs.html",
     "areas/angier.html",
     "areas/willow-spring.html",
