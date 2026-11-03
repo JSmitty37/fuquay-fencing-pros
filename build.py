@@ -563,95 +563,196 @@ depot.</p>
 
 "holly-springs": ("""
 <h2>Fence installation in Holly Springs, NC</h2>
-<p>Holly Springs sits about five miles northwest of Fuquay-Varina &mdash; the closest neighbor town we serve, and one of
-the fastest-growing in Wake County, from roughly 41,000 residents at the 2020 census to over
-<strong>50,000</strong> by 2025. One clean zip code, <strong>27540</strong>, which makes life simpler than
-it is in Fuquay-Varina.</p>
-<h2>What's different here</h2>
-<p>Holly Springs is its own municipality with its own ordinance, so fence standards, height limits and any
-permit requirements are set by the Town of Holly Springs rather than Fuquay-Varina. If you're in an HOA
-neighborhood &mdash; and a lot of Holly Springs is &mdash; architectural approval usually comes before
-anything else. We'll confirm the current local requirements before we quote, not after.</p>
-<h2>What does the Town of Holly Springs allow for fences?</h2>
-<p>The Town of Holly Springs says it does not require a permit for fences, though it may require one for certain types of fences, decorative walls, or retaining walls. Because the Town doesn't say which types, it's smart to ask Development Services if your plan is unusual.</p>
-<p>The Town's published limits for residential lots:</p>
+<p>Holly Springs sits about five miles northwest of Fuquay-Varina, and it is growing fast. The U.S. Census
+Bureau counted <strong>41,239</strong> people here in 2020 and estimates about <strong>50,288</strong> in 2025
+(<a href="https://www.census.gov/quickfacts/fact/table/hollyspringstownnorthcarolina/POP060210" rel="noopener">Census QuickFacts</a>). A lot of new homes means a lot of bare
+backyards.</p>
+<h2>What's different in Holly Springs</h2>
+<p>Holly Springs has its own town rules, so Fuquay-Varina's limits don't carry over. Many homes here are also
+in an HOA. The Town says it is the property owner's job to understand and follow the neighborhood's
+restrictive covenants (<a href="https://www.hollyspringsnc.gov/2174/Fences" rel="noopener">Town of Holly Springs: Fences</a>). So plan on two
+checks before you build: the Town's rules and your HOA's rules.</p>
+<h2>Do I need a fence permit in Holly Springs?</h2>
+<p>Usually not. The Town says it &ldquo;does not require a permit for fences,&rdquo; but it may require a
+permit for certain types of fences, decorative walls, or retaining walls
+(<a href="https://www.hollyspringsnc.gov/2174/Fences" rel="noopener">Town of Holly Springs: Fences</a>). The Town's page doesn't list which
+types, so if your plan includes a wall or anything unusual, ask the Town's
+<a href="https://www.hollyspringsnc.gov/2170/Development-Services" rel="noopener">Development Services</a> department first.</p>
+<h2>How tall can a fence be in Holly Springs?</h2>
+<p>The Town lists these height limits for residential lots:</p>
 <div class="table-scroll"><table class="mini-table">
   <thead><tr><th>Where on the lot</th><th>Maximum height</th></tr></thead>
   <tbody>
     <tr><td>Front yard</td><td>4 feet</td></tr>
-    <tr><td>Side-corner yard</td><td>4 feet (up to 6 feet behind the halfway point of the house's depth)</td></tr>
-    <tr><td>Side-interior and rear yards</td><td>6 feet</td></tr>
-    <tr><td>Outer street edge of a subdivision</td><td>6 feet</td></tr>
+    <tr><td>Side and rear yards</td><td>6 feet</td></tr>
+    <tr><td>Street edge around the outside of a subdivision</td><td>6 feet</td></tr>
   </tbody>
 </table></div>
-<p>Materials differ by location, too. In front yards, side-corner yards, and the outer street edge of a subdivision, the Town lists wood or vinyl picket, brick wall, or ornamental fence only. In side-interior and rear yards, it lists wood, vinyl, ornamental fence, brick wall, or chain link. In plain terms, a tall solid privacy fence is a backyard and side-yard choice here, not a front-yard one.</p>
-<p>The finished side of the fence must face outward, toward the neighbor or street.</p>
+<p>Corner lots have one more rule. The Town says a fence along a side-corner lot line can't be placed closer
+to the front of the lot than half the depth of the building footprint. In plain terms, on a corner lot the
+side fence can't come forward past the middle of the house. For the full rule, the Town points to Section
+3.4.2(H) of its Unified Development Ordinance (<a href="https://www.hollyspringsnc.gov/2174/Fences" rel="noopener">Town of Holly Springs:
+Fences</a>).</p>
 <h2>Where can't a fence go in Holly Springs?</h2>
-<p>The Town says fences and other permanent structures can't be placed in the right-of-way or in public easements, such as greenway, utility, water, sewer, and drainage easements. Private drainage easements are a gray area. A fence may be allowed there at the discretion of the HOA, landowner, or other group the easement serves, as long as it doesn't block or redirect surface water or damage anything underground.</p>
-<p>The Town's rules allow a fence right up to the lot line unless other standards restrict it, but the Town itself suggests setting a fence safely inside your line so it doesn't land on a neighbor's lot by mistake.</p>
-<p>Before any digging, call 811 or 1-800-632-4949 to have utilities marked. The Town says it is a member of that service and would locate Town-maintained utilities within 48 hours.</p>
+<ul class="prose-list">
+  <li><strong>The right-of-way.</strong> The Town says fences and other permanent structures can't go in the
+  right-of-way.</li>
+  <li><strong>Public easements.</strong> That includes greenway, utility, water, sewer, and drainage
+  easements.</li>
+  <li><strong>Private drainage easements</strong> are different. The Town says a fence may go there at the
+  discretion of the HOA, landowner, or other group the easement serves, as long as it doesn't block or
+  redirect water above ground or damage anything underground.</li>
+</ul>
+<p>If your backyard backs up to a greenway or a drainage swale, look at your plat or survey for an easement
+before you pick a fence line. Source: <a href="https://www.hollyspringsnc.gov/2174/Fences" rel="noopener">Town of Holly Springs: Fences</a>.</p>
+<h2>Property lines and setbacks</h2>
+<p>The Town says it has no setback requirement for fences next to another lot. It still suggests placing the
+fence a safe distance inside your property line so you don't build on your neighbor's land by mistake
+(<a href="https://www.hollyspringsnc.gov/2174/Fences" rel="noopener">Town of Holly Springs: Fences</a>). Your HOA may have its own rule, so
+check that too.</p>
+<h2>Call 811 before anyone digs</h2>
+<p>The Town says to contact the North Carolina One-Call Center at 811 or (800) 632-4949 before work starts.
+The center contacts member utility companies, and the Town says it would locate Town-maintained utilities
+within 48 hours (<a href="https://www.hollyspringsnc.gov/2174/Fences" rel="noopener">Town of Holly Springs: Fences</a>,
+<a href="https://nc811.org/" rel="noopener">NC 811</a>). That 48 hours is the Town's own lines. State law says the person digging
+must give notice at least three full working days before the dig starts
+(<a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByArticle/Chapter_87/Article_8A.html" rel="noopener">G.S. 87-122</a>),
+so call early.</p>
 <h2>Who do I call about Holly Springs fence rules?</h2>
-<p>Start with the Town's Development Services office at 128 S. Main St. in Holly Springs, or call (919) 577-3111 if you're calling from outside Town limits. The Town also says it is the owner's job to understand and follow the neighborhood's restrictive covenants, so pull your HOA documents at the same time.</p>
-<h2>Holly Springs rules FAQ</h2>
-<h3>Can I put a solid privacy fence in my front yard?</h3>
-<p>The Town's front-yard limit is 4 feet, and its front-yard material list is wood or vinyl picket, brick wall, or ornamental only. Solid privacy panels aren't on that list.</p>
-<h3>How tall can a fence be on a corner lot?</h3>
-<p>The Town lists 4 feet in the side-corner yard, with a 6-foot allowance behind the halfway point of the house's depth. Ask Development Services to confirm how it applies to your lot.</p>
-<h3>Can I build right on the property line?</h3>
-<p>The Town's UDO generally allows it, but the Town recommends a safe margin inside your line. Your HOA may have its own rule.</p>
-<h2>Same soil, same considerations</h2>
-<p>Holly Springs is on the same Piedmont ground as Fuquay-Varina: <strong>Cecil red clay</strong> starting roughly eight inches
-below the surface, the same 47 inches of annual rain, the same late-March pine pollen that makes every
-white fence in the county look dirty for three weeks. Everything we do about post drainage, ground
-clearance and material choice applies here identically.</p>
-<h2>What we install in Holly Springs</h2>
-<p>Vinyl privacy and picket, wood privacy, powder-coated aluminum including pool-code enclosures, and
-chain link. A newer house here may come with a bare backyard when the builder didn't include a fence.</p>
-""", "Fence installation in Holly Springs, NC 27540. Vinyl, wood privacy, aluminum pool-code and chain link fencing. Serving Holly Springs. Free estimates."),
+<p>Start with the Town's <a href="https://www.hollyspringsnc.gov/2170/Development-Services" rel="noopener">Development Services</a> department. The Town's 311
+line is 311 from inside Town limits, or (919) 577-3111 if you are outside Town limits
+(<a href="https://hollyspringsnc.gov/311/Holly-Springs-311" rel="noopener">Holly Springs 311</a>). Pull your HOA documents at the same time.</p>
+<h2>A simple order of steps</h2>
+<ol class="prose-list">
+  <li>Find your plat or survey and mark any easements.</li>
+  <li>Read your HOA's fence rules and apply if your HOA requires it. Our
+  <a href="../blog/hoa-fence-approval-fuquay-varina/">HOA fence approval guide</a> explains how that process
+  usually works. The decision is up to your HOA.</li>
+  <li>Check the Town's height limits and the corner-lot rule above.</li>
+  <li>Call 811 before anyone digs.</li>
+  <li>Get a free estimate once you know your fence line.</li>
+</ol>
+<p>Just closed on a new home? Our <a href="../blog/holly-springs-new-build-fence/">Holly Springs new
+construction fence guide</a> walks through the first few weeks after closing.</p>
+<h2>Holly Springs fence FAQ</h2>
+<h3>Do I need a permit for a fence in Holly Springs?</h3>
+<p>Usually not. The Town says it does not require a permit for fences, but it may require one for certain
+types of fences, decorative walls, or retaining walls.</p>
+<h3>How tall can a backyard fence be in Holly Springs?</h3>
+<p>The Town lists 6 feet for side and rear yards and 4 feet for front yards.</p>
+<h3>Where can a fence go on a corner lot?</h3>
+<p>The Town says a fence along a side-corner lot line can't be closer to the front of the lot than half the
+depth of the building footprint.</p>
+<h3>Can I put a fence in a greenway or drainage easement?</h3>
+<p>Not in a public easement, such as a greenway, utility, water, sewer, or drainage easement. In a private
+drainage easement, the Town says it is up to the HOA, landowner, or other group the easement serves.</p>
+<h2>Soil and weather</h2>
+<p>Like Fuquay-Varina, Holly Springs is in North Carolina's Piedmont, where red clay subsoils such as the
+<a href="https://soilseries.sc.egov.usda.gov/OSD_Docs/C/Cecil.html" rel="noopener">Cecil series</a> are common. Clay holds water against fence posts, so drainage
+at the post base matters. Our guide to <a href="../blog/piedmont-red-clay-fence-posts/">red clay and fence
+posts</a> explains why. Spring pine pollen also shows up fast on white fences, which our
+<a href="../services/vinyl-fences.html">vinyl fence page</a> covers.</p>
+<h2>Fence types for Holly Springs homes</h2>
+<p>Vinyl privacy and picket, wood privacy, powder-coated aluminum including pool-code enclosures, and chain
+link. A newer house here may come with a bare backyard when the builder didn't include a fence.</p>
+<h2>Sources</h2>
+<ul class="prose-list">
+  <li><a href="https://www.hollyspringsnc.gov/2174/Fences" rel="noopener">Town of Holly Springs: Fences</a></li>
+  <li><a href="https://www.hollyspringsnc.gov/2170/Development-Services" rel="noopener">Town of Holly Springs: Development Services</a></li>
+  <li><a href="https://hollyspringsnc.gov/311/Holly-Springs-311" rel="noopener">Town of Holly Springs: Holly Springs 311</a></li>
+  <li><a href="https://www.census.gov/quickfacts/fact/table/hollyspringstownnorthcarolina/POP060210" rel="noopener">U.S. Census Bureau QuickFacts: Holly Springs town</a></li>
+  <li><a href="https://soilseries.sc.egov.usda.gov/OSD_Docs/C/Cecil.html" rel="noopener">USDA NRCS: Cecil soil series</a></li>
+  <li><a href="https://nc811.org/" rel="noopener">NC 811</a></li>
+  <li><a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByArticle/Chapter_87/Article_8A.html" rel="noopener">N.C. General Statutes, Chapter 87, Article 8A (G.S. 87-122)</a></li>
+</ul>
+""", "Fence installation in Holly Springs, NC 27540. Town height limits, corner-lot and easement rules, and HOA steps, with sources. Free estimates."),
 
 "angier": ("""
 <h2>Fence installation in Angier, NC</h2>
-<p>Angier is about six miles southeast of Fuquay-Varina, and it is growing faster in percentage terms than
-anywhere else nearby &mdash; from around 5,300 residents in 2020 to roughly <strong>9,400</strong> by 2025,
-a <strong>75% increase in five years</strong>. Zip code <strong>27501</strong>.</p>
-<h2>The important difference: Angier is in Harnett County</h2>
-<p>This matters more than the six-mile distance suggests. Angier is a <strong>Harnett County</strong>
-municipality, not Wake. Different county government, different school system, different permitting
-authority. If you've moved here from the Wake County side and assume the rules carry over, they don't
-necessarily.</p>
-<p>It also cuts the other way: plenty of homes with a <em>Fuquay-Varina</em> mailing address are actually
-in Harnett County, because zip 27526 crosses the county line. If you're somewhere in that southern
-stretch, it's worth knowing which county you're actually in before you plan a fence.</p>
+<p>Angier is about six miles southeast of Fuquay-Varina, and it is growing fast. The U.S. Census Bureau
+counted <strong>5,265</strong> people in 2020 and estimates about <strong>9,410</strong> in 2025, a jump of
+nearly 80% (<a href="https://www.census.gov/quickfacts/angiertownnorthcarolina" rel="noopener">Census QuickFacts</a>). Zip code <strong>27501</strong>.</p>
+<h2>Angier is a Harnett County town</h2>
+<p>The Town of Angier is based in Harnett County, not Wake. That means different town and county offices than
+Fuquay-Varina or Holly Springs. It cuts the other way too: zip 27526 crosses into Harnett County, so some homes
+with a <em>Fuquay-Varina</em> mailing address are in Harnett as well (see our
+<a href="fuquay-varina.html">Fuquay-Varina page</a>). Check which town or county covers your lot before you
+plan a fence.</p>
 <h2>Does Angier require a fence permit?</h2>
-<p>Yes, inside town limits. Angier's Unified Development Ordinance says a land use permit is required to install a fence within the corporate limits of the town. That is different from Fuquay-Varina, whose Town doesn't require a fence permit, and Holly Springs, which generally doesn't.</p>
-<p>The Town's ordinance applies in town limits and in its ETJ, the area just outside town that is still under town zoning. The fence sentence itself refers to the corporate limits, so if you're outside town limits, call the Planning Department before assuming either way.</p>
-<p>Contact the Town of Angier's permit office about an application. You can apply in person at the Planning Department, 32 W. Williams St. in Angier. Town Hall's phone number is (919) 639-2071.</p>
-<h2>What are Angier's height and material limits?</h2>
-<p>For residential lots, the ordinance's table sets these limits:</p>
+<p>Yes, inside town limits. The fence section of the Town's Unified Development Ordinance (Section 7.3.5) says:
+&ldquo;A land use permit shall be required for the installation of a fence within the corporate limits of the
+town.&rdquo; The Town's Planning &amp; Permitting page also lists fences among the projects that need a Land
+Use Permit (<a href="https://www.angier.org/1244/Planning-Permitting-Information" rel="noopener">Town of Angier: Planning &amp; Permitting</a>). That is
+different from Fuquay-Varina and Holly Springs, which generally don't require a fence permit. Our
+<a href="../blog/fence-permit-fuquay-varina/">Fuquay-Varina permit guide</a> explains that side.</p>
+<p>The Land Use Permit form is listed on the Town's Planning &amp; Permitting page. The Town's main phone line
+is (919) 639-2071.</p>
+<p>The permit sentence refers to the Town's corporate limits. If you live just outside town, ask the Planning
+Department whether Town rules apply to your lot.</p>
+<h2>How tall can a fence be in Angier?</h2>
+<p>For homes, the ordinance's fence table allows:</p>
 <ul class="prose-list">
-  <li><strong>Front yards:</strong> up to 4 feet. Listed materials are wood, brick, stone, wrought iron, stucco, and vinyl.</li>
-  <li><strong>Side and rear yards:</strong> up to 6 feet. Listed materials add chain link and privacy screening to that same list.</li>
-  <li><strong>Taller than 6 feet:</strong> may be approved on residential property only with a special use permit from the Board of Adjustment.</li>
+  <li><strong>Front yard:</strong> up to 4 feet.</li>
+  <li><strong>Side and rear yards:</strong> up to 6 feet.</li>
+  <li><strong>Taller than 6 feet:</strong> may be approved on residential property only with a special use
+  permit from the Board of Adjustment.</li>
 </ul>
-<p>Fences can't be installed within or across any private or public easement shown on your property survey or on a map recorded at the Register of Deeds. In wetlands or floodplain areas, the ordinance requires at least four inches of open space at the base of the fence so water can flow through.</p>
-<h2>What about homes outside the Town of Angier?</h2>
-<p>Some Angier-area homes may sit outside both town limits and the ETJ. In unincorporated Harnett County, the county says it does not regulate fences on residential lots, though easements, rights-of-way, and sight triangles still matter. If a home is in a town's limits or ETJ, that town's ordinance applies instead.</p>
-<h2>Angier rules FAQ</h2>
+<p>The same table also lists which materials are allowed in each yard. Ask the Planning Department which
+materials fit your yard before you order anything.</p>
+<h2>Easements and low ground</h2>
+<p>The ordinance says fences &ldquo;shall not be installed within or across any private or public
+easement.&rdquo; In wetlands or floodplain areas, a fence must have at least four inches of open space at the
+bottom so water can flow through. These rules come from Section 7.3.5, as reproduced in a Town Board of
+Adjustment packet (<a href="https://www.angier.org/AgendaCenter/ViewFile/Agenda/_04222025-62" rel="noopener">Town of Angier, April 22, 2025 Board of Adjustment
+agenda</a>). The full ordinance is on the <a href="https://library.municode.com/nc/angier/codes/code_of_ordinances" rel="noopener">Town's code of ordinances
+site</a>.</p>
+<h2>Outside town limits: unincorporated Harnett County</h2>
+<p>Harnett County Planning Services says the county &ldquo;does not regulate fences on residential lots, and no
+fence permits are required to erect a fence.&rdquo; It also says a fence can't be in an easement or
+right-of-way, and it recommends building the fence 1 foot off the property line to avoid disputes with a
+neighbor. The county does regulate fences in a few special cases, such as a required landscape buffer or a
+manufactured home park (<a href="https://www.harnett.org/planning/" rel="noopener">Harnett County Planning Services</a>). If your home
+is inside a town's limits, that town's rules apply instead.</p>
+<h2>A simple order of steps</h2>
+<ol class="prose-list">
+  <li>Find out whether your home is inside Angier's town limits.</li>
+  <li>If it is, apply for a Land Use Permit with the Town.</li>
+  <li>Check your plat or survey for easements and flood zones.</li>
+  <li>If you have an HOA, follow its approval process. Our
+  <a href="../blog/hoa-fence-approval-fuquay-varina/">HOA fence approval guide</a> explains how that usually
+  works. The decision is up to your HOA.</li>
+  <li>Call <a href="https://nc811.org/" rel="noopener">NC 811</a> before anyone digs.</li>
+</ol>
+<h2>Angier fence FAQ</h2>
 <h3>Do I need a permit to build a fence in Angier?</h3>
-<p>Inside town limits, yes. The Town requires a land use permit for a fence. In unincorporated Harnett County, the county says no fence permit is required on a residential lot.</p>
+<p>Inside town limits, yes. The Town requires a land use permit for a fence. In unincorporated Harnett County,
+the county says no fence permit is required on a residential lot.</p>
 <h3>Can I build a fence taller than 6 feet in Angier?</h3>
 <p>Only with a special use permit from the Board of Adjustment on a residential property.</p>
-<h3>Can I put chain link in my front yard?</h3>
-<p>The ordinance's front-yard material list for residential lots doesn't include chain link. It appears only in the side and rear yard list. Confirm with the Planning Department for your lot.</p>
-<h2>Growing fast, on fresh lots</h2>
-<p>Angier's growth means a lot of new construction, and new construction means bare graded lots with no
-fence, no mature trees and freshly compacted subsoil. Compacted new-build clay
-behaves differently from an established yard &mdash; denser, less predictable &mdash; and it's worth
-setting posts accordingly.</p>
-<h2>What we install in Angier</h2>
-<p>Vinyl privacy, wood privacy, aluminum and pool-code enclosures, and chain link for larger lots &mdash;
-and out this way, lots do get larger. When the run is long, our guide to <a href="../blog/chain-link-fence-southern-wake/">when chain link still makes sense in southern Wake</a> covers dogs, budget, and how coat rules differ by town. Free estimates, same as everywhere we work.</p>
-""", "Fence installation in Angier, NC 27501. Harnett County fencing — vinyl, wood privacy, aluminum and chain link. Serving Angier. Free estimates."),
+<h3>Can a fence go in an easement in Angier?</h3>
+<p>No. The ordinance says fences can't be installed within or across any private or public easement.</p>
+<h3>What if my yard is in a floodplain?</h3>
+<p>The ordinance requires at least four inches of open space at the base of the fence so water can flow
+through.</p>
+<h2>New lots, packed soil</h2>
+<p>Angier's growth means a lot of new construction, and new construction often means bare graded lots with
+packed fill soil. Packed clay drains slowly, so post depth and drainage at the post base matter. Our guide to
+<a href="../blog/piedmont-red-clay-fence-posts/">red clay and fence posts</a> explains why.</p>
+<h2>Fence types for Angier homes</h2>
+<p>Vinyl privacy, wood privacy, aluminum and pool-code enclosures, and chain link for larger lots. When the run
+is long, our guide to <a href="../blog/chain-link-fence-southern-wake/">when chain link still makes sense in
+southern Wake</a> covers dogs, budget, and how coating rules differ by town. Free estimates, same as everywhere
+we work.</p>
+<h2>Sources</h2>
+<ul class="prose-list">
+  <li><a href="https://www.angier.org/1244/Planning-Permitting-Information" rel="noopener">Town of Angier: Planning &amp; Permitting Information</a></li>
+  <li><a href="https://www.angier.org/AgendaCenter/ViewFile/Agenda/_04222025-62" rel="noopener">Town of Angier: Board of Adjustment agenda, April 22, 2025 (reproduces UDO Section 7.3.5)</a></li>
+  <li><a href="https://library.municode.com/nc/angier/codes/code_of_ordinances" rel="noopener">Town of Angier: Code of Ordinances</a></li>
+  <li><a href="https://www.harnett.org/planning/" rel="noopener">Harnett County Planning Services</a></li>
+  <li><a href="https://www.census.gov/quickfacts/angiertownnorthcarolina" rel="noopener">U.S. Census Bureau QuickFacts: Angier town</a></li>
+  <li><a href="https://nc811.org/" rel="noopener">NC 811</a></li>
+</ul>
+""", "Fence installation in Angier, NC 27501: the Town's land use permit, 4- and 6-foot limits, easements, and Harnett County basics. Free estimates."),
 
 "willow-spring": ("""
 <h2>Fence installation in Willow Spring, NC</h2>
@@ -777,15 +878,18 @@ AREA_RELATED = {
     ],
     "holly-springs": [
         ("blog/holly-springs-new-build-fence/", "New construction fences"),
+        ("blog/hoa-fence-approval-fuquay-varina/", "HOA fence approval"),
+        ("blog/piedmont-red-clay-fence-posts/", "Red clay fence posts"),
         ("services/vinyl-fences.html", "Vinyl fences"),
-        ("areas/fuquay-varina.html", "Fuquay-Varina"),
     ],
     "angier": [
-        ("services/chain-link-fences.html", "Chain link fences"),
         ("blog/fence-permit-fuquay-varina/", "How Fuquay permits differ"),
-        ("areas/fuquay-varina.html", "Fuquay-Varina"),
+        ("blog/chain-link-fence-southern-wake/", "Chain link in southern Wake"),
+        ("blog/hoa-fence-approval-fuquay-varina/", "HOA fence approval"),
+        ("services/chain-link-fences.html", "Chain link fences"),
     ],
     "willow-spring": [
+        ("blog/willow-spring-fence-rules/", "Willow Spring fence rules"),
         ("services/chain-link-fences.html", "Chain link fences"),
         ("services/wood-privacy-fences.html", "Wood privacy fences"),
         ("blog/piedmont-red-clay-fence-posts/", "Red clay fence posts"),
@@ -834,20 +938,24 @@ AREA_FAQS = {
          "For a residential lot in Harnett County's own jurisdiction, no. The county says it does not regulate fences on residential lots. A town's limits or ETJ, an HOA, and easements can still apply."),
     ],
     "holly-springs": [
-        ("Can I put a solid privacy fence in my front yard?",
-         "The Town's front-yard limit is 4 feet, and its front-yard material list is wood or vinyl picket, brick wall, or ornamental only. Solid privacy panels aren't on that list."),
-        ("How tall can a fence be on a corner lot?",
-         "The Town lists 4 feet in the side-corner yard, with a 6-foot allowance behind the halfway point of the house's depth. Ask Development Services to confirm how it applies to your lot."),
-        ("Can I build right on the property line?",
-         "The Town's UDO generally allows it, but the Town recommends a safe margin inside your line. Your HOA may have its own rule."),
+        ("Do I need a permit for a fence in Holly Springs?",
+         "Usually not. The Town says it does not require a permit for fences, but it may require one for certain types of fences, decorative walls, or retaining walls."),
+        ("How tall can a backyard fence be in Holly Springs?",
+         "The Town lists 6 feet for side and rear yards and 4 feet for front yards."),
+        ("Where can a fence go on a corner lot?",
+         "The Town says a fence along a side-corner lot line can't be closer to the front of the lot than half the depth of the building footprint."),
+        ("Can I put a fence in a greenway or drainage easement?",
+         "Not in a public easement, such as a greenway, utility, water, sewer, or drainage easement. In a private drainage easement, the Town says it is up to the HOA, landowner, or other group the easement serves."),
     ],
     "angier": [
         ("Do I need a permit to build a fence in Angier?",
          "Inside town limits, yes. The Town requires a land use permit for a fence. In unincorporated Harnett County, the county says no fence permit is required on a residential lot."),
         ("Can I build a fence taller than 6 feet in Angier?",
          "Only with a special use permit from the Board of Adjustment on a residential property."),
-        ("Can I put chain link in my front yard?",
-         "The ordinance's front-yard material list for residential lots doesn't include chain link. It appears only in the side and rear yard list. Confirm with the Planning Department for your lot."),
+        ("Can a fence go in an easement in Angier?",
+         "No. The ordinance says fences can't be installed within or across any private or public easement."),
+        ("What if my yard is in a floodplain?",
+         "The ordinance requires at least four inches of open space at the base of the fence so water can flow through."),
     ],
     "willow-spring": [
         ("How do I tell whether my Willow Spring address is in Wake or Johnston County?",
@@ -1043,7 +1151,7 @@ data such as pages visited and referring source.</p>
 <p>We use your information solely to contact you about your fence estimate and to connect you with the local
 fence contractor who will perform the work. We do not sell your personal information.</p>
 <h2>Who we share it with</h2>
-<p>We share your project details with the licensed local fence contractor serving your area so they can
+<p>We share your project details with the independent local fence contractor serving your area so they can
 prepare your estimate. We also use service providers &mdash; including analytics and automation tools
 &mdash; that process data on our behalf.</p>
 <h2>Advertising</h2>
@@ -1077,7 +1185,7 @@ def terms_page():
 &ldquo;us&rdquo;). {BRAND} is a referral and lead service for homeowners in {CITY}, North Carolina and
 nearby communities. The only public contact for this site is {PHONE_TEXT}.</p>
 <h2>We are not the fence contractor</h2>
-<p>We connect you with an independent licensed local fence contractor. We are not that contractor, and we
+<p>We connect you with an independent local fence contractor. We are not that contractor, and we
 do not install the fence ourselves. If you decide to hire the contractor, your agreement for the work is
 with the contractor. The contractor is responsible for its own estimates, scheduling, materials, and the
 quality of its work.</p>
@@ -2594,6 +2702,13 @@ sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps
 # Willow Spring fence-rules post, and the pages that link to the height guide, use 2026-11-02.
 # Height-limit edits use 2026-10-26. The chain-link guide keeps 2026-10-19.
 # Older URLs keep the 2026-10-12 sitewide edit.
+LASTMOD_1103 = {
+    "areas/holly-springs.html",
+    "areas/angier.html",
+    "areas/willow-spring.html",
+    "privacy.html",
+    "terms.html",
+}
 LASTMOD_1102 = {
     "",
     "faq.html",
@@ -2615,7 +2730,9 @@ EDITED_LASTMOD = {
     "services/chain-link-fences.html",
 }
 for u, p in urls:
-    if u in LASTMOD_1102:
+    if u in LASTMOD_1103:
+        lastmod = "2026-11-03"
+    elif u in LASTMOD_1102:
         lastmod = "2026-11-02"
     elif u in LASTMOD_1026:
         lastmod = "2026-10-26"
