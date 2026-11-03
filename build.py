@@ -965,11 +965,13 @@ AREA_RELATED = {
     ],
     "holly-springs": [
         ("blog/holly-springs-new-build-fence/", "New construction fences"),
+        ("blog/fence-permit-rules-southern-wake-towns/", "Fence permits by town"),
         ("blog/hoa-fence-approval-fuquay-varina/", "HOA fence approval"),
         ("blog/piedmont-red-clay-fence-posts/", "Red clay fence posts"),
         ("services/vinyl-fences.html", "Vinyl fences"),
     ],
     "angier": [
+        ("blog/fence-permit-rules-southern-wake-towns/", "Fence permits by town"),
         ("blog/fence-permit-fuquay-varina/", "How Fuquay permits differ"),
         ("blog/chain-link-fence-southern-wake/", "Chain link in southern Wake"),
         ("blog/hoa-fence-approval-fuquay-varina/", "HOA fence approval"),
@@ -982,6 +984,7 @@ AREA_RELATED = {
         ("blog/piedmont-red-clay-fence-posts/", "Red clay fence posts"),
     ],
     "garner": [
+        ("blog/fence-permit-rules-southern-wake-towns/", "Fence permits by town"),
         ("services/wood-privacy-fences.html", "Wood privacy fences"),
         ("services/aluminum-pool-fences.html", "Pool fence rules"),
         ("blog/piedmont-red-clay-fence-posts/", "Replacing posts in clay"),
@@ -1927,6 +1930,92 @@ def extract_faqs(md):
 
 POSTS = [
     {
+        "slug": "fence-permit-rules-southern-wake-towns",
+        "meta_title": "Fence Permits by Town in Southern Wake and Harnett",
+        "meta_desc": "Which towns near Fuquay-Varina need a fence permit? Fuquay-Varina, Holly Springs, Angier, Garner, Willow Spring, and Harnett County, with sources.",
+        "h1": "Do You Need a Fence Permit? Rules by Town Near Fuquay-Varina",
+        "date": "2026-11-03",
+        "body": """# Do You Need a Fence Permit? Rules by Town Near Fuquay-Varina
+
+**Quick answer:** It depends on the town or county that covers your lot, not your mailing address. Fuquay-Varina and Holly Springs say a fence does not need a permit. Angier requires a land use permit inside town limits. Garner requires a zoning compliance permit for certain home fences. Harnett County does not regulate fences on home lots outside its towns. Every place still has height limits, easement rules, and maybe an HOA. This is homeowner information, not legal advice, so check your own lot before you build.
+
+## Fence permit rules at a glance
+
+| Where your lot is | Fence permit? | Front yard height | Side and back yard height |
+| --- | --- | --- | --- |
+| Fuquay-Varina town limits | No | 4 ft, no solid fences | 6 ft |
+| Fuquay-Varina ETJ | No | 4 ft | No Town maximum |
+| Holly Springs | No | 4 ft | 6 ft |
+| Angier town limits | Yes, a land use permit | 4 ft | 6 ft (taller only with a special use permit) |
+| Garner | Yes, for certain home fences | 4 ft | 6 ft solid; open fences any sound height |
+| Unincorporated Harnett County | No, home lots are not regulated | Not set by the county | Not set by the county |
+
+Each row comes from the town or county page linked in its section below. Rules can change, so open the source before you order materials.
+
+## How do I know which rules cover my lot?
+
+Your mailing address can fool you. Fuquay-Varina's zip code, 27526, reaches well past town limits, and part of it is in Harnett County. A "Willow Spring" address can be in Wake County or Johnston County.
+
+Start with the parcel. In Wake County, the [iMAPS](https://www.wake.gov/departments-government/geographic-information-services-gis/maps-apps-data/imaps-information) property search shows a "Jurisdiction" line that names the office in charge. Your tax bill and your plat help too. A plat is the recorded map of your lot, and it shows property lines and easements.
+
+## Fuquay-Varina
+
+The Town's [fence FAQ](https://www.fuquay-varina.org/Faq.aspx?QID=218) says a permit is not required for a fence in the corporate limits or the ETJ. The ETJ is the area just outside town limits that still follows Town zoning. Pools, sheds, and detached garages do need permits.
+
+The Town's [Land Development Ordinance](https://online.flippingbook.com/view/1031340238/223/) caps a front yard fence at 4 feet and bans solid fences there. Inside town limits, side and back yard fences can be up to 6 feet. In the ETJ, the Town sets no maximum for side and back yards. Our [fence height limits guide](/blog/fence-height-limits-fuquay-varina/) and [Fuquay-Varina permit guide](/blog/fence-permit-fuquay-varina/) go deeper.
+
+## Holly Springs
+
+The [Town of Holly Springs fence page](https://www.hollyspringsnc.gov/2174/Fences) says the Town does not require a permit for fences. A front yard fence can be up to 4 feet, and side and rear yard fences can be up to 6 feet. Fences can't go in the street right-of-way or in public easements, such as greenway, utility, water, sewer, or drainage easements. Our [Holly Springs area page](/areas/holly-springs.html) covers corner lots and who to call.
+
+## Angier
+
+Angier is different. The fence section of the Town's ordinance says a land use permit is required to install a fence within the corporate limits. The Town's [Planning and Permitting page](https://www.angier.org/1244/Planning-Permitting-Information) lists fences among the projects that need a Land Use Permit. Front yard fences can be up to 4 feet and side and rear yard fences up to 6 feet. A taller fence on a home lot needs a special use permit from the Board of Adjustment. Our [Angier area page](/areas/angier.html) has the easement and floodplain rules, with sources.
+
+## Garner
+
+The [Town of Garner fence page](https://www.garnernc.gov/departments/planning/citizen-resources/fences) says an approved Zoning Compliance Permit is required before building certain residential fences and walls. The Town asks you to contact Planning before you apply. In home districts, open and solid fences can be up to 4 feet in front and corner side yards. Solid fences can be up to 6 feet in side and rear yards, and open fences can be any structurally sound height there. Our [Garner area page](/areas/garner.html) covers easements and pools.
+
+## Unincorporated Harnett County
+
+If your lot is in Harnett County and outside any town, [Harnett County Planning](https://www.harnett.org/planning/) says the county does not regulate fences on residential lots, and no fence permit is required. A fence still cannot sit in an easement or right-of-way, and it must stay outside the NCDOT 10-foot by 70-foot sight triangle. The county recommends building about 1 foot inside your property line.
+
+## Willow Spring and unincorporated Wake or Johnston County
+
+Willow Spring is not its own town, so the county rules decide. Johnston County's [building permit page](https://www.johnstonnc.gov/planning/content.cfm?pageid=58) lists fences among projects that do not need a building permit. In unincorporated Wake County, check the county's ordinance or call Wake County Planning. Our [Willow Spring fence rules guide](/blog/willow-spring-fence-rules/) walks through both counties.
+
+## What applies everywhere?
+
+- **Call 811 first.** North Carolina law says the person digging must give notice at least three full working days before the dig ([G.S. 87-122](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByArticle/Chapter_87/Article_8A.html)). Call 811 or use [NC 811](https://nc811.org/).
+- **Check for an HOA.** HOA rules can be stricter than the town's. Get written approval before anyone digs. We can't approve a fence for your HOA or promise that your HOA will. Our [HOA fence approval guide](/blog/hoa-fence-approval-fuquay-varina/) shows the steps.
+- **Pools are separate.** A pool barrier follows North Carolina's pool code, not these yard heights. See our [aluminum and pool fence page](/services/aluminum-pool-fences.html).
+
+When you know which rules cover your lot, [request a free estimate](/#quote) or call or text **(919) 276-8406**.
+
+## Fence permit FAQ
+
+### Does Fuquay-Varina require a fence permit?
+
+No. The Town says a fence needs no permit in its corporate limits or ETJ. Its height limits and easement rules still apply.
+
+### Does Holly Springs require a fence permit?
+
+No. The Town of Holly Springs says it does not require a permit for fences. Front yard fences can be up to 4 feet and side and rear fences up to 6 feet.
+
+### Does Angier require a fence permit?
+
+Yes, inside town limits. The Town requires a land use permit for a fence within its corporate limits.
+
+### Does Garner require a fence permit?
+
+For certain residential fences and walls, yes. The Town requires an approved Zoning Compliance Permit and asks you to talk with Planning first.
+
+### Do I need a fence permit in unincorporated Harnett County?
+
+No. Harnett County says it does not regulate fences on residential lots and does not require a fence permit. Easements, right-of-way, and the sight triangle rule still apply.
+""",
+    },
+    {
         "slug": "willow-spring-fence-rules",
         "meta_title": "Fence Rules in Willow Spring, NC",
         "meta_desc": "Willow Spring fence rules: which county covers your lot, Wake and Johnston setbacks, easements, NC 811, and HOA approval.",
@@ -2437,7 +2526,7 @@ The barrier for a new pool is part of the pool's permit. Our [aluminum and pool-
 
 ## What should I do next?
 
-First, confirm whether you're in town limits, the ETJ, or somewhere else, and then pull your HOA guidelines. Picking a material comes next, and our [vinyl vs wood privacy fence guide](/blog/vinyl-vs-wood-privacy-fuquay-varina/) can help. If you live in Holly Springs, the Town rules are different, so see our [Holly Springs new construction fence guide](/blog/holly-springs-new-build-fence/). For the HOA step, see our [HOA fence approval guide](/blog/hoa-fence-approval-fuquay-varina/).
+First, confirm whether you're in town limits, the ETJ, or somewhere else, and then pull your HOA guidelines. Picking a material comes next, and our [vinyl vs wood privacy fence guide](/blog/vinyl-vs-wood-privacy-fuquay-varina/) can help. If you live in Holly Springs, the Town rules are different, so see our [Holly Springs new construction fence guide](/blog/holly-springs-new-build-fence/). To compare nearby towns side by side, see our [fence permits by town guide](/blog/fence-permit-rules-southern-wake-towns/). For the HOA step, see our [HOA fence approval guide](/blog/hoa-fence-approval-fuquay-varina/).
 
 When you're ready, [request a free estimate](/#quote) or call or text **(919) 276-8406**. We'll check your address, look at your yard, and talk through your options with no pressure.
 
@@ -2811,6 +2900,8 @@ sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps
 # Older URLs keep the 2026-10-12 sitewide edit.
 LASTMOD_1103 = {
     "",
+    "blog/",
+    "blog/fence-permit-rules-southern-wake-towns/",
     "blog/piedmont-red-clay-fence-posts/",
     "faq.html",
     "areas/fuquay-varina.html",
