@@ -131,28 +131,39 @@ def header(depth):
 </header>
 """
 
-def crumbs(depth, trail):
-    """trail: list of (label, href|None). Renders visible breadcrumbs + BreadcrumbList JSON-LD."""
-    if not trail: return "", ""
+def crumbs(depth, trail, current_url=None):
+    """trail: list of (label, href|None). Visible breadcrumbs + BreadcrumbList JSON-LD.
+
+    Every ListItem includes name, position, and item as a URL string, including
+    the current page. The last trail entry with no href is that page; its item
+    is current_url (the canonical). A visible label with no page, such as
+    "Service Area", stays in the nav and is left out of the JSON-LD. Fewer than
+    two URL-backed crumbs emits no BreadcrumbList (the homepage omits it).
+    """
+    if not trail:
+        return "", ""
     up = "../" * depth
-    parts, items = [f'<a href="{up}index.html">Home</a>'], [
-        {"name": "Home", "url": f"{BASE}/"}]
+    parts = [f'<a href="{up}index.html">Home</a>']
+    items = [{"name": "Home", "url": f"{BASE}/"}]
+    last = len(trail) - 1
     for i, (label, href) in enumerate(trail):
         if href:
             parts.append(f'<a href="{up}{href}">{label}</a>')
             items.append({"name": label, "url": f"{BASE}/{href}"})
         else:
             parts.append(f'<span aria-current="page">{label}</span>')
-            items.append({"name": label, "url": None})
+            if i == last and current_url:
+                items.append({"name": label, "url": current_url})
     nav = ('<nav class="crumbs" aria-label="Breadcrumb"><div class="container">'
            + ' <span class="sep">/</span> '.join(parts) + '</div></nav>')
-    # Google requires "item" on every crumb except the last, so label-only
-    # middle crumbs ("Services", "Service Area") stay visible but leave the JSON-LD.
-    kept = [it for k, it in enumerate(items) if it["url"] or k == len(items) - 1]
+    kept = [it for it in items if it.get("url")]
+    if len(kept) < 2:
+        return nav, ""
     li = []
     for i, it in enumerate(kept, 1):
-        u = f',"item":"{it["url"]}"' if it["url"] else ""
-        li.append(f'{{"@type":"ListItem","position":{i},"name":"{it["name"]}"{u}}}')
+        name = json.dumps(it["name"], ensure_ascii=False)
+        url = json.dumps(it["url"], ensure_ascii=False)
+        li.append(f'{{"@type":"ListItem","position":{i},"name":{name},"item":{url}}}')
     ld = ('<script type="application/ld+json">{"@context":"https://schema.org",'
           '"@type":"BreadcrumbList","itemListElement":[' + ",".join(li) + ']}</script>')
     return nav, ld
@@ -1006,7 +1017,7 @@ def service_page(slug, nav_name, head_name):
         "areaServed": {"@type": "City", "name": f"{CITY}, {STATE}"},
         "description": desc,
     })
-    nav, bc_ld = crumbs(1, [("Services", None), (nav_name.replace("&amp;", "&"), None)])
+    nav, bc_ld = crumbs(1, [("Services", None), (nav_name.replace("&amp;", "&"), None)], canon)
     return (head(title, desc, canon, 1, svc_ld + bc_ld) + header(1) + nav +
             f'<main><section class="hero hero-inner"><div class="container hero-content">'
             f'<p class="hero-eyebrow">{CITY}, {STATE}</p><h1>{head_name} in {CITY}</h1>'
@@ -1077,18 +1088,6 @@ def web_page_ld(name, url, description):
         "publisher": _biz_node(),
     })
 
-def home_breadcrumb_ld():
-    return _ld({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": f"{BASE}/",
-        }],
-    })
-
 def _faq_plain(text):
     """FAQ JSON-LD text. Visible answers may use markdown links; schema stays plain."""
     return _MD_LINK.sub(lambda m: m.group(1), text)
@@ -1110,7 +1109,7 @@ def area_page(slug, name, zipc):
     body, desc = AREA_BODY[slug]
     title = f"Fence Company in {name}, {STATE} | {BRAND}"
     canon = f"{BASE}/areas/{slug}.html"
-    nav, bc_ld = crumbs(1, [("Service Area", None), (name, None)])
+    nav, bc_ld = crumbs(1, [("Service Area", None), (name, None)], canon)
     faqs = AREA_FAQS.get(slug) or []
     page_ld = _faqpage_ld(faqs) if faqs else web_page_ld(title, canon, desc)
     return (head(title, desc, canon, 1, page_ld + bc_ld) + header(1) + nav +
@@ -1144,7 +1143,7 @@ def home():
                   f'<p class="card-link"><a href="services/{s}.html">{n} details &rarr;</a></p></div></article>')
     zips = "".join(f'<li><strong><a href="areas/{s}.html">{n}</a></strong> <span>{z}</span></li>'
                    for s, n, z in AREAS)
-    return (head(title, desc, f"{BASE}/", 0, biz_ld() + home_breadcrumb_ld()) + header(0) +
+    return (head(title, desc, f"{BASE}/", 0, biz_ld()) + header(0) +
 f"""<main>
 <section class="hero" aria-labelledby="hero-heading">
   <div class="hero-overlay"></div>
@@ -1212,7 +1211,7 @@ def faq_page():
     title = f"Fence FAQ &mdash; {CITY}, {STATE} | {BRAND}"
     desc = ("Permits, height limits, HOA approval, post depth, red clay staining and NC pool barrier code "
             f"— answered for {CITY} homeowners.")
-    nav, bc_ld = crumbs(0, [("FAQ", None)])
+    nav, bc_ld = crumbs(0, [("FAQ", None)], f"{BASE}/faq.html")
     body = "".join(f'<div class="faq-item"><h2>{html.escape(q)}</h2><p>{_inline(a, 0)}</p></div>'
                    for q, a in FAQS)
     more = related_links(0, [
@@ -1236,7 +1235,7 @@ def privacy_page():
     title = f"Privacy Policy | {BRAND}"
     desc = (f"Privacy policy for {BRAND}. What the estimate form collects, how we use it, "
             "and how to ask us to delete it.")
-    nav, bc_ld = crumbs(0, [("Privacy Policy", None)])
+    nav, bc_ld = crumbs(0, [("Privacy Policy", None)], f"{BASE}/privacy.html")
     return (head(title, desc, f"{BASE}/privacy.html", 0, web_page_ld(title, f"{BASE}/privacy.html", desc) + bc_ld)
             + header(0) + nav + f"""<main><section class="section"><div class="container prose">
 <h1>Privacy Policy</h1>
@@ -1274,7 +1273,7 @@ purposes. Text-messaging originator opt-in data and consent will not be shared w
 
 def terms_page():
     title = f"Terms and Conditions | {BRAND}"
-    nav, bc_ld = crumbs(0, [("Terms and Conditions", None)])
+    nav, bc_ld = crumbs(0, [("Terms and Conditions", None)], f"{BASE}/terms.html")
     desc = f"Terms and conditions for {BRAND}, including SMS text messaging terms."
     return (head(title, desc, f"{BASE}/terms.html", 0, web_page_ld("Terms and Conditions", f"{BASE}/terms.html", desc) + bc_ld)
             + header(0) + nav + f"""<main><section class="section"><div class="container prose">
@@ -1683,7 +1682,8 @@ Open `build.py`, edit the CONFIG block, re-run `python3 build.py`:
    counties, so zip alone cannot qualify a lead here.
 5. **Schema** — one shared business `@id` across all pages. Inner pages put that typed
    business inside Service, FAQPage, Article, or WebPage nodes. Every JSON-LD block has
-   an `@type`. BreadcrumbList is on every page.
+   an `@type`. BreadcrumbList is on every page except the homepage. Every
+   ListItem includes name, position, and an item URL.
 6. **Real local content** per area page — ordinance specifics, the Wake/Harnett split, Cecil clay,
    red-clay staining, pollen timing.
 
@@ -2795,7 +2795,7 @@ def blog_index():
         "publisher": _biz_node(),
         "blogPost": posts_ld,
     }
-    nav, bc_ld = crumbs(1, [("Blog", None)])
+    nav, bc_ld = crumbs(1, [("Blog", None)], canon)
     more = related_links(1, [
         ("services/vinyl-fences.html", "Vinyl fences"),
         ("services/wood-privacy-fences.html", "Wood privacy fences"),
@@ -2846,7 +2846,7 @@ def blog_post(post):
         f'<meta property="article:published_time" content="{post["date"]}" />\n'
         f'<meta property="article:modified_time" content="{modified}" />\n'
     )
-    nav, bc_ld = crumbs(depth, [("Blog", "blog/"), (h1, None)])
+    nav, bc_ld = crumbs(depth, [("Blog", "blog/"), (h1, None)], canon)
     blocks = _ld(article) + (_ld(faq_ld) if faqs else "") + bc_ld
     body = md_to_html(post["body"], depth, insert_ctas=True)
     return (head(post["meta_title"], desc, canon, depth, blocks,
