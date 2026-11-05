@@ -44,7 +44,8 @@ Open `build.py`, edit the CONFIG block, re-run `python3 build.py`:
    counties, so zip alone cannot qualify a lead here.
 5. **Schema** — one shared business `@id` across all pages. Inner pages put that typed
    business inside Service, FAQPage, Article, or WebPage nodes. Every JSON-LD block has
-   an `@type`. BreadcrumbList is on every page.
+   an `@type`. BreadcrumbList is on every page except the homepage. Every
+   ListItem includes name, position, and an item URL.
 6. **Real local content** per area page — ordinance specifics, the Wake/Harnett split, Cecil clay,
    red-clay staining, pollen timing.
 
