@@ -98,7 +98,7 @@ PHONE_SVG = ('<svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"
 
 def header(depth):
     up = "../" * depth
-    home = up + "index.html" if depth else "#top"
+    home = "/" if depth else "#top"
     return f"""<header class="site-header" id="top">
 <div class="container header-inner">
   <a class="brand" href="{home}" aria-label="{BRAND} home">{MARK}
@@ -143,7 +143,7 @@ def crumbs(depth, trail, current_url=None):
     if not trail:
         return "", ""
     up = "../" * depth
-    parts = [f'<a href="{up}index.html">Home</a>']
+    parts = [f'<a href="/">Home</a>']
     items = [{"name": "Home", "url": f"{BASE}/"}]
     last = len(trail) - 1
     for i, (label, href) in enumerate(trail):
@@ -1748,7 +1748,7 @@ def _rewrite_href(url, depth):
         return url
     up = "../" * depth
     if url.startswith("/#"):
-        return up + "index.html" + url[1:]
+        return url
     if url.startswith("/"):
         return up + url.lstrip("/")
     return url
