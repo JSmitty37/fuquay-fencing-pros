@@ -1930,6 +1930,146 @@ def extract_faqs(md):
 
 POSTS = [
     {
+        "slug": "fence-cost-factors-fuquay-varina",
+        "meta_title": "What Changes Fence Cost in Fuquay-Varina, NC",
+        "meta_desc": "What changes fence cost in Fuquay-Varina and southern Wake? Length, height, gates, clay, old fences, permits, and HOA rules. No made-up prices.",
+        "h1": "What Changes the Cost of a Fence in Fuquay-Varina?",
+        "date": "2026-11-16",
+        "body": """# What Changes the Cost of a Fence in Fuquay-Varina?
+
+**Quick answer:** Fence cost in Fuquay-Varina changes with the material, the length, the height, the gates, the ground, and the rules on your lot. A long solid fence on a slope is a bigger job than a short open fence on flat ground. This page does not list prices. A local fence pro has to see the yard. We connect homeowners with that pro. We do not install the fence ourselves.
+
+## What should I look at before I ask about price?
+
+| What changes the job | What to notice in your yard |
+| --- | --- |
+| Material | Vinyl, wood, chain link, or aluminum |
+| Length | How many feet the fence will run |
+| Height | How tall you want it, and the town limit |
+| Gates | How many gates, and how wide they are |
+| Ground | Slope, red clay, rock, or an old fence |
+| Rules | Permit, HOA, property line, and the 811 call |
+
+Use the rows above as a checklist. The sections below explain each one in plain words. When you want a look at your own line, [request a free estimate](/#quote).
+
+## How does the fence material change the job?
+
+The material is the first big choice. Wood, vinyl, chain link, and aluminum are different products. They use different posts and different panels. One material is not right for every yard.
+
+Around Fuquay-Varina, red clay, humid summers, and your HOA should shape that choice. Our [vinyl versus wood guide](/blog/vinyl-vs-wood-privacy-fuquay-varina/) compares privacy fences. Our [chain link guide](/blog/chain-link-fence-southern-wake/) covers long runs and dogs. The service pages go one step further: [vinyl](/services/vinyl-fences.html), [wood privacy](/services/wood-privacy-fences.html), [chain link](/services/chain-link-fences.html), and [aluminum and pool fences](/services/aluminum-pool-fences.html).
+
+A pool fence is a different project from a backyard privacy fence. If a pool is part of the plan, start with the aluminum and pool fence page linked above.
+
+Ask to hear about the same line in more than one material. That is how you compare them on your yard.
+
+## How does fence length change the cost?
+
+People measure a fence in linear feet. That means the distance along the fence line, not the size of the whole yard. More feet means more posts, more panels, and more holes.
+
+A fence around the whole boundary is a bigger job than a fence around the part you use. A dog run or a garden is often the smaller plan. On a longer lot, including lots in [Willow Spring](/areas/willow-spring.html), that choice matters even more. Our [Willow Spring fence rules guide](/blog/willow-spring-fence-rules/) shows which county rules apply before you draw a long line.
+
+Walk the line if you do not know the footage. A rough number is enough for a first talk. The real measure happens at the yard.
+
+## How does fence height change the cost?
+
+A taller fence uses more material than a short one. It can also catch more wind. Town rules may cap the height, so you may not get every height you want.
+
+In Fuquay-Varina, height depends on the yard and on where the lot sits. Our [fence height limits guide](/blog/fence-height-limits-fuquay-varina/) quotes the Town ordinance. The Town's [fence FAQ](https://www.fuquay-varina.org/Faq.aspx?QID=218) is the short list of local standards. Your HOA can set a stricter rule than the Town. That same FAQ says to check for private rules, and Town standards still apply.
+
+Holly Springs is its own town. See our [Holly Springs area page](/areas/holly-springs.html) and our [permits by town guide](/blog/fence-permit-rules-southern-wake-towns/). Apex and Cary are their own towns too, so use each town's fence rules there.
+
+## How do gates change the cost?
+
+Every gate needs extra posts, hinges, and a latch. A wide gate is more work than a narrow walk gate. A gate on a slope has to swing without hitting the ground.
+
+Think about where you walk, where a mower needs to pass, and where a truck might need to enter. One well-placed gate can matter more than a second gate you rarely use. Mark the spots on a sketch before you ask for an estimate.
+
+## How do slope, red clay, and rock change the cost?
+
+Flat ground is the simple case. On a slope, the fence may step down the hill. Posts on the low side may need to be taller so the top line stays even. A steep yard takes more planning than a level one.
+
+The soil matters too. [NC State Extension](https://content.ces.ncsu.edu/extension-gardener-handbook/1-soils-and-plant-nutrients) says clay holds water. Clay soils are often too sticky when wet and too hard when dry to work. In well-drained Piedmont soils, the layer under the topsoil is often red, brown, or yellow. A post hole in that clay can hold water. Our guide on [why red clay eats fence posts](/blog/piedmont-red-clay-fence-posts/) explains drainage and ground-contact wood.
+
+Rock is a different problem. If a hole hits rock, a stump, or old concrete, that hole takes longer. This page does not claim rock is under every Fuquay-Varina yard. It is a fact of that hole when it shows up. The same can happen in Holly Springs and the rest of southern Wake County.
+
+## What if an old fence has to come out?
+
+Taking out an old fence is part of the job. It is not a free extra. Posts set in concrete do not pull easily. Hard clay makes that harder. The old wood, metal, or vinyl has to leave the yard.
+
+Say if the old fence is still standing, if it is falling down, or if only a few posts remain. Photos help. A replacement is also a chance to move a line that sat in an easement or too close to a neighbor.
+
+## How do permits, an HOA, and the property line change the plan?
+
+Rules do not set one price for every fence. They can change the height, the material, where the fence sits, and when work can start.
+
+The Town of Fuquay-Varina says a permit is not required for a fence in the corporate limits or the ETJ. Corporate limits means inside the town. The ETJ is the area just outside town limits that still follows Town rules. Our [Fuquay-Varina permit guide](/blog/fence-permit-fuquay-varina/) explains how to tell which area your lot is in. Nearby towns publish their own answers. Compare them in our [permits by town guide](/blog/fence-permit-rules-southern-wake-towns/).
+
+If you have an HOA, its rules are separate from the Town's. [North Carolina law](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_47F/GS_47F-3-102.html) says an owners' association may adopt rules, unless its own papers say otherwise. The Town's fence FAQ says to check your HOA or your deed. Town standards still apply on top of those private rules. We are not your HOA. We cannot approve the fence or promise that your HOA will. Our [HOA fence approval guide](/blog/hoa-fence-approval-fuquay-varina/) shows how to get a written yes before anyone digs.
+
+The property line is the other limit. The Town says a fence should sit at least 3 inches from the property line, so you avoid a property line dispute. The Town also says it cannot hand you a survey or survey your lot. Recorded surveys are kept at the county. If you need a new survey, the Town says to hire a registered land surveyor. Find the metal pins if you can, and bring the plat. A plat is the map of your lot.
+
+The same [Town FAQ](https://www.fuquay-varina.org/Faq.aspx?QID=218) says fences are not allowed in utility, drainage, or stormwater easements. They are also not allowed in the public right-of-way along the street. If the line has to move, the length can change.
+
+To confirm which office covers your lot, call the Town of Fuquay-Varina Planning Department at (919) 552-1429. That is the Town's number, not ours. Our [Fuquay-Varina area page](/areas/fuquay-varina.html) explains why two homes in the same zip can follow different rules.
+
+## Why does the 811 call change the schedule?
+
+North Carolina law says the person who will dig must give notice first. For a normal yard, that notice has to be at least three full working days before the start date. The law is [G.S. 87-122](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByArticle/Chapter_87/Article_8A.html). [G.S. 87-119](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByArticle/Chapter_87/Article_8A.html) says the notification center may not charge you for giving that notice.
+
+You reach that center through [NC 811](https://nc811.org/). Dial 811, or 1-800-632-4949. NC 811 says it marks primary utility lines. Private lines on private property are not marked. The Town's [Call Before You Dig page](https://www.fuquay-varina.org/315/Call-Before-You-Dig) says to give that notice at least 3 working days ahead, and that the call is free. The call is a safety step. It is not a fence permit, and it does not replace your HOA.
+
+## How do privacy and style change the job?
+
+A solid privacy fence blocks the view. It uses more board or panel than a fence you can see through. Open styles include picket and chain link. Solid styles include wood and vinyl privacy panels. Some yards use privacy on the back and an open fence on the side.
+
+Your HOA may allow one style and not another. Front yard rules can also differ from backyard rules. Our [fence height limits guide](/blog/fence-height-limits-fuquay-varina/) quotes the Fuquay-Varina ordinance before you choose a solid panel out front.
+
+## How do access and timing change the job?
+
+Access is how people and materials get into the yard. A wide open side yard is simpler than a locked gate, a steep path, or a deck in the way. If panels have to be carried in by hand, the work takes longer.
+
+Timing is the calendar. It is not a sale price. Clay is sticky when it is soaked and hard when it is dry, which is the Extension note above. An HOA review runs on the HOA's own schedule. The 811 notice needs those three full working days before digging starts. These steps can change when the work can start. They are not a price.
+
+## What should I bring to an estimate?
+
+A few notes make the visit clearer:
+
+- A rough length, or a sketch of the line
+- The spots where you want gates
+- Photos of the slope and of any old fence
+- Your HOA rules, if you have them
+- The town or county you think covers the lot
+
+When you want someone to see the yard, [request a free estimate](/#quote) or call or text **(919) 276-8406**. We connect you with a local fence pro who can price the real line. We do not install the fence ourselves.
+
+## Fence cost FAQ
+
+### What changes fence cost the most?
+
+Length, material, height, and the ground usually change the job the most. Gates, an old fence, access, and the rules on the lot matter too. No single item sets a price for every yard in Fuquay-Varina.
+
+### Does Fuquay-Varina charge a fence permit fee?
+
+The Town says a permit is not required for a fence in town limits or the ETJ. This page does not list fees. Other towns nearby can differ, so check your own lot.
+
+### Does red clay always raise the cost?
+
+No. Clay can slow the holes because it is sticky when wet and hard when dry. Rock or old concrete can slow a hole too. A flat yard with easier digging is a simpler job. Someone still has to see your soil.
+
+### Do I have to call 811 before I ask for an estimate?
+
+No. You can ask for an estimate before any marks are on the ground. The person who digs still has to give notice at least three full working days before the start. That call is not a fence permit.
+
+## Sources
+
+- [Town of Fuquay-Varina Planning FAQ: fences, surveys, and easements](https://www.fuquay-varina.org/Faq.aspx?QID=218)
+- [Town of Fuquay-Varina: Call Before You Dig](https://www.fuquay-varina.org/315/Call-Before-You-Dig)
+- [NC 811](https://nc811.org/)
+- [North Carolina G.S. 87-122 and G.S. 87-119, Underground Utility Safety and Damage Prevention Act](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByArticle/Chapter_87/Article_8A.html)
+- [North Carolina G.S. 47F-3-102, powers of an owners' association](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_47F/GS_47F-3-102.html)
+- [NC State Extension Gardener Handbook: Soils and Plant Nutrients](https://content.ces.ncsu.edu/extension-gardener-handbook/1-soils-and-plant-nutrients)""",
+    },
+    {
         "slug": "fence-permit-rules-southern-wake-towns",
         "meta_title": "Fence Permits by Town in Southern Wake and Harnett",
         "meta_desc": "Which towns near Fuquay-Varina need a fence permit? Fuquay-Varina, Holly Springs, Angier, Garner, Willow Spring, and Harnett County, with sources.",
@@ -2106,11 +2246,12 @@ No. Get the HOA answer in writing, and still follow the county or town that the 
         "meta_desc": "Fence height in Fuquay-Varina: 4 feet in front, 6 feet on the side and back in town, and no Town cap in the ETJ.",
         "h1": "Fence Height Limits in Fuquay-Varina",
         "date": "2026-10-26",
+        "updated": "2026-11-16",
         "body": """# Fence Height Limits in Fuquay-Varina
 
 **Quick answer:** Fence height in Fuquay-Varina depends on the yard and on where the lot sits. Inside town limits, a front yard fence can be up to 4 feet, and it cannot be solid. A side or back yard fence can be up to 6 feet. In the Fuquay-Varina ETJ, the side and back yard have no Town height cap, while the front yard rule is still written as 4 feet. This is homeowner information, not legal advice. Confirm your lot with the Town of Fuquay-Varina Planning Department at (919) 552-1429 before you build.
 
-A Fuquay-Varina mailing address does not tell you which rules cover the yard. Our [area page](/areas/fuquay-varina.html) explains why two homes in the same zip can differ, and our [fence permit guide](/blog/fence-permit-fuquay-varina/) plus our [fence FAQ](/faq.html) cover the Town's no-permit rule for town limits and the ETJ.
+A Fuquay-Varina mailing address does not tell you which rules cover the yard. Our [area page](/areas/fuquay-varina.html) explains why two homes in the same zip can differ, and our [fence permit guide](/blog/fence-permit-fuquay-varina/) plus our [fence FAQ](/faq.html) cover the Town's no-permit rule for town limits and the ETJ. If the mail says Willow Spring, the county line is the next check. Our [Willow Spring fence rules guide](/blog/willow-spring-fence-rules/) walks through Wake County and Johnston County.
 
 ## What is the front yard fence height in Fuquay-Varina, NC?
 
@@ -2189,7 +2330,7 @@ Yes. HOA rules can be stricter, the Town's rules still apply, and you need the H
         "meta_desc": "Chain link fence in Fuquay-Varina for dogs, bigger lots, and budget. Coated versus galvanized in Holly Springs and Southern Wake.",
         "h1": "When Chain Link Still Makes Sense in Southern Wake",
         "date": "2026-10-19",
-        "updated": "2026-11-03",
+        "updated": "2026-11-16",
         "body": """# When Chain Link Still Makes Sense in Southern Wake
 
 **Quick answer:** A chain link fence in Fuquay-Varina still makes sense for a dog, a long property line, or a big back lot. Choose it when you want to spend less per foot than wood or vinyl. You can see through the mesh, and air can move through it. Inside Fuquay-Varina town limits, chain link must be black or green coated. It will not give you a private yard, and your HOA may still say no.
@@ -2210,7 +2351,7 @@ In Holly Springs, coated chain link can be a practical first fence for pets whil
 
 ## Usually less per foot than wood or vinyl
 
-Chain link is usually less per foot than wood or vinyl, which is why people still use it when the boundary is long. Length, gates, soil, and coating change the bill, so there is no dollar figure here.
+Chain link is usually less per foot than wood or vinyl, which is why people still use it when the boundary is long. Length, gates, soil, and coating change the bill, so there is no dollar figure here. Our [fence cost factors guide](/blog/fence-cost-factors-fuquay-varina/) explains those same factors for a yard in Fuquay-Varina or southern Wake.
 
 Around Fuquay-Varina the soil under the grass is often dense red clay, and a post hole can hold water. Wood can rot there, and steel can rust on that same wet line. Gravel at the bottom, and a top that slopes off the post, give the water a way out. Our guide on [why red clay eats fence posts](/blog/piedmont-red-clay-fence-posts/) covers that step. For a look at your line, [request a free estimate](/#quote) or call or text **(919) 276-8406**.
 
@@ -2441,7 +2582,7 @@ No. Only your HOA can approve your fence. A fence company can help you understan
         "meta_desc": "Do you need a fence permit in Fuquay-Varina? Usually not, but height rules, your HOA, and the Harnett County side of 27526 still matter. Here's how.",
         "h1": 'Do You Need a Fence Permit in Fuquay-Varina, NC?',
         "date": "2026-09-26",
-        "updated": "2026-11-03",
+        "updated": "2026-11-16",
         "body": """# Do You Need a Fence Permit in Fuquay-Varina, NC?
 
 **Quick answer:** Usually not. You don't need a fence permit in Fuquay-Varina if your home is inside town limits or the Town's ETJ, which is the area just outside town limits that still follows town zoning rules. You still have to follow the Town's height rules, and your HOA will likely need to approve your fence first. If your home is on the Harnett County side of zip code 27526, check with Harnett County instead.
@@ -2460,7 +2601,7 @@ So a normal backyard privacy fence in town usually needs no Town permit. For unu
 
 ETJ is short for "extraterritorial jurisdiction." The Town describes it as the area outside town limits that is still subject to Town zoning and development standards ([Town: ETJ expansion](https://www.fuquay-varina.org/1688/ETJ-Expansion)). So the Town's fence rules can apply there even though you're not technically in town.
 
-Here's the catch: your mailing address won't tell you if you're in town, in the ETJ, or neither. Fuquay-Varina's zip code, 27526, covers much more land than the Town. The Town is in Wake County, and the southern part of the zip reaches into Harnett County.
+Here's the catch: your mailing address won't tell you if you're in town, in the ETJ, or neither. Fuquay-Varina's zip code, 27526, covers much more land than the Town. The Town is in Wake County, and the southern part of the zip reaches into Harnett County. A Willow Spring address just east of town can sit in Wake County or Johnston County. Our [Willow Spring fence rules guide](/blog/willow-spring-fence-rules/) shows how to check that parcel.
 
 That means two neighbors with the same "Fuquay-Varina, NC 27526" address can fall under different rules. To find out where you stand:
 
@@ -2554,7 +2695,7 @@ Usually, yes. HOA rules are separate from Town rules, so get written approval fr
         "meta_desc": 'Vinyl vs wood privacy fence for a Fuquay-Varina yard: compare upkeep, looks, red clay stains, and HOA rules so you can choose with confidence.',
         "h1": 'Vinyl vs Wood Privacy Fence: Which Is Right for Your Fuquay-Varina Yard?',
         "date": "2026-09-26",
-        "updated": "2026-11-03",
+        "updated": "2026-11-16",
         "body": """# Vinyl vs Wood Privacy Fence: Which Is Right for Your Fuquay-Varina Yard?
 
 **Quick answer:** Both vinyl and wood make a good privacy fence in Fuquay-Varina. Choose vinyl if you want less upkeep and a clean, uniform look. Choose wood if you like a classic look and don't mind staining and sealing it on a regular schedule. Either way, our red clay, humid summers, and your HOA rules should shape the choice as much as the material itself.
@@ -2635,7 +2776,7 @@ Wood is often the better fit if you:
 
 If several neighbors are fencing at the same time, matching height and finished side can prevent disputes down the road. The only wrong choice is picking a material from a brochure and finding out about clay, pollen, or HOA rules after the posts are set.
 
-Just bought a new home in Holly Springs? Our [Holly Springs new construction fence guide](/blog/holly-springs-new-build-fence/) covers what's different there. If an HOA has to approve the fence, our [HOA fence approval guide](/blog/hoa-fence-approval-fuquay-varina/) walks through that process.
+Just bought a new home in Holly Springs? Our [Holly Springs new construction fence guide](/blog/holly-springs-new-build-fence/) covers what's different there. If an HOA has to approve the fence, our [HOA fence approval guide](/blog/hoa-fence-approval-fuquay-varina/) walks through that process. What changes the price is the length, the height, the gates, and the ground. Our [fence cost factors guide](/blog/fence-cost-factors-fuquay-varina/) walks through those for a Fuquay-Varina yard.
 
 ## Get a free estimate
 
@@ -2900,7 +3041,6 @@ sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps
 # Older URLs keep the 2026-10-12 sitewide edit.
 LASTMOD_1103 = {
     "",
-    "blog/",
     "blog/fence-permit-rules-southern-wake-towns/",
     "blog/piedmont-red-clay-fence-posts/",
     "faq.html",
@@ -2909,10 +3049,7 @@ LASTMOD_1103 = {
     "services/aluminum-pool-fences.html",
     "services/wood-privacy-fences.html",
     "services/chain-link-fences.html",
-    "blog/fence-permit-fuquay-varina/",
     "blog/holly-springs-new-build-fence/",
-    "blog/chain-link-fence-southern-wake/",
-    "blog/vinyl-vs-wood-privacy-fuquay-varina/",
     "areas/holly-springs.html",
     "areas/angier.html",
     "areas/willow-spring.html",
@@ -2924,23 +3061,29 @@ LASTMOD_1102 = {
     "faq.html",
     "services/vinyl-fences.html",
     "services/wood-privacy-fences.html",
-    "blog/",
     "blog/willow-spring-fence-rules/",
 }
 LASTMOD_1026 = {
-    "blog/",
-    "blog/fence-height-limits-fuquay-varina/",
-    "blog/fence-permit-fuquay-varina/",
     "areas/fuquay-varina.html",
     "areas/willow-spring.html",
     "areas/angier.html",
 }
 EDITED_LASTMOD = {
-    "blog/chain-link-fence-southern-wake/",
     "services/chain-link-fences.html",
 }
+# 2026-11-16: new fence-cost guide, links to it, and new links to the Willow Spring rules guide.
+LASTMOD_1116 = {
+    "blog/",
+    "blog/fence-cost-factors-fuquay-varina/",
+    "blog/fence-permit-fuquay-varina/",
+    "blog/fence-height-limits-fuquay-varina/",
+    "blog/vinyl-vs-wood-privacy-fuquay-varina/",
+    "blog/chain-link-fence-southern-wake/",
+}
 for u, p in urls:
-    if u in LASTMOD_1103:
+    if u in LASTMOD_1116:
+        lastmod = "2026-11-16"
+    elif u in LASTMOD_1103:
         lastmod = "2026-11-03"
     elif u in LASTMOD_1102:
         lastmod = "2026-11-02"
