@@ -599,6 +599,7 @@ Brighton Ridge.</p>
 <p>If you just closed on a new build and are looking at a bare graded lot, talk with your neighbors before
 you pick a fence. Fencing a run of next-door yards at the same time can line up heights, styles and
 finished sides, and it can save everyone a second crew trip.</p>
+<p>On a bare Fuquay-Varina lot, length, height, gates, and the clay all change the job. See <a href="../blog/fence-cost-factors-fuquay-varina/">what affects fence cost in Fuquay-Varina</a> before you plan the line.</p>
 <h2>A little local history</h2>
 <p>The town is two towns. <strong>Fuquay Springs</strong> grew up around a mineral spring a Fuquay
 descendant turned up while plowing a field around 1858 &mdash; the spring house still stands in Fuquay
@@ -689,6 +690,7 @@ line is 311 from inside Town limits, or (919) 577-3111 if you are outside Town l
   <li>Call 811 before anyone digs.</li>
   <li>Get a free estimate once you know your fence line.</li>
 </ol>
+<p>Once that line is set, see <a href="../blog/fence-cost-factors-fuquay-varina/">what affects fence cost in Fuquay-Varina</a> for how length, height, gates, and slope change the job on a Holly Springs lot.</p>
 <p>Just closed on a new home? Our <a href="../blog/holly-springs-new-build-fence/">Holly Springs new
 construction fence guide</a> walks through the first few weeks after closing.</p>
 <h2>Holly Springs fence FAQ</h2>
@@ -755,7 +757,7 @@ Department whether Town rules apply to your lot.</p>
   permit from the Board of Adjustment.</li>
 </ul>
 <p>The same table also lists which materials are allowed in each yard. Ask the Planning Department which
-materials fit your yard before you order anything.</p>
+materials fit your yard before you order anything. After the Town says which material can go in that yard, see <a href="../blog/fence-cost-factors-fuquay-varina/">what affects fence cost in Fuquay-Varina</a> for how the material, the length, and the gates change the job.</p>
 <h2>Easements and low ground</h2>
 <p>The ordinance says fences &ldquo;shall not be installed within or across any private or public
 easement.&rdquo; In wetlands or floodplain areas, a fence must have at least four inches of open space at the
@@ -842,7 +844,7 @@ and any HOA covenants still govern. We'll sort out which apply to your specific 
 <p>The county has no fence setback rule, but recommends staying 1 to 2 feet inside the line.</p>
 <h2>Bigger lots, different projects</h2>
 <p>Yards out here tend to run larger than in-town lots, which changes what makes sense. Fencing an acre is a
-different conversation from fencing a quarter-acre backyard. On a long line, <a href="../blog/chain-link-fence-southern-wake/">chain link can still make sense in southern Wake</a> when cost per foot matters more than a solid wall, and a partial enclosure around the area you use is often smarter than ringing the whole property.</p>
+different conversation from fencing a quarter-acre backyard. On a long line, <a href="../blog/chain-link-fence-southern-wake/">chain link can still make sense in southern Wake</a> when cost per foot matters more than a solid wall, and a partial enclosure around the area you use is often smarter than ringing the whole property. Before you decide how much of a large Willow Spring lot to fence, see <a href="../blog/fence-cost-factors-fuquay-varina/">what affects fence cost in Fuquay-Varina</a> for how length, gates, and the ground change the job.</p>
 <h2>Fence types for Willow Spring homes</h2>
 <p>Vinyl, wood privacy, aluminum and pool-code fencing, and chain link. The same Piedmont red clay applies
 out here, so the same care with post drainage does too.</p>
